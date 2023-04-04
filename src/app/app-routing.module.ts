@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from '@app/app.component';
+import { Error404Component } from '@app/components/error404/error404.component';
 
 const routes: Routes = [
-  // { path: '', component: AppComponent },
+  { path: '', component: AppComponent },
   // { path: 'busqueda/pokedex', redirectTo: 'busqueda/pokedex/pikachu', pathMatch: 'full', component: PokedexComponent },
   // { path: 'busqueda/pokedex/:query', component: PokedexComponent,
   //   data: { title: 'Pokedex' }
@@ -15,7 +17,7 @@ const routes: Routes = [
   // { path: 'busqueda/tvshows/:query', component: TvshowsComponent,
   //   data: { title: 'TV Shows' }
   // },
-  // { path: '**', component: Error404 } //error 404
+  { path: '**', component: Error404Component } //error 404
 ];
 
 @NgModule({
