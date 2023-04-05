@@ -27,9 +27,9 @@ export class SignUpComponent implements OnInit {
   private passwordMatchingValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
     const password = control.get('password');
     const confirmPassword = control.get('confirm_password');
-    if (control.get('confirm_password')?.value !== null &&
-        control.get('confirm_password')?.value !== undefined &&
-        control.get('confirm_password')?.value !== "" &&
+    if (confirmPassword?.value !== null &&
+        confirmPassword?.value !== undefined &&
+        confirmPassword?.value !== "" &&
         password?.value !== confirmPassword?.value) {
       return { notMatched: true };
     }
