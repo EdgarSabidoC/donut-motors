@@ -1,26 +1,42 @@
-<form [formGroup]="sign_up_form" class="form-container">
+<form
+  [formGroup]="sign_up_form"
+  class="form-container"
+  (ngSubmit)="onSaveForm()"
+>
   <label for="first_name">First Name: </label>
-  <input id="first_name" type="text" formControlName="first_name" required />
-
+  <input id="first_name" type="text" formControlName="first_name" />
+  <br />
   <label for="last_name">Last Name: </label>
-  <input id="last_name" type="text" formControlName="last_name" required />
-
+  <input id="last_name" type="text" formControlName="last_name" />
+  <br />
   <label for="email">Email: </label>
-  <input id="email" type="email" formControlName="email" required />
-
+  <input id="email" type="email" formControlName="email" minlength="10" />
+  <br />
   <label for="phone">Phone: </label>
-  <input id="phone" type="phone" formControlName="phone_number" required />
-
+  <input
+    id="phone"
+    type="phone"
+    formControlName="phone_number"
+    minlength="10"
+  />
+  <br />
   <label for="postal_code">Postal Code: </label>
-  <input id="postal_code" type="text" formControlName="postal_code" required />
-
+  <input id="postal_code" type="text" formControlName="postal_code" />
+  <br />
   <label for="password">Password: </label>
-  <input id="password" type="password" formControlName="password" required />
-
+  <input id="password" type="password" formControlName="password" />
+  <br />
   <label for="confirm_password">Confirm password: </label>
-  <input id="confirm_password" type="password" required />
-  <label *ngIf="sign_up_form.errors?.['valuesDoNotMatch']"
-    ><p>Las contraseñas no coinciden</p></label
-  >
+  <input
+    id="confirm_password"
+    type="password"
+    formControlName="confirm_password"
+  />
+  <div class="alert alert-danger" *ngIf="sign_up_form.errors?.['notMatched']">
+    Las contraseñas no coinciden.
+  </div>
+  <br />
+
+  <button type="submit" class="btn-send">Send</button>
 </form>
 <a routerLink="/home" routerLinkActive="active"> Go to home </a>

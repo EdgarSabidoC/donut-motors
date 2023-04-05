@@ -8,9 +8,9 @@ import { FormGroup, Validators, ValidatorFn, AbstractControl, ValidationErrors, 
 })
 export class SignUpComponent implements OnInit {
   sign_up_form!: FormGroup;
-
   constructor(private fb: FormBuilder) {}
 
+  // Formulario de registro de usuario:
   ngOnInit(): void {
     this.sign_up_form = this.fb.group({
       first_name:  this.fb.control(null, Validators.required),
@@ -20,23 +20,27 @@ export class SignUpComponent implements OnInit {
       phone_number: this.fb.control(null, [Validators.required, Validators.minLength(10)]),
       password: this.fb.control(null, [Validators.required, Validators.minLength(8)]),
       confirm_password: this.fb.control(null, [Validators.required, Validators.minLength(8)]),
-    }, { validators: this.passwordMatchingValidator('password','confirm_password')});
+    }, { validators: this.passwordMatchingValidator  });
   }
 
-  // Valida que el valor de dos contraseñas sean iguales:
-  passwordMatchingValidator(passwordA: string, passwordB: string): ValidatorFn {
-    return(control: AbstractControl): ValidationErrors | null => {
-      const formGroup = control as FormGroup;
-      const valueOfPasswordA = formGroup.get(passwordA)?.value;
-      const valueOfPasswordB = formGroup.get(passwordB)?.value;
-
-      // Si las contraseñas son diferentes se retorna un error, si no, un null.
-      if (valueOfPasswordA !== valueOfPasswordB) {
-        return null;
-      } else {
-        return { valuesDoNotMatch: true };
-      }
+  // Valida que las cadenas de los campos de password y confirm_password sean iguales.
+  private passwordMatchingValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
+    const password = control.get('password');
+    const confirmPassword = control.get('confirm_password');
+    if (control.get('confirm_password')?.value !== null &&
+        control.get('confirm_password')?.value !== undefined &&
+        control.get('confirm_password')?.value !== "" &&
+        password?.value !== confirmPassword?.value) {
+      return { notMatched: true };
     }
+    else {
+      return null;
+    }
+  }
+
+  // Guarda el formulario.
+  onSaveForm() {
+    console.log("Saved!");
   }
 
 }
