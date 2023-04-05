@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'donut-motors';
+
+  	// constructor(private SearchService: SearchService,
+    // private aRoute: ActivatedRoute,
+    // private router: Router
+    // ) { }
+
+
 }
