@@ -1,1 +1,26 @@
-<p>sign-up works!</p>
+<form [formGroup]="sign_up_form" class="form-container">
+  <label for="first_name">First Name: </label>
+  <input id="first_name" type="text" formControlName="first_name" required />
+
+  <label for="last_name">Last Name: </label>
+  <input id="last_name" type="text" formControlName="last_name" required />
+
+  <label for="email">Email: </label>
+  <input id="email" type="email" formControlName="email" required />
+
+  <label for="phone">Phone: </label>
+  <input id="phone" type="phone" formControlName="phone_number" required />
+
+  <label for="postal_code">Postal Code: </label>
+  <input id="postal_code" type="text" formControlName="postal_code" required />
+
+  <label for="password">Password: </label>
+  <input id="password" type="password" formControlName="password" required />
+
+  <label for="confirm_password">Confirm password: </label>
+  <input id="confirm_password" type="password" required />
+  <label *ngIf="sign_up_form.errors?.['valuesDoNotMatch']"
+    ><p>Las contraseñas no coinciden</p></label
+  >
+</form>
+<a routerLink="/home" routerLinkActive="active"> Go to home </a>
