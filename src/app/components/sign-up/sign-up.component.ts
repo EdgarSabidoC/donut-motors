@@ -27,15 +27,12 @@ export class SignUpComponent implements OnInit {
   private passwordMatchingValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
     const password = control.get('password');
     const confirmPassword = control.get('confirm_password');
-    if (confirmPassword?.value !== null &&
+    return (confirmPassword?.value !== null &&
         confirmPassword?.value !== undefined &&
         confirmPassword?.value !== "" &&
-        password?.value !== confirmPassword?.value) {
-      return { notMatched: true };
-    }
-    else {
-      return null;
-    }
+        password?.value !== confirmPassword?.value) ?
+      { notMatched: true } :
+      null;
   }
 
   // Guarda el formulario.
