@@ -25,6 +25,25 @@
   <br />
   <label for="password">Password: </label>
   <input id="password" type="password" formControlName="password" />
+  <div *ngIf="sign_up_form.get('password')?.hasError('symbolRequired')">
+    Se necesita al menos un símbolo.
+  </div>
+  <div *ngIf="sign_up_form.get('password')?.hasError('numberRequired')">
+    Se necesita al menos un número.
+  </div>
+  <div *ngIf="sign_up_form.get('password')?.hasError('uppercaseRequired')">
+    Se necesita al menos una letra mayúscula.
+  </div>
+  <div
+    *ngIf="
+      sign_up_form.get('password')?.value !== null &&
+      sign_up_form.get('password')?.value !== undefined &&
+      sign_up_form.get('password')?.value !== '' &&
+      sign_up_form.get('password')?.hasError('minLength')
+    "
+  >
+    La contraseña debe de tener 8 o más caracteres.
+  </div>
   <br />
   <label for="confirm_password">Confirm password: </label>
   <input
@@ -32,6 +51,27 @@
     type="password"
     formControlName="confirm_password"
   />
+  <div *ngIf="sign_up_form.get('confirm_password')?.hasError('symbolRequired')">
+    Se necesita al menos un símbolo.
+  </div>
+  <div *ngIf="sign_up_form.get('confirm_password')?.hasError('numberRequired')">
+    Se necesita al menos un número.
+  </div>
+  <div
+    *ngIf="sign_up_form.get('confirm_password')?.hasError('uppercaseRequired')"
+  >
+    Se necesita al menos una letra mayúscula.
+  </div>
+  <div
+    *ngIf="
+      sign_up_form.get('confirm_password')?.value !== null &&
+      sign_up_form.get('confirm_password')?.value !== undefined &&
+      sign_up_form.get('confirm_password')?.value !== '' &&
+      sign_up_form.get('confirm_password')?.hasError('minLength')
+    "
+  >
+    La contraseña debe de tener 8 o más caracteres.
+  </div>
   <div class="alert alert-danger" *ngIf="sign_up_form.errors?.['notMatched']">
     Las contraseñas no coinciden.
   </div>
