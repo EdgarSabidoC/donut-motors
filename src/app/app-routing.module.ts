@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { SignUpComponent } from '@app/components/sign-up/sign-up.component';
 import { HomeComponent } from '@app/components/home/home.component';
 import { PageNotFoundComponent } from "@app/components/page-not-found/page-not-found.component"
+import { LoginComponent } from '@app/components/login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: "home", pathMatch: "full" },
   {path: "home", component: HomeComponent },
   { path: 'sign-up', component: SignUpComponent, data: { title: 'Sign-Up' } },
+  { path: 'login', component: LoginComponent, data: { title: 'Login' } },
   { path: '**', component: PageNotFoundComponent } // Error 404
 ];
 
