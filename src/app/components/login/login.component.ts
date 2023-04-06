@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
   login_form!: FormGroup;
   constructor(private fb: FormBuilder) {}
 
-  // Formulario de registro de usuario:
+  // Formulario de inicio de sesión de usuario:
   ngOnInit(): void {
     this.login_form = this.fb.group({
       email: this.fb.control(null, [Validators.required, Validators.email]),
