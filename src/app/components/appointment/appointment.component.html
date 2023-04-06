@@ -1,0 +1,80 @@
+<h1>{{ title }}</h1>
+
+<form
+  [formGroup]="appointment_booking_form"
+  class="form-container"
+  (ngSubmit)="onSaveForm()"
+>
+  <input
+    id="first_name"
+    placeholder="first name"
+    type="text"
+    formControlName="first_name"
+  />
+  <br />
+
+  <input
+    id="last_name"
+    type="text"
+    placeholder="last name"
+    formControlName="last_name"
+  />
+  <br />
+
+  <input
+    id="email"
+    type="email"
+    placeholder="email@example.com"
+    formControlName="email"
+    minlength="10"
+  />
+  <div
+    class="alert alert-danger"
+    *ngIf="appointment_booking_form.get('email')?.hasError('email')"
+  >
+    Invalid email!
+  </div>
+  <br />
+
+  <input
+    id="phone"
+    type="tel"
+    placeholder="phone"
+    formControlName="phone_number"
+    minlength="10"
+  />
+  <br />
+
+  <select
+    name="dealership"
+    id="dealership"
+    class="dealership"
+    formControlName="dealership"
+  >
+    <option class="select_option_title" [ngValue]="null" disabled selected>
+      Select Dealership:
+    </option>
+    <option *ngFor="let option of dealershipOptions" [value]="option.value">
+      {{ option.label }}
+    </option>
+  </select>
+  <br />
+
+  <ngb-datepicker
+    name="calendar"
+    class="calendar"
+    formControlName="date"
+  ></ngb-datepicker>
+  <br />
+
+  <select name="time" id="time" class="time" formControlName="time">
+    <option class="select_option_title" [ngValue]="null" disabled selected>
+      Select Time:
+    </option>
+    <option *ngFor="let option of timeOptions" [value]="option.value">
+      {{ option.label }}
+    </option>
+  </select>
+  <br />
+  <button type="submit" class="btn-send" name="send">Send</button>
+</form>
