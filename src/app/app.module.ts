@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { HomeComponent } from './components/home/home.component';
 import { AppointmentComponent } from './components/appointment/appointment.component';
 import { QuoteACarComponent } from './components/quote-a-car/quote-a-car.component';
+import { RegisterACarComponent } from './components/register-a-car/register-a-car.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { QuoteACarComponent } from './components/quote-a-car/quote-a-car.compone
     HomeComponent,
     AppointmentComponent,
     QuoteACarComponent,
+    RegisterACarComponent,
   ],
   imports: [
     BrowserModule,
