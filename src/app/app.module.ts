@@ -13,6 +13,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HomeComponent } from './components/home/home.component';
 import { AppointmentComponent } from './components/appointment/appointment.component';
+import { QuoteACarComponent } from './components/quote-a-car/quote-a-car.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AppointmentComponent } from './components/appointment/appointment.compo
     PageNotFoundComponent,
     HomeComponent,
     AppointmentComponent,
+    QuoteACarComponent,
   ],
   imports: [
     BrowserModule,
