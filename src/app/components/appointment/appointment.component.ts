@@ -33,10 +33,10 @@ export class AppointmentComponent implements OnInit {
   ];
 
   dealershipOptions = [
-    { value: 'value1', label: 'Donut-Motors Classic Cars Emporium' },
-    { value: 'value2', label: 'Donut-Motors Vintage Auto Gallery' },
-    { value: 'value3', label: 'Donut-Motors Antique Automobile Dealership' },
-    { value: 'value4', label: 'Donut-Motors Retro Ride Showroom' },
+    { value: 'value0', label: 'Donut-Motors Classic Cars Emporium' },
+    { value: 'value1', label: 'Donut-Motors Vintage Auto Gallery' },
+    { value: 'value2', label: 'Donut-Motors Antique Automobile Dealership' },
+    { value: 'value3', label: 'Donut-Motors Retro Ride Showroom' },
     { value: 'value4', label: 'Donut-Motors Timeless Car Boutique' },
   ];
 
