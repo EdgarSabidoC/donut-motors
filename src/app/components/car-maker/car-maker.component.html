@@ -1,0 +1,8 @@
+<select name="maker" id="maker" class="car_maker">
+  <option class="select_option_title" [ngValue]="null" disabled selected>
+    Select Maker:
+  </option>
+  <option *ngFor="let maker of makerOptions" [value]="maker?.value">
+    {{ maker?.label }}
+  </option>
+</select>

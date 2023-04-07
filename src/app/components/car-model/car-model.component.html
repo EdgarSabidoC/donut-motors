@@ -1,0 +1,8 @@
+<select name="model" id="model" class="car_model">
+  <option class="select_option_title" [ngValue]="null" disabled selected>
+    Select Model:
+  </option>
+  <option *ngFor="let model of modelOptions" [value]="model?.value">
+    {{ model?.label }}
+  </option>
+</select>

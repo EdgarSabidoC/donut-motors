@@ -5,6 +5,8 @@ import { HomeComponent } from '@app/components/home/home.component';
 import { PageNotFoundComponent } from "@app/components/page-not-found/page-not-found.component"
 import { LoginComponent } from '@app/components/login/login.component';
 import { AppointmentComponent } from './components/appointment/appointment.component';
+import { QuoteACarComponent } from './components/quote-a-car/quote-a-car.component';
+import { RegisterACarComponent } from './components/register-a-car/register-a-car.component';
 
 const routes: Routes = [
   { path: '', redirectTo: "home", pathMatch: "full" },
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, data: { title: 'Login' } },
   { path: 'appointment', component: AppointmentComponent, data: { title: 'Book an appointment' } },
   { path: 'appointment/:query', component: AppointmentComponent, data: { title: 'Book an appointment' } },
+  { path: 'quote-a-car', component: QuoteACarComponent, data: { title: 'Quote a car' } },
+  { path: 'register-a-car', component: RegisterACarComponent, data: { title: 'Register a car' } },
   { path: '**', component: PageNotFoundComponent } // Error 404
 ];
 

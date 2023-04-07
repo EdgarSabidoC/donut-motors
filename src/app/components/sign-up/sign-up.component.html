@@ -4,13 +4,23 @@
   (ngSubmit)="onSaveForm()"
 >
   <label for="first_name">First Name: </label>
-  <input id="first_name" type="text" formControlName="first_name" />
+  <input
+    id="first_name"
+    type="text"
+    formControlName="first_name"
+    ngDefaultControl
+  />
   <br />
   <label for="last_name">Last Name: </label>
-  <input id="last_name" type="text" formControlName="last_name" />
+  <input
+    id="last_name"
+    type="text"
+    formControlName="last_name"
+    ngDefaultControl
+  />
   <br />
   <label for="email">Email: </label>
-  <input id="email" type="email" formControlName="email" minlength="10" />
+  <input id="email" type="email" formControlName="email" ngDefaultControl />
   <div
     class="alert alert-danger"
     *ngIf="sign_up_form.get('email')?.hasError('email')"
@@ -19,13 +29,28 @@
   </div>
   <br />
   <label for="phone">Phone: </label>
-  <input id="phone" type="tel" formControlName="phone_number" minlength="10" />
+  <input
+    id="phone"
+    type="tel"
+    formControlName="phone_number"
+    ngDefaultControl
+  />
   <br />
   <label for="postal_code">Postal Code: </label>
-  <input id="postal_code" type="text" formControlName="postal_code" />
+  <input
+    id="postal_code"
+    type="text"
+    formControlName="postal_code"
+    ngDefaultControl
+  />
   <br />
   <label for="password">Password: </label>
-  <input id="password" type="password" formControlName="password" />
+  <input
+    id="password"
+    type="password"
+    formControlName="password"
+    ngDefaultControl
+  />
   <div
     class="alert alert-danger"
     *ngIf="sign_up_form.get('password')?.hasError('symbolRequired')"
@@ -61,6 +86,7 @@
     id="confirm_password"
     type="password"
     formControlName="confirm_password"
+    ngDefaultControl
   />
   <div
     class="alert alert-danger"

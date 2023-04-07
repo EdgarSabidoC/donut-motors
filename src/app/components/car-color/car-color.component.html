@@ -1,0 +1,8 @@
+<select name="color" id="color" class="car_color">
+  <option class="select_option_title" [ngValue]="null" disabled selected>
+    Select Color:
+  </option>
+  <option *ngFor="let color of colorOptions" [value]="color?.value">
+    {{ color?.label }}
+  </option>
+</select>

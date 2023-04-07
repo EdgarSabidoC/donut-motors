@@ -1,0 +1,11 @@
+<select name="dealership" id="dealership" class="car_dealership">
+  <option class="select_option_title" [ngValue]="null" disabled selected>
+    Select Dealership:
+  </option>
+  <option
+    *ngFor="let dealership of dealershipOptions"
+    [value]="dealership?.value"
+  >
+    {{ dealership?.label }}
+  </option>
+</select>
