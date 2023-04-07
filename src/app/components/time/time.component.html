@@ -1,0 +1,8 @@
+<select name="time" id="time" class="time">
+  <option class="select_option_title" [ngValue]="null" disabled selected>
+    Select Time:
+  </option>
+  <option *ngFor="let time of timeOptions" [value]="time?.value">
+    {{ time?.label }}
+  </option>
+</select>

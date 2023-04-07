@@ -47,10 +47,10 @@
   />
   <br />
 
-  <app-dealerships
+  <app-car-dealership
     formControlName="dealership"
     ngDefaultControl
-  ></app-dealerships>
+  ></app-car-dealership>
   <br />
 
   <ngb-datepicker
@@ -60,20 +60,7 @@
   ></ngb-datepicker>
   <br />
 
-  <select
-    name="time"
-    id="time"
-    class="time"
-    formControlName="time"
-    ngDefaultControl
-  >
-    <option class="select_option_title" [ngValue]="null" disabled selected>
-      Select Time:
-    </option>
-    <option *ngFor="let option of timeOptions" [value]="option.value">
-      {{ option.label }}
-    </option>
-  </select>
+  <app-time formControlName="time" ngDefaultControl></app-time>
   <br />
 
   <button type="submit" class="btn-send" name="send">Send</button>

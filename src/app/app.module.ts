@@ -15,10 +15,15 @@ import { HomeComponent } from './components/home/home.component';
 import { AppointmentComponent } from './components/appointment/appointment.component';
 import { QuoteACarComponent } from './components/quote-a-car/quote-a-car.component';
 import { RegisterACarComponent } from './components/register-a-car/register-a-car.component';
-import { DealershipsComponent } from './components/dealerships/dealerships.component';
 import { CarModelComponent } from './components/car-model/car-model.component';
 import { CarMakerComponent } from './components/car-maker/car-maker.component';
 import { CarColorComponent } from './components/car-color/car-color.component';
+import { CarDealershipComponent } from './components/car-dealership/car-dealership.component';
+import { RegisterAModelComponent } from './components/register-a-model/register-a-model.component';
+import { RegisterAColorComponent } from './components/register-a-color/register-a-color.component';
+import { RegisterAMakerComponent } from './components/register-a-maker/register-a-maker.component';
+import { RegisterADealershipComponent } from './components/register-a-dealership/register-a-dealership.component';
+import { TimeComponent } from './components/time/time.component';
 
 @NgModule({
   declarations: [
@@ -33,10 +38,15 @@ import { CarColorComponent } from './components/car-color/car-color.component';
     AppointmentComponent,
     QuoteACarComponent,
     RegisterACarComponent,
-    DealershipsComponent,
     CarModelComponent,
     CarMakerComponent,
     CarColorComponent,
+    CarDealershipComponent,
+    RegisterAModelComponent,
+    RegisterAColorComponent,
+    RegisterAMakerComponent,
+    RegisterADealershipComponent,
+    TimeComponent,
   ],
   imports: [
     BrowserModule,

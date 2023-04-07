@@ -10,27 +10,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AppointmentComponent implements OnInit {
   query!: string;
   date!: Date;
-  timeOptions = [
-    { value: 'value1', label: '8:00' },
-    { value: 'value2', label: '8:30' },
-    { value: 'value3', label: '9:00' },
-    { value: 'value4', label: '9:30' },
-    { value: 'value5', label: '10:00' },
-    { value: 'value6', label: '10:30' },
-    { value: 'value7', label: '11:00' },
-    { value: 'value8', label: '11:30' },
-    { value: 'value9', label: '12:00' },
-    { value: 'value10', label: '12:30' },
-    { value: 'value11', label: '13:00' },
-    { value: 'value12', label: '13:30' },
-    { value: 'value13', label: '14:00' },
-    { value: 'value14', label: '14:30' },
-    { value: 'value15', label: '15:00' },
-    { value: 'value16', label: '15:30' },
-    { value: 'value17', label: '16:00' },
-    { value: 'value18', label: '16:30' },
-    { value: 'value19', label: '17:00' },
-  ];
 
   appointment_booking_form!: FormGroup;
   constructor(private fb: FormBuilder, private aRoute: ActivatedRoute,
@@ -85,7 +64,28 @@ export class AppointmentComponent implements OnInit {
     // Se obtiene la fecha y hora seleccionadas:
     const selectedDate = this.appointment_booking_form.get('date')?.value;
     const selectedTime = this.appointment_booking_form.get('time')?.value;
-    const time = this.timeOptions.find(option => option.value === selectedTime);
+    const timeOptions = [
+      { value: 'time0', label: '8:00' },
+      { value: 'time1', label: '8:30' },
+      { value: 'time2', label: '9:00' },
+      { value: 'time3', label: '9:30' },
+      { value: 'time4', label: '10:00' },
+      { value: 'time5', label: '10:30' },
+      { value: 'time6', label: '11:00' },
+      { value: 'time7', label: '11:30' },
+      { value: 'time8', label: '12:00' },
+      { value: 'time9', label: '12:30' },
+      { value: 'time10', label: '13:00' },
+      { value: 'time11', label: '13:30' },
+      { value: 'time12', label: '14:00' },
+      { value: 'time13', label: '14:30' },
+      { value: 'time14', label: '15:00' },
+      { value: 'time15', label: '15:30' },
+      { value: 'time16', label: '16:00' },
+      { value: 'time17', label: '16:30' },
+      { value: 'time18', label: '17:00' },
+    ];
+    const time = timeOptions.find(option => option.value === selectedTime);
 
     // Se valida que el formato de hora sea válido:
     if (time && time.label && time.label.match(/^\d{1,2}:\d{2}$/)) {
