@@ -13,7 +13,6 @@ const routes: Routes = [
   {path: "home", component: HomeComponent },
   { path: 'sign-up', component: SignUpComponent, data: { title: 'Sign-Up' } },
   { path: 'login', component: LoginComponent, data: { title: 'Login' } },
-  { path: 'appointment', component: AppointmentComponent, data: { title: 'Book an appointment' } },
   { path: 'appointment/:query', component: AppointmentComponent, data: { title: 'Book an appointment' } },
   { path: 'quote-a-car', component: QuoteACarComponent, data: { title: 'Quote a car' } },
   { path: 'register-a-car', component: RegisterACarComponent, data: { title: 'Register a car' } },

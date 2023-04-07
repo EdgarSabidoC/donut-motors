@@ -16,8 +16,6 @@
     id="version"
     placeholder="version"
     type="number"
-    min="1900"
-    max="2099"
     formControlName="version"
   />
   <br />
@@ -38,7 +36,6 @@
     type="email"
     placeholder="email@example.com"
     formControlName="email"
-    minlength="10"
   />
   <div
     class="alert alert-danger"
@@ -53,14 +50,13 @@
     type="tel"
     placeholder="phone"
     formControlName="phone_number"
-    minlength="10"
   />
   <br />
 
-  <app-dealerships
+  <app-car-dealership
     formControlName="dealership"
     ngDefaultControl
-  ></app-dealerships>
+  ></app-car-dealership>
   <br />
 
   <button type="submit" class="btn-send" name="send">Send</button>
