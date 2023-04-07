@@ -15,6 +15,10 @@ import { HomeComponent } from './components/home/home.component';
 import { AppointmentComponent } from './components/appointment/appointment.component';
 import { QuoteACarComponent } from './components/quote-a-car/quote-a-car.component';
 import { RegisterACarComponent } from './components/register-a-car/register-a-car.component';
+import { DealershipsComponent } from './components/dealerships/dealerships.component';
+import { CarModelComponent } from './components/car-model/car-model.component';
+import { CarMakerComponent } from './components/car-maker/car-maker.component';
+import { CarColorComponent } from './components/car-color/car-color.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +33,10 @@ import { RegisterACarComponent } from './components/register-a-car/register-a-ca
     AppointmentComponent,
     QuoteACarComponent,
     RegisterACarComponent,
+    DealershipsComponent,
+    CarModelComponent,
+    CarMakerComponent,
+    CarColorComponent,
   ],
   imports: [
     BrowserModule,

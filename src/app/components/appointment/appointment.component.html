@@ -10,6 +10,7 @@
     placeholder="first name"
     type="text"
     formControlName="first_name"
+    ngDefaultControl
   />
   <br />
 
@@ -18,6 +19,7 @@
     type="text"
     placeholder="last name"
     formControlName="last_name"
+    ngDefaultControl
   />
   <br />
 
@@ -26,7 +28,7 @@
     type="email"
     placeholder="email@example.com"
     formControlName="email"
-    minlength="10"
+    ngDefaultControl
   />
   <div
     class="alert alert-danger"
@@ -41,23 +43,14 @@
     type="tel"
     placeholder="phone"
     formControlName="phone_number"
-    minlength="10"
+    ngDefaultControl
   />
   <br />
 
-  <select
-    name="dealership"
-    id="dealership"
-    class="dealership"
+  <app-dealerships
     formControlName="dealership"
-  >
-    <option class="select_option_title" [ngValue]="null" disabled selected>
-      Select Dealership:
-    </option>
-    <option *ngFor="let option of dealershipOptions" [value]="option.value">
-      {{ option.label }}
-    </option>
-  </select>
+    ngDefaultControl
+  ></app-dealerships>
   <br />
 
   <ngb-datepicker
@@ -67,7 +60,13 @@
   ></ngb-datepicker>
   <br />
 
-  <select name="time" id="time" class="time" formControlName="time">
+  <select
+    name="time"
+    id="time"
+    class="time"
+    formControlName="time"
+    ngDefaultControl
+  >
     <option class="select_option_title" [ngValue]="null" disabled selected>
       Select Time:
     </option>

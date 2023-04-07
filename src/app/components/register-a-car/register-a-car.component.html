@@ -1,1 +1,40 @@
-<p>register-a-car works!</p>
+<form
+  [formGroup]="register_a_car_form"
+  class="form-container"
+  (ngSubmit)="onSaveForm()"
+>
+  <app-car-maker formControlName="maker" ngDefaultControl></app-car-maker>
+  <br />
+
+  <app-car-model formControlName="model" ngDefaultControl></app-car-model>
+  <br />
+
+  <input
+    id="year"
+    placeholder="year"
+    type="number"
+    formControlName="year"
+    ngDefaultControl
+  />
+  <br />
+
+  <app-car-color formControlName="color" ngDefaultControl></app-car-color>
+  <br />
+
+  <input
+    id="mileage"
+    placeholder="mileage"
+    type="number"
+    formControlName="mileage"
+    ngDefaultControl
+  />
+  <br />
+
+  <app-dealerships
+    formControlName="dealership"
+    ngDefaultControl
+  ></app-dealerships>
+  <br />
+
+  <button type="submit" class="btn-send" name="send">Send</button>
+</form>
