@@ -32,14 +32,6 @@ export class AppointmentComponent implements OnInit {
     { value: 'value19', label: '17:00' },
   ];
 
-  dealershipOptions = [
-    { value: 'value0', label: 'Donut-Motors Classic Cars Emporium' },
-    { value: 'value1', label: 'Donut-Motors Vintage Auto Gallery' },
-    { value: 'value2', label: 'Donut-Motors Antique Automobile Dealership' },
-    { value: 'value3', label: 'Donut-Motors Retro Ride Showroom' },
-    { value: 'value4', label: 'Donut-Motors Timeless Car Boutique' },
-  ];
-
   appointment_booking_form!: FormGroup;
   constructor(private fb: FormBuilder, private aRoute: ActivatedRoute,
     private router: Router,) {}

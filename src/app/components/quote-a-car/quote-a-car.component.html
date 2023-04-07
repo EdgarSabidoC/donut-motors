@@ -1,1 +1,67 @@
-<p>quote-a-car works!</p>
+<form
+  [formGroup]="quote_a_car_form"
+  class="form-container"
+  (ngSubmit)="onSaveForm()"
+>
+  <app-car-maker formControlName="maker" ngDefaultControl></app-car-maker>
+  <br />
+
+  <app-car-model formControlName="model" ngDefaultControl></app-car-model>
+  <br />
+
+  <input id="year" placeholder="year" type="number" formControlName="year" />
+  <br />
+
+  <input
+    id="version"
+    placeholder="version"
+    type="number"
+    min="1900"
+    max="2099"
+    formControlName="version"
+  />
+  <br />
+
+  <input id="color" placeholder="color" type="string" formControlName="color" />
+  <br />
+
+  <input
+    id="mileage"
+    placeholder="mileage"
+    type="number"
+    formControlName="mileage"
+  />
+  <br />
+
+  <input
+    id="email"
+    type="email"
+    placeholder="email@example.com"
+    formControlName="email"
+    minlength="10"
+  />
+  <div
+    class="alert alert-danger"
+    *ngIf="quote_a_car_form.get('email')?.hasError('email')"
+  >
+    Invalid email!
+  </div>
+  <br />
+
+  <input
+    id="phone"
+    type="tel"
+    placeholder="phone"
+    formControlName="phone_number"
+    minlength="10"
+  />
+  <br />
+
+  <app-dealerships
+    formControlName="dealership"
+    ngDefaultControl
+  ></app-dealerships>
+  <br />
+
+  <button type="submit" class="btn-send" name="send">Send</button>
+</form>

@@ -10,20 +10,12 @@ export class QuoteACarComponent implements OnInit {
   quote_a_car_form!: FormGroup;
   constructor(private fb: FormBuilder) {}
 
-  dealershipOptions = [
-    { value: 'value0', label: 'Donut-Motors Classic Cars Emporium' },
-    { value: 'value1', label: 'Donut-Motors Vintage Auto Gallery' },
-    { value: 'value2', label: 'Donut-Motors Antique Automobile Dealership' },
-    { value: 'value3', label: 'Donut-Motors Retro Ride Showroom' },
-    { value: 'value4', label: 'Donut-Motors Timeless Car Boutique' },
-  ];
-
-  // Formulario de registro de usuario:
+  // Formulario de cotización de venta de auto:
   ngOnInit(): void {
     this.quote_a_car_form = this.fb.group({
-      maker: this.fb.control(null, [Validators.required]), // Selector
+      maker: this.fb.control(null, [Validators.required]),
       model: this.fb.control(null, [Validators.required]),
-      year: this.fb.control(null, [Validators.required, Validators.pattern(/^\d{4}$/)]),
+      year: this.fb.control(null, [Validators.required, Validators.pattern(/^\d{4}$/), Validators.minLength(1900), Validators.maxLength(2099)]),
       version: this.fb.control(null, [Validators.required]),
       color: this.fb.control(null, [Validators.required]),
       mileage: this.fb.control(null, [Validators.required, Validators.pattern(/^\d$/)]),
