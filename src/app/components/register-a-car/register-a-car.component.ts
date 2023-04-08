@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-register-a-car',
@@ -23,7 +23,21 @@ export class RegisterACarComponent implements OnInit {
       description: this.fb.control(null, [Validators.required]),
       price: this.fb.control(null, [Validators.required, Validators.pattern(/^\d$/)]),
       dealership: this.fb.control(null, [Validators.required]),
+      photo_image: this.fb.control(null, [Validators.required, this.imageValidator]),
     });
+  }
+
+  // Valida que la imagen seleccionada para el logo sea de tipo svg, webp, png o avif:
+  imageValidator(control: AbstractControl): { [key: string]: any } | null {
+    const allowedFormats = ['svg', 'webp', 'png', 'avif'];
+    const file = control.value;
+    if (file && file.name) { // Se comprueba si existe el archivo y el nombre.
+      const fileExt = file.name.split('.').pop()?.toLowerCase();
+      if (allowedFormats.indexOf(fileExt) === -1) {
+        return { invalidImageFormat: true };
+      }
+    }
+    return null;
   }
 
   // Guarda el formulario.

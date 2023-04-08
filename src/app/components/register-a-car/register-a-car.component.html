@@ -36,5 +36,18 @@
   ></app-dealership>
   <br />
 
-  <button type="submit" class="btn-send" name="send">Send</button>
+  <div>
+    <input
+      class="form-control"
+      id="vehicle_photo"
+      placeholder="Vehicle photo"
+      type="file"
+      formControlName="photo_image"
+      ngDefaultControl
+    />
+  </div>
+  <br />
+
+  <button class="btn btn-warning" type="submit" name="Save">Save</button>
+  <button class="btn btn-warning" type="reset" name="reset">Reset</button>
 </form>

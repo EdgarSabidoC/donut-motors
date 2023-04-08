@@ -1,1 +1,17 @@
-<p>register-a-model works!</p>
+<form
+  [formGroup]="register_a_model_form"
+  class="form-container"
+  (ngSubmit)="onSaveForm()"
+>
+  <input
+    id="model_name"
+    placeholder="model name"
+    type="string"
+    formControlName="name"
+    ngDefaultControl
+  />
+  <br />
+
+  <button class="btn btn-warning" type="submit" name="Save">Save</button>
+  <button class="btn btn-warning" type="reset" name="reset">Reset</button>
+</form>

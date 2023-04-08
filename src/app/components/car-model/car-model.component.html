@@ -1,8 +1,17 @@
-<select name="car_model" id="car_model" class="car_model">
+<select
+  name="car_model"
+  id="car_model"
+  class="car_model"
+  class="btn btn-warning"
+>
   <option class="select_option_title" [ngValue]="null" disabled selected>
     Select Model:
   </option>
-  <option *ngFor="let model of modelOptions" [value]="model?.value">
+  <option
+    class="btn btn-light"
+    *ngFor="let model of modelOptions"
+    [value]="model?.value"
+  >
     {{ model?.label }}
   </option>
 </select>

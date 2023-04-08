@@ -1,1 +1,16 @@
-<p>register-a-color works!</p>
+<form
+  [formGroup]="register_a_color_form"
+  class="form-container"
+  (ngSubmit)="onSaveForm()"
+>
+  <input
+    id="color_name"
+    placeholder="color name"
+    type="string"
+    formControlName="color_name"
+    ngDefaultControl
+  />
+  <br />
+  <button class="btn btn-warning" type="submit" name="Save">Save</button>
+  <button class="btn btn-warning" type="reset" name="reset">Reset</button>
+</form>
