@@ -22,6 +22,7 @@ export class QuoteACarComponent implements OnInit {
       email: this.fb.control(null, [Validators.required, Validators.email]),
       phone_number: this.fb.control(null, [Validators.required, Validators.minLength(10), Validators.pattern(/^\d{10}$/)]),
       dealership: this.fb.control(null, [Validators.required]),
+      serial_number: this.fb.control(null, [Validators.required, Validators.pattern(/^\d$/)]),
     });
   }
 
