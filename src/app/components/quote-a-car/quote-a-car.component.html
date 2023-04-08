@@ -9,18 +9,16 @@
   <app-car-model formControlName="model" ngDefaultControl></app-car-model>
   <br />
 
-  <input id="year" placeholder="year" type="number" formControlName="year" />
-  <br />
-
   <input
-    id="version"
-    placeholder="version"
+    id="year"
+    placeholder="year"
     type="number"
-    formControlName="version"
+    formControlName="year"
+    ngDefaultControl
   />
   <br />
 
-  <input id="color" placeholder="color" type="string" formControlName="color" />
+  <app-car-color formControlName="color" ngDefaultControl></app-car-color>
   <br />
 
   <input
@@ -60,4 +58,5 @@
   <br />
 
   <button type="submit" class="btn-send" name="send">Send</button>
+  <button type="reset" class="btn-send" name="reset">Reset</button>
 </form>

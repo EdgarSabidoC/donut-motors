@@ -1,1 +1,35 @@
-<p>register-a-dealership works!</p>
+<form
+  [formGroup]="register_a_dealership_form"
+  class="form-container"
+  (ngSubmit)="onSaveForm()"
+>
+  <input
+    id="dealership_name"
+    placeholder="dealership name"
+    type="string"
+    formControlName="name"
+    ngDefaultControl
+  />
+  <br />
+
+  <input
+    id="dealership_address"
+    placeholder="dealership address"
+    type="string"
+    formControlName="address"
+    ngDefaultControl
+  />
+  <br />
+
+  <input
+    id="phone"
+    type="tel"
+    placeholder="phone"
+    formControlName="phone_number"
+    ngDefaultControl
+  />
+  <br />
+
+  <button class="btn btn-warning" type="submit" name="Save">Save</button>
+  <button class="btn btn-warning" type="reset" name="reset">Reset</button>
+</form>

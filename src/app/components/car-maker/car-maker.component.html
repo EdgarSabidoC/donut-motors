@@ -1,8 +1,12 @@
-<select name="car_maker" id="car_maker" class="car_maker">
+<select name="car_maker" id="car_maker" class="btn btn-warning">
   <option class="select_option_title" [ngValue]="null" disabled selected>
     Select Maker:
   </option>
-  <option *ngFor="let maker of makerOptions" [value]="maker?.value">
+  <option
+    class="btn btn-light"
+    *ngFor="let maker of makerOptions"
+    [value]="maker?.value"
+  >
     {{ maker?.label }}
   </option>
 </select>

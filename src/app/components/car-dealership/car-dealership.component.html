@@ -1,8 +1,9 @@
-<select name="car_dealership" id="car_dealership" class="car_dealership">
+<select name="car_dealership" id="car_dealership" class="btn btn-warning">
   <option class="select_option_title" [ngValue]="null" disabled selected>
-    Select Dealership:
+    Select Dealership
   </option>
   <option
+    class="btn btn-light"
     *ngFor="let dealership of dealershipOptions"
     [value]="dealership?.value"
   >

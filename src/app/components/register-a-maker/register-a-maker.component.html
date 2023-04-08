@@ -1,1 +1,29 @@
-<p>register-a-maker works!</p>
+<form
+  [formGroup]="register_a_maker_form"
+  class="form-container"
+  (ngSubmit)="onSaveForm()"
+>
+  <input
+    id="maker_name"
+    placeholder="maker name"
+    type="string"
+    formControlName="name"
+    ngDefaultControl
+  />
+  <br />
+
+  <div>
+    <input
+      class="form-control"
+      id="maker_logo"
+      placeholder="Logo image"
+      type="file"
+      formControlName="logo_image"
+      ngDefaultControl
+    />
+  </div>
+  <br />
+
+  <button class="btn btn-warning" type="submit" name="Save">Save</button>
+  <button class="btn btn-warning" type="reset" name="reset">Reset</button>
+</form>
