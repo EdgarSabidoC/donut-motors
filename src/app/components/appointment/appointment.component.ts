@@ -46,7 +46,7 @@ export class AppointmentComponent implements OnInit {
   }
 
   // Valida que la fecha no esté en el pasado:
-  pastDateValidator(control: AbstractControl): { [key: string]: boolean } | null {
+  private pastDateValidator(control: AbstractControl): { [key: string]: boolean } | null {
     const dateValue = control.value;
 
     // Verifica si la fecha está en el pasado:

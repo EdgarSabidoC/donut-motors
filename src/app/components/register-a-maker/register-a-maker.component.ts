@@ -18,12 +18,12 @@ export class RegisterAMakerComponent {
     });
   }
 
-  // Valida que la imagen seleccionada para la foto del auto sea de tipo jpeg, webp, png o avif:
-  imageValidator(control: AbstractControl): { [key: string]: any } | null {
-    const allowedFormats = ['jpg','jpeg', 'webp', 'png', 'avif'];
-    const file = control.value;
-    if (file && file.name) { // Se comprueba si existe el archivo y el nombre.
-      const fileExt = file.name.split('.').pop()?.toLowerCase();
+  // Valida que la imagen seleccionada para el logo del fabricante sea de tipo svg, png, webp o avif:
+  private imageValidator(control: AbstractControl): { [key: string]: any } | null {
+    const allowedFormats = ['svg', 'png', 'webp', 'avif'];
+    const file = control.value; // Obtén el valor del control
+    if (file) {
+      const fileExt = file.split('.').pop()?.toLowerCase();
       if (allowedFormats.indexOf(fileExt) === -1) {
         return { invalidImageFormat: true };
       }
