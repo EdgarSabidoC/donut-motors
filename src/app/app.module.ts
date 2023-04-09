@@ -24,6 +24,8 @@ import { RegisterAColorComponent } from './components/register-a-color/register-
 import { RegisterAMakerComponent } from './components/register-a-maker/register-a-maker.component';
 import { RegisterADealershipComponent } from './components/register-a-dealership/register-a-dealership.component';
 import { TimeComponent } from './components/time/time.component';
+import { CarsForSaleComponent } from './components/cars-for-sale/cars-for-sale.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { TimeComponent } from './components/time/time.component';
     RegisterAMakerComponent,
     RegisterADealershipComponent,
     TimeComponent,
+    CarsForSaleComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ import { TimeComponent } from './components/time/time.component';
     NgbModule,
     ReactiveFormsModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -11,6 +11,7 @@ import { RegisterAColorComponent } from './components/register-a-color/register-
 import { RegisterADealershipComponent } from './components/register-a-dealership/register-a-dealership.component';
 import { RegisterAMakerComponent } from './components/register-a-maker/register-a-maker.component';
 import { RegisterAModelComponent } from './components/register-a-model/register-a-model.component';
+import { CarsForSaleComponent } from './components/cars-for-sale/cars-for-sale.component';
 
 const routes: Routes = [
   { path: '', redirectTo: "home", pathMatch: "full" },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'register-a-dealership', component: RegisterADealershipComponent, data: { title: 'Register a dealership' } },
   { path: 'register-a-maker', component: RegisterAMakerComponent, data: { title: 'Register a maker' } },
   { path: 'register-a-model', component: RegisterAModelComponent, data: { title: 'Register a model' } },
+  { path: 'cars-for-sale', component: CarsForSaleComponent, data: { title: 'Cars for sale' } },
   { path: '**', component: PageNotFoundComponent } // Error 404
 ];
 
