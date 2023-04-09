@@ -24,6 +24,7 @@ import { RegisterAColorComponent } from './components/register-a-color/register-
 import { RegisterAMakerComponent } from './components/register-a-maker/register-a-maker.component';
 import { RegisterADealershipComponent } from './components/register-a-dealership/register-a-dealership.component';
 import { TimeComponent } from './components/time/time.component';
+import { CarCategoryComponent } from './components/car-category/car-category.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { TimeComponent } from './components/time/time.component';
     RegisterAMakerComponent,
     RegisterADealershipComponent,
     TimeComponent,
+    CarCategoryComponent,
   ],
   imports: [
     BrowserModule,

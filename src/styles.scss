@@ -2,3 +2,15 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+// Elimina las flechas del campo de tipo number:
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// Elimina las flechas del campo de tipo number en navegadores Mozilla Firefox:
+input[type="number"] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
