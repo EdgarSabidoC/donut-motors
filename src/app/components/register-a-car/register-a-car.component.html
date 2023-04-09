@@ -35,25 +35,79 @@
     placeholder="serial number"
     type="number"
     formControlName="serial_number"
+    ngDefaultControl
   />
   <br />
 
-  <app-dealership
-    formControlName="dealership"
-    ngDefaultControl
-  ></app-dealership>
+  <fieldset>
+    <legend>Select transmision type:</legend>
+    <div>
+      <input
+        id="automatic_transmision"
+        value="automatic"
+        type="radio"
+        name="transmision"
+        formControlName="transmision"
+        ngDefaultControl
+      />
+      <label for="automatic_transmision">Automatic</label>
+    </div>
+    <div>
+      <input
+        id="manual_transmision"
+        value="manual"
+        type="radio"
+        name="transmision"
+        formControlName="transmision"
+        ngDefaultControl
+      />
+      <label for="manual_transmision">Manual</label>
+    </div>
+  </fieldset>
   <br />
 
-  <div>
-    <input
-      class="form-control"
-      id="vehicle_photo"
-      placeholder="Vehicle photo"
-      type="file"
-      formControlName="photo_image"
-      ngDefaultControl
-    />
-  </div>
+  <textarea
+    id="description"
+    name="description"
+    placeholder="car description..."
+    rows="4"
+    cols="50"
+    formControlName="description"
+    ngDefaultControl
+  >
+  </textarea>
+  <br />
+
+  <app-car-category
+    formControlName="category"
+    ngDefaultControl
+  ></app-car-category>
+  <br />
+
+  <app-car-dealership
+    formControlName="dealership"
+    ngDefaultControl
+  ></app-car-dealership>
+  <br />
+
+  <input
+    class="form-control"
+    id="vehicle_photo"
+    placeholder="Vehicle photo"
+    type="file"
+    formControlName="photo_image"
+    accept=".png, .jpg, .jpeg, .webp, .avif"
+    ngDefaultControl
+  />
+  <br />
+
+  <input
+    id="price"
+    placeholder="price"
+    type="number"
+    formControlName="price"
+    ngDefaultControl
+  />
   <br />
 
   <button class="btn btn-warning" type="submit" name="Save">Save</button>

@@ -15,7 +15,7 @@ export class RegisterADealershipComponent {
     this.register_a_dealership_form = this.fb.group({
       name: this.fb.control(null, [Validators.required]),
       address: this.fb.control(null, [Validators.required]),
-      phone_number: this.fb.control(null, [Validators.required, Validators.minLength(10), Validators.pattern(/^\d{10}$/)]),
+      phone_number: this.fb.control(null, [Validators.required, Validators.pattern(/^\d{10}$/)]),
       house_number: this.fb.control(null, [Validators.required]),
       street: this.fb.control(null, [Validators.required]),
       intersections: this.fb.control(null, [Validators.required]),

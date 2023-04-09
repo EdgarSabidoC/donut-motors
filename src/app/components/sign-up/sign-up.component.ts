@@ -47,20 +47,20 @@ export class SignUpComponent implements OnInit {
 
   // Valida que la contraseña tenga cuando menos una letra mayúscula, un número, un símbolo y tiene 8 caracteres:
   private passwordValidator(control: AbstractControl): { [key: string]: boolean } | null {
-  const password = control.value;
-  if (password && password.length >= 8) {
-    const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]+$/;
-    // Si no tiene una letra mayúscula, un número y un símbolo.
-    if (!regex.test(password)) {
-      return { symbolRequired: true, numberRequired: true, uppercaseRequired: true };
+    const password = control.value;
+    if (password && password.length >= 8) {
+      const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]+$/;
+      // Si no tiene una letra mayúscula, un número y un símbolo.
+      if (!regex.test(password)) {
+        return { symbolRequired: true, numberRequired: true, uppercaseRequired: true };
+      }
+    } else {
+      // La contraseña no cumple el mínimo de caracteres:
+      return { minLength: true };
     }
-  } else {
-    // La contraseña no cumple el mínimo de caracteres:
-    return { minLength: true };
+    // Si la contraseña cumple con todo lo requerido:
+    return null;
   }
-  // Si la contraseña cumple con todo lo requerido:
-  return null;
-}
 
   // Guarda el formulario.
   onSaveForm() {
