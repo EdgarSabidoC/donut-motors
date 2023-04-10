@@ -1,8 +1,8 @@
-import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, Subject, merge, OperatorFunction } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { SearchService } from '@app/services/search.service';
 
 @Component({
@@ -12,11 +12,70 @@ import { SearchService } from '@app/services/search.service';
 })
 export class WordSuggesterComponent {
   makers = [
-  'mercedes-benz',
-  'ford',
-  'audi',
-  'chevrolet',
-  ];
+  'Acura',
+  'Alfa-Romeo',
+  'Aston Martin',
+  'Audi',
+  'BMW',
+  'Bentley',
+  'Buick',
+  'Cadilac',
+  'Chevrolet',
+  'Chrysler',
+  'Daewoo',
+  'Daihatsu',
+  'Dodge',
+  'Eagle',
+  'Ferrari',
+  'Fiat',
+  'Fisker',
+  'Ford',
+  'Freighliner',
+  'GMC',
+  'GMC - General Motors Company',
+  'Genesis',
+  'Geo',
+  'Honda',
+  'Hummer',
+  'Hyundai',
+  'Infinity',
+  'Isuzu',
+  'Jaguar',
+  'Jeep',
+  'Kla',
+  'Lamborghini',
+  'Land Rover',
+  'Lexus',
+  'Lincoln',
+  'Lotus',
+  'Mazda',
+  'Maserati',
+  'Maybach',
+  'McLaren',
+  'Mercedez-Benz',
+  'Mercury',
+  'Mini',
+  'Mitsubishi',
+  'Nissan',
+  'Oldsmobile',
+  'Panoz',
+  'Plymouth',
+  'Polestar',
+  'Pontiac',
+  'Porsche',
+  'Ram',
+  'Rivian',
+  'Rolls_Royce',
+  'Saab',
+  'Saturn',
+  'Smart',
+  'Subaru',
+  'Susuki',
+  'Tesla',
+  'Toyota',
+  'Volkswagen',
+  'Volvo',
+  ].sort();
   suggester_form !: FormGroup;
   model!: any;
 
