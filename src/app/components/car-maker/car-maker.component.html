@@ -1,9 +1,8 @@
-<select name="car_maker" id="car_maker" class="btn btn-warning">
+<select name="car_maker" id="car_maker" class="form-select" multiple>
   <option class="select_option_title" [ngValue]="null" disabled selected>
     Select Maker:
   </option>
   <option
-    class="btn btn-light"
     *ngFor="let maker of makerOptions"
     [value]="maker?.value"
   >

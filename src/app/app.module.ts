@@ -26,8 +26,10 @@ import { RegisterADealershipComponent } from './components/register-a-dealership
 import { TimeComponent } from './components/time/time.component';
 import { CarCategoryComponent } from './components/car-category/car-category.component';
 import { WordSuggesterComponent } from './components/word-suggester/word-suggester.component';
+
 import { CarsForSaleComponent } from './components/cars-for-sale/cars-for-sale.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { SellACarComponent } from './components/sell-a-car/sell-a-car.component';
 
 @NgModule({
   declarations: [
@@ -52,8 +54,9 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     RegisterADealershipComponent,
     TimeComponent,
     CarCategoryComponent,
-    WordSuggesterComponent,
     CarsForSaleComponent,
+    SellACarComponent,
+    WordSuggesterComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,6 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule
-
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

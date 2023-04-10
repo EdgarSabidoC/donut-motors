@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 /* Importing Bootstrap SCSS file. */
-@import 'bootstrap/dist/css/bootstrap.min.css';
+//@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 .bd-placeholder-img {
@@ -73,4 +76,28 @@
 }
 .bd-mode-toggle {
     z-index: 1500;
+}
+
+// Elimina las flechas del campo de tipo number:
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// Elimina las flechas del campo de tipo number en navegadores Mozilla Firefox:
+input[type="number"] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+
+[data-bs-theme=dark] .bg-warning {
+  background-color: #a74db9 !important; /* Cambia el color de fondo de la clase bg-warning */
+}
+
+[data-bs-theme=dark] .title-shadow {
+    box-shadow: 10px 10px #a74db9 !important; /* Cambia el color de fondo de la clase bg-warning */
+}
+
+[data-bs-theme=dark] .bn-shadow {
+    box-shadow: 0px 10px #a74db9 !important; /* Cambia el color de fondo de la clase bg-warning */
 }
