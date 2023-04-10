@@ -21,8 +21,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  searchCar(): void {
-    this.SearchService.search({limit: "10", maker: this.search_form.get('search_query')?.value}).subscribe({
+  searchCarsModel(): void {
+    this.SearchService.searchCarsApi({limit: "10", maker: this.search_form.get('search_query')?.value}).subscribe({
       next: value=> console.log('Next: ', value),
       error: error => console.log('Error: ', error)
     });
@@ -31,7 +31,8 @@ export class HomeComponent implements OnInit {
   onSaveForm() {
     this.search_form.get('search_query')?.setValue(this.SearchService.selectedString);
     if (this.search_form.valid) {
-      this.searchCar();
+      this.searchCarsModel();
+      this.SearchService.setSelectedString(''); // Se limpia de nuevo la cadena de búsqueda.
     }
   }
 }

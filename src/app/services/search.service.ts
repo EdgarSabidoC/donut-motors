@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CarsApi } from '@app/interfaces/cars-api';
+import { CarModels } from '@app/interfaces/car-models';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,7 @@ export class SearchService {
   }
 
   // Método de búsqueda para consumir el servicio utilizando Observables:
-  search = (options: { limit?: string, maker?: string, model?: string, year?: string }): Observable<CarsApi> => {
+  searchCarsApi = (options: { limit?: string, maker?: string, model?: string, year?: string }): Observable<CarsApi> => {
     const headerOptions = new HttpHeaders({
       'X-Api-Key': 'nK7yBNLBYaa4Pdxn+SBxyw==o0jbL22gh3mNk5z6',
     });
@@ -48,5 +49,28 @@ export class SearchService {
     const apiUrl: string = 'https://api.api-ninjas.com/v1/cars';
     console.log(apiUrl, { headers: headerOptions, params });
     return this.http.get<CarsApi>(apiUrl, { headers: headerOptions, params });
+  }
+
+  getCarModels = (): Observable<CarModels> => {
+    const headerOptions = new HttpHeaders({
+      'X-Parse-Application-Id': 'uO8sRxF6D5OvSwlPfi1gtg7zTJXrzUjJrNcsCFBD', // This is your app's application id
+      'X-Parse-REST-API-Key': '8SWmSlYEBUbSNRcyzJ8uCG2bg3tiBAg1PzZj39dU', // This is your app's REST API key
+    });
+
+    let params = new HttpParams();
+
+    const apiUrl: string = `https://parseapi.back4app.com/classes/Carmodels_Car_Model_List`;
+    const where = encodeURIComponent(JSON.stringify({
+      "Make": {
+        "$exists": true
+      }
+    }));
+
+    params = params.set('limit', '10'); // Parámetro que especifica el límite máximo de objetos devueltos en la respuesta.
+    params = params.set('order', 'Model'); // Parámetro que especifica el orden de clasificación de los resultados.
+    params = params.set('where', where); // Parámetro que especifica la consulta en formato JSON que se aplica a los objetos antes de ser devueltos.
+
+    console.log(apiUrl, { headers: headerOptions, params });
+    return this.http.get<CarModels>(apiUrl, { headers: headerOptions, params });
   }
 }
