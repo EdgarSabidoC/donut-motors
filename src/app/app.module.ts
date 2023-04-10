@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -24,6 +24,8 @@ import { RegisterAColorComponent } from './components/register-a-color/register-
 import { RegisterAMakerComponent } from './components/register-a-maker/register-a-maker.component';
 import { RegisterADealershipComponent } from './components/register-a-dealership/register-a-dealership.component';
 import { TimeComponent } from './components/time/time.component';
+import { CarCategoryComponent } from './components/car-category/car-category.component';
+import { WordSuggesterComponent } from './components/word-suggester/word-suggester.component';
 import { CarsForSaleComponent } from './components/cars-for-sale/cars-for-sale.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
@@ -49,13 +51,18 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     RegisterAMakerComponent,
     RegisterADealershipComponent,
     TimeComponent,
+    CarCategoryComponent,
+    WordSuggesterComponent,
     CarsForSaleComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

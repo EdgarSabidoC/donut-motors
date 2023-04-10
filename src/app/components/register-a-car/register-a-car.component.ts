@@ -17,29 +17,42 @@ export class RegisterACarComponent implements OnInit {
       maker: this.fb.control(null, [Validators.required]),
       model: this.fb.control(null, [Validators.required]),
       year: this.fb.control(null, [Validators.required, Validators.pattern(/^\d{4}$/), Validators.minLength(1900), Validators.maxLength(2099)]),
-      version: this.fb.control(null, [Validators.required]),
       color: this.fb.control(null, [Validators.required]),
-      mileage: this.fb.control(null, [Validators.required, Validators.pattern(/^\d$/)]),
-      description: this.fb.control(null, [Validators.required]),
-      price: this.fb.control(null, [Validators.required, Validators.pattern(/^\d$/)]),
+      mileage: this.fb.control(null, [Validators.required, Validators.pattern(/^\d+$/)]),
+      description: this.fb.control(null, [Validators.required, Validators.minLength(10), Validators.maxLength(1000), Validators.pattern(/^[a-zA-Z0-9\s:,-;.]*$/)]),
+      transmission: this.fb.control(null, [Validators.required, this.transmisionValidator]),
+      category: this.fb.control(null,[Validators.required]),
+      price: this.fb.control(null, [Validators.required, Validators.pattern(/^\d+$/)]),
       dealership: this.fb.control(null, [Validators.required]),
       photo_image: this.fb.control(null, [Validators.required, this.imageValidator]),
-      serial_number: this.fb.control(null, [Validators.required, Validators.pattern(/^\d$/)]),
+      serial_number: this.fb.control(null, [Validators.required, Validators.pattern(/^\d+$/)]),
     });
   }
 
-  // Valida que la imagen seleccionada para el logo sea de tipo svg, webp, png o avif:
-  imageValidator(control: AbstractControl): { [key: string]: any } | null {
-    const allowedFormats = ['svg', 'webp', 'png', 'avif'];
-    const file = control.value;
-    if (file && file.name) { // Se comprueba si existe el archivo y el nombre.
-      const fileExt = file.name.split('.').pop()?.toLowerCase();
+  // Valida que la imagen seleccionada para la foto del auto sea de tipo png, jpg, jpeg, webp o avif:
+  private imageValidator(control: AbstractControl): { [key: string]: any } | null {
+    const allowedFormats = ['png', 'jpg', 'jpeg', 'webp', 'avif'];
+    const file = control.value; // Obtén el valor del control
+    if (file) {
+      const fileExt = file.split('.').pop()?.toLowerCase();
       if (allowedFormats.indexOf(fileExt) === -1) {
         return { invalidImageFormat: true };
       }
     }
     return null;
   }
+
+  // Valida que sólo se puedan ingresar dos cadenas para el campo transmisión: manual o automatic.
+  private transmisionValidator(control: AbstractControl): { [key: string]: any } | null {
+    const allowedTransmisions = ['manual', 'automatic'];
+    const transmission = control.value?.toLowerCase();
+
+    if (!allowedTransmisions.includes(transmission)) {
+      return { invalidTransmision: true };
+    }
+
+    return null;
+}
 
   // Guarda el formulario.
   onSaveForm() {
