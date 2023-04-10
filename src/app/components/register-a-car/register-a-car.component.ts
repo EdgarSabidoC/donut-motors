@@ -20,7 +20,7 @@ export class RegisterACarComponent implements OnInit {
       color: this.fb.control(null, [Validators.required]),
       mileage: this.fb.control(null, [Validators.required, Validators.pattern(/^\d+$/)]),
       description: this.fb.control(null, [Validators.required, Validators.minLength(10), Validators.maxLength(1000), Validators.pattern(/^[a-zA-Z0-9\s:,-;.]*$/)]),
-      transmision: this.fb.control(null, [Validators.required, this.transmisionValidator]),
+      transmission: this.fb.control(null, [Validators.required, this.transmisionValidator]),
       category: this.fb.control(null,[Validators.required]),
       price: this.fb.control(null, [Validators.required, Validators.pattern(/^\d+$/)]),
       dealership: this.fb.control(null, [Validators.required]),
@@ -45,9 +45,9 @@ export class RegisterACarComponent implements OnInit {
   // Valida que sólo se puedan ingresar dos cadenas para el campo transmisión: manual o automatic.
   private transmisionValidator(control: AbstractControl): { [key: string]: any } | null {
     const allowedTransmisions = ['manual', 'automatic'];
-    const transmision = control.value?.toLowerCase();
+    const transmission = control.value?.toLowerCase();
 
-    if (!allowedTransmisions.includes(transmision)) {
+    if (!allowedTransmisions.includes(transmission)) {
       return { invalidTransmision: true };
     }
 

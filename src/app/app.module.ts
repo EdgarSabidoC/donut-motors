@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -25,6 +25,7 @@ import { RegisterAMakerComponent } from './components/register-a-maker/register-
 import { RegisterADealershipComponent } from './components/register-a-dealership/register-a-dealership.component';
 import { TimeComponent } from './components/time/time.component';
 import { CarCategoryComponent } from './components/car-category/car-category.component';
+import { WordSuggesterComponent } from './components/word-suggester/word-suggester.component';
 
 @NgModule({
   declarations: [
@@ -49,12 +50,16 @@ import { CarCategoryComponent } from './components/car-category/car-category.com
     RegisterADealershipComponent,
     TimeComponent,
     CarCategoryComponent,
+    WordSuggesterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

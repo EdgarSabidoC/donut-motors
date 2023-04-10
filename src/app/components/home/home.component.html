@@ -1,2 +1,9 @@
-<p>home works!</p>
+<p>Home Works!</p>
+<form [formGroup]="search_form" (ngSubmit)="onSaveForm()">
+  <app-word-suggester></app-word-suggester>
+  <button type="submit">Search</button>
+  <button type="reset">Reset</button>
+</form>
+
+<br />
 <a routerLink="/sign-up" routerLinkActive="active"> Sign-Up </a>
