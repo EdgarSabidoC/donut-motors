@@ -1,9 +1,8 @@
-<select name="car_category" id="car_category" class="btn btn-warning">
+<select name="car_category" id="car_category" class="form-select">
   <option class="select_option_title" [ngValue]="null" disabled selected>
     Select Category
   </option>
   <option
-    class="btn btn-light"
     *ngFor="let category of categorypOptions"
     [value]="category?.value"
   >

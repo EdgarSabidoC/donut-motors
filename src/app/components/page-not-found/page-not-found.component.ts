@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import "@lottiefiles/lottie-player";
 
 @Component({
   selector: 'app-page-not-found',
