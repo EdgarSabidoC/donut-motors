@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
 })
 export class CarModelComponent {
   modelOptions = [
-    { value: 'carModel1', label: 'Fiesta' },
-    { value: 'carModel2', label: 'Corvette' },
-    { value: 'carModel3', label: 'GT-R' },
-    { value: 'carModel4', label: 'MX-30' },
-    { value: 'carModel5', label: 'Rifter' },
+    { value: 'Corvette', label: 'Corvette' },
+    { value: 'Fiesta', label: 'Fiesta' },
+    { value: 'GT-R', label: 'GT-R' },
+    { value: 'MX-30', label: 'MX-30' },
+    { value: 'Rifter', label: 'Rifter' },
   ];
 }

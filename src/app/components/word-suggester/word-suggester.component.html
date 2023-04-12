@@ -1,7 +1,9 @@
 <input
+  type="search"
+  class="form-control bg-white search-bar"
+  placeholder="Search..."
+  aria-label="Search"
   id="typeahead-focus"
-  type="text"
-  class="form-control-warning"
   [(ngModel)]="model"
   [ngbTypeahead]="search"
   (focus)="focus$.next($any($event).target.value)"

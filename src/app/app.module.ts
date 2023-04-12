@@ -27,6 +27,10 @@ import { TimeComponent } from './components/time/time.component';
 import { CarCategoryComponent } from './components/car-category/car-category.component';
 import { WordSuggesterComponent } from './components/word-suggester/word-suggester.component';
 
+import { CarsForSaleComponent } from './components/cars-for-sale/cars-for-sale.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { SellACarComponent } from './components/sell-a-car/sell-a-car.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +54,8 @@ import { WordSuggesterComponent } from './components/word-suggester/word-suggest
     RegisterADealershipComponent,
     TimeComponent,
     CarCategoryComponent,
+    CarsForSaleComponent,
+    SellACarComponent,
     WordSuggesterComponent,
   ],
   imports: [
@@ -59,8 +65,8 @@ import { WordSuggesterComponent } from './components/word-suggester/word-suggest
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule
-
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

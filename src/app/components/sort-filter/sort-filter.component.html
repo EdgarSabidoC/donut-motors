@@ -1,0 +1,5 @@
+<select class="form-select" id="sortSelect">
+  <option *ngFor="let sort of sortOptions" [value]="sort?.value">
+    {{ sort?.label }}
+  </option>
+</select>

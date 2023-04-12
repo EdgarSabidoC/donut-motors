@@ -1,1 +1,9 @@
-<router-outlet></router-outlet>
+<div class="d-flex flex-column vh-100">
+    <app-nav></app-nav>
+    <main class="bg-body-tertiary flex-grow-1">
+        <router-outlet></router-outlet>
+    </main>
+    <footer class="footer mt-auto bg-warning shadow-sm">
+        <app-footer></app-footer>
+    </footer>
+</div>

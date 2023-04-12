@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
 })
 export class CarMakerComponent {
   makerOptions = [
-    { value: 'carMaker1', label: 'Ford' },
-    { value: 'carMaker2', label: 'Chevrolet' },
-    { value: 'carMaker3', label: 'Nissan' },
-    { value: 'carMaker4', label: 'Mazda' },
-    { value: 'carMaker5', label: 'Peugeot' },
+    { value: 'Chevrolet', label: 'Chevrolet' },
+    { value: 'Ford', label: 'Ford' },
+    { value: 'Mazda', label: 'Mazda' },
+    { value: 'Nissan', label: 'Nissan' },
+    { value: 'Peugeot', label: 'Peugeot' },
   ];
 }
