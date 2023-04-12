@@ -11,71 +11,25 @@ import { SearchService } from '@app/services/search.service';
   styleUrls: ['./word-suggester.component.scss'],
 })
 export class WordSuggesterComponent {
+
   makers = [
-  'Acura',
-  'Alfa-Romeo',
-  'Aston Martin',
-  'Audi',
-  'BMW',
-  'Bentley',
-  'Buick',
-  'Cadilac',
-  'Chevrolet',
-  'Chrysler',
-  'Daewoo',
-  'Daihatsu',
-  'Dodge',
-  'Eagle',
-  'Ferrari',
-  'Fiat',
-  'Fisker',
-  'Ford',
-  'Freighliner',
-  'GMC',
-  'GMC - General Motors Company',
-  'Genesis',
-  'Geo',
-  'Honda',
-  'Hummer',
-  'Hyundai',
-  'Infinity',
-  'Isuzu',
-  'Jaguar',
-  'Jeep',
-  'Kla',
-  'Lamborghini',
-  'Land Rover',
-  'Lexus',
-  'Lincoln',
-  'Lotus',
-  'Mazda',
-  'Maserati',
-  'Maybach',
-  'McLaren',
-  'Mercedez-Benz',
-  'Mercury',
-  'Mini',
-  'Mitsubishi',
-  'Nissan',
-  'Oldsmobile',
-  'Panoz',
-  'Plymouth',
-  'Polestar',
-  'Pontiac',
-  'Porsche',
-  'Ram',
-  'Rivian',
-  'Rolls_Royce',
-  'Saab',
-  'Saturn',
-  'Smart',
-  'Subaru',
-  'Susuki',
-  'Tesla',
-  'Toyota',
-  'Volkswagen',
-  'Volvo',
-  ].sort();
+    'Chevrolet',
+    'Ford',
+    'Mazda',
+    'Nissan',
+    'Peugeot',
+  ];
+
+  models = [
+    'Corvette',
+    'Fiesta',
+    'GT-R',
+    'MX-30',
+    'Rifter'
+  ];
+
+  options = [...this.models, ...this.makers].sort();
+
   suggester_form !: FormGroup;
   model!: any;
 
@@ -94,7 +48,7 @@ export class WordSuggesterComponent {
 		return merge(debouncedText$, inputFocus$, clicksWithClosedPopup$).pipe(
         map((term) => {
             // Realiza las operaciones necesarias con el término y devuelve el resultado
-            return (term === '' ? this.makers : this.makers.filter((v) => v?.toLowerCase().indexOf(term.toLowerCase()) > -1)).slice(0, 10);
+            return (term === '' ? this.options : this.options.filter((v) => v?.toLowerCase().indexOf(term.toLowerCase()) > -1)).slice(0, 10);
         }),
     );
 	};
