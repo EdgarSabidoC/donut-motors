@@ -16,6 +16,7 @@ export class CarsForSaleComponent implements OnInit {
   filter_form!: FormGroup; // Formulario de filtro
   sort: string = 'asc'; // Tipo de ordenamiento, por modelo ascendente predeterminado.
   cars!: any; // Lista de autos
+  query!: string;
 
   /**
    * Constructor del componente.

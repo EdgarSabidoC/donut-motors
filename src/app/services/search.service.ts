@@ -168,11 +168,11 @@ export class SearchService {
     this.http = http;
   }
 
-  setqueryString(value: string): void {
+  setQueryString(value: string): void {
     this.queryString = value;
   }
 
-  getqueryString(): string {
+  getQueryString(): string {
     return this.queryString;
   }
 
