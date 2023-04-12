@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SearchService } from '@app/services/search.service';
 
 @Component({
   selector: 'app-car-category',
@@ -6,15 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./car-category.component.scss']
 })
 export class CarCategoryComponent {
-  categorypOptions = [
-    { value: 'SUV', label: 'SUV' },
-    { value: 'Sedan', label: 'Sedan' },
-    { value: 'Hatchback', label: 'Hatchback' },
-    { value: 'Pickup', label: 'Pickup' },
-    { value: 'Coupe', label: 'Coupe' },
-    { value: 'Minivan', label: 'Minivan' },
-    { value: 'Convertible', label: 'Convertible' },
-    { value: 'Wagon', label: 'Wagon' },
-    { value: 'Van', label: 'Van' },
-  ];
+
+  constructor(private searchService: SearchService){}
+
+  categorypOptions = this.searchService.categorypOptions;
 }

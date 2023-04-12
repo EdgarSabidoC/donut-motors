@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SearchService } from '@app/services/search.service';
 
 @Component({
   selector: 'app-nav',
@@ -8,5 +7,4 @@ import { SearchService } from '@app/services/search.service';
 })
 export class NavComponent {
 
-  // constructor(private SearchService: SearchService) {}
 }

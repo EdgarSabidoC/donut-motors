@@ -2,13 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CarsApi } from '@app/interfaces/cars-api';
-import { CarModels } from '@app/interfaces/car-models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
-  selectedString: string = '';
+  queryString: string = '';
 
   cars = [
     {
@@ -19,6 +18,7 @@ export class SearchService {
       color: "Black",
       mileage: 12000,
       description: "",
+      condition: "Mint",
       transmission: "Automatic",
       category: "Sedan",
       price: 12000,
@@ -34,7 +34,8 @@ export class SearchService {
       color: "Red",
       mileage: 100000,
       description: "",
-      transmission: "Automatic",
+      condition: "Excellent",
+      transmission: "Manual",
       category: "Convertible",
       price: 13500,
       dealership: "Donut-Motors Vintage Auto Gallery",
@@ -49,6 +50,7 @@ export class SearchService {
       color: "Black",
       mileage: 150000,
       description: "",
+      condition: "Good",
       transmission: "Automatic",
       category: "Convertible",
       price: 14000,
@@ -64,6 +66,7 @@ export class SearchService {
       color: "Grey",
       mileage: 5000,
       description: "",
+      condition: "Fair",
       transmission: "Automatic",
       category: "SUV",
       price: 20000,
@@ -73,17 +76,104 @@ export class SearchService {
     },
   ];
 
+  categorypOptions = [
+    { value: 'SUV', label: 'SUV' },
+    { value: 'Sedan', label: 'Sedan' },
+    { value: 'Hatchback', label: 'Hatchback' },
+    { value: 'Pickup', label: 'Pickup' },
+    { value: 'Coupe', label: 'Coupe' },
+    { value: 'Minivan', label: 'Minivan' },
+    { value: 'Convertible', label: 'Convertible' },
+    { value: 'Wagon', label: 'Wagon' },
+    { value: 'Van', label: 'Van' },
+  ];
+
+  colorOptions = [
+    { value: 'White', label: 'White' },
+    { value: 'Blue', label: 'Blue' },
+    { value: 'Black', label: 'Black' },
+    { value: 'Silver', label: 'Silver' },
+    { value: 'Red', label: 'Red' },
+    { value: 'Gold', label: 'Gold' },
+    { value: 'Green', label: 'Green' },
+    { value: 'Yellow', label: 'Yellow' },
+    { value: 'Orange', label: 'Orange' },
+    { value: 'Grey', label: 'Grey' },
+  ];
+
+  makerOptions = [
+    { value: 'Chevrolet', label: 'Chevrolet' },
+    { value: 'Ford', label: 'Ford' },
+    { value: 'Mazda', label: 'Mazda' },
+    { value: 'Nissan', label: 'Nissan' },
+    { value: 'Peugeot', label: 'Peugeot' },
+  ];
+
+  dealershipOptions = [
+    { value: 'Donut-Motors Cars Emporium', label: 'Donut-Motors Cars Emporium' },
+    { value: 'Donut-Motors Vintage Auto Gallery', label: 'Donut-Motors Vintage Auto Gallery' },
+    { value: 'Donut-Motors Automobile Dealership', label: 'Donut-Motors Automobile Dealership' },
+    { value: 'Donut-Motors Retro Ride Showroom', label: 'Donut-Motors Retro Ride Showroom' },
+    { value: 'Donut-Motors Timeless Car Boutique', label: 'Donut-Motors Timeless Car Boutique' },
+  ];
+
+  modelOptions = [
+    { value: 'Corvette', label: 'Corvette' },
+    { value: 'Fiesta', label: 'Fiesta' },
+    { value: 'GT-R', label: 'GT-R' },
+    { value: 'MX-30', label: 'MX-30' },
+    { value: 'Rifter', label: 'Rifter' },
+  ];
+
+  makers = [
+    'Chevrolet',
+    'Ford',
+    'Mazda',
+    'Nissan',
+    'Peugeot',
+  ];
+
+  models = [
+    'Corvette',
+    'Fiesta',
+    'GT-R',
+    'MX-30',
+    'Rifter'
+  ];
+
+  timeOptions = [
+      { value: '8:00', label: '8:00' },
+      { value: '8:30', label: '8:30' },
+      { value: '9:00', label: '9:00' },
+      { value: '9:30', label: '9:30' },
+      { value: '10:00', label: '10:00' },
+      { value: '10:30', label: '10:30' },
+      { value: '11:00', label: '11:00' },
+      { value: '11:30', label: '11:30' },
+      { value: '12:00', label: '12:00' },
+      { value: '12:30', label: '12:30' },
+      { value: '13:00', label: '13:00' },
+      { value: '13:30', label: '13:30' },
+      { value: '14:00', label: '14:00' },
+      { value: '14:30', label: '14:30' },
+      { value: '15:00', label: '15:00' },
+      { value: '15:30', label: '15:30' },
+      { value: '16:00', label: '16:00' },
+      { value: '16:30', label: '16:30' },
+      { value: '17:00', label: '17:00' },
+    ];
+
   // Constructor de la clase:
   constructor(private http: HttpClient) {
     this.http = http;
   }
 
-  setSelectedString(value: string): void {
-    this.selectedString = value;
+  setqueryString(value: string): void {
+    this.queryString = value;
   }
 
-  getSelectedString(): string {
-    return this.selectedString;
+  getqueryString(): string {
+    return this.queryString;
   }
 
   // Método de búsqueda para consumir el servicio utilizando Observables:
@@ -114,26 +204,4 @@ export class SearchService {
     return this.http.get<CarsApi>(apiUrl, { headers: headerOptions, params });
   }
 
-  getCarModels = (): Observable<CarModels> => {
-    const headerOptions = new HttpHeaders({
-      'X-Parse-Application-Id': 'uO8sRxF6D5OvSwlPfi1gtg7zTJXrzUjJrNcsCFBD', // This is your app's application id
-      'X-Parse-REST-API-Key': '8SWmSlYEBUbSNRcyzJ8uCG2bg3tiBAg1PzZj39dU', // This is your app's REST API key
-    });
-
-    let params = new HttpParams();
-
-    const apiUrl: string = `https://parseapi.back4app.com/classes/Carmodels_Car_Model_List`;
-    const where = encodeURIComponent(JSON.stringify({
-      "Make": {
-        "$exists": true
-      }
-    }));
-
-    params = params.set('limit', '10'); // Parámetro que especifica el límite máximo de objetos devueltos en la respuesta.
-    params = params.set('order', 'Model'); // Parámetro que especifica el orden de clasificación de los resultados.
-    params = params.set('where', where); // Parámetro que especifica la consulta en formato JSON que se aplica a los objetos antes de ser devueltos.
-
-    console.log(apiUrl, { headers: headerOptions, params });
-    return this.http.get<CarModels>(apiUrl, { headers: headerOptions, params });
-  }
 }
