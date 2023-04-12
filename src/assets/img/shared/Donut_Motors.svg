@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="205"
+   height="103.08427"
+   id="svg10"
+   sodipodi:docname="Donut_Motors_raw.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   inkscape:export-filename="Donut_Motors_raw.webp"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs14">
+    <linearGradient
+       id="linearGradient2773"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#333333;stop-opacity:1;"
+         offset="0"
+         id="stop2771" />
+    </linearGradient>
+    <rect
+       x="92.566704"
+       y="34.608273"
+       width="148.64922"
+       height="105.19499"
+       id="rect906" />
+    <rect
+       x="92.566704"
+       y="34.608273"
+       width="148.64922"
+       height="105.19499"
+       id="rect906-4" />
+    <rect
+       x="92.566704"
+       y="34.608273"
+       width="148.64922"
+       height="105.19499"
+       id="rect2850" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview12"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="4.796541"
+     inkscape:cx="53.476036"
+     inkscape:cy="71.82259"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg10" />
+  <path
+     fill="#febe34"
+     d="M 41.236479,14.210813 C 18.460197,14.210813 0,33.697653 0,57.740611 c 0,24.042958 18.460197,43.529799 41.236479,43.529799 22.776282,0 41.23648,-19.486841 41.23648,-43.529799 0,-24.042958 -18.460198,-43.529798 -41.23648,-43.529798 z m 0,57.872866 c -7.505039,0 -13.58742,-6.420645 -13.58742,-14.343068 0,-7.922423 6.082381,-14.335813 13.58742,-14.335813 7.505039,0 13.58742,6.420645 13.58742,14.335813 0,7.922423 -6.082381,14.343068 -13.58742,14.343068 z"
+     id="path312"
+     style="display:inline;fill:#ffffff;fill-opacity:1;stroke-width:0.706127" />
+  <path
+     fill="#febe34"
+     d="M 43.236479,14.210813 C 20.460197,14.210813 2,33.697653 2,57.740611 c 0,24.042958 18.460197,43.529799 41.236479,43.529799 22.776282,0 41.23648,-19.486841 41.23648,-43.529799 0,-24.042958 -18.460198,-43.529798 -41.23648,-43.529798 z m 0,57.872866 c -7.505039,0 -13.58742,-6.420645 -13.58742,-14.343068 0,-7.922423 6.082381,-14.335813 13.58742,-14.335813 7.505039,0 13.58742,6.420645 13.58742,14.335813 0,7.922423 -6.082381,14.343068 -13.58742,14.343068 z"
+     id="path2"
+     style="display:inline;stroke-width:0.706127" />
+  <path
+     fill-rule="evenodd"
+     clip-rule="evenodd"
+     fill="#fe4dd1"
+     d="M 79.366507,48.657393 C 78.39745,47.750522 79.015997,46.647768 79.146579,45.603052 79.634544,41.511251 78.34934,38.667305 74.933586,37.013172 73.655255,36.3965 73.016089,35.569434 72.431906,34.314325 69.332297,27.654266 62.85817,24.708749 57.992266,19.985766 57.414955,19.427134 56.22597,19.601253 55.360004,19.325564 50.507845,17.794767 45.531976,19.311054 40.453017,18.084965 33.697107,16.452598 27.594108,20.747538 21.86911,24.53463 c -0.08935,0.05804 -0.164946,0.174119 -0.213055,0.275689 -1.182112,2.619043 -3.4295,3.743563 -5.821216,4.722983 -1.718187,0.703732 -3.814374,1.538053 -3.958702,3.612973 -0.329892,4.781023 -2.419207,8.568115 -4.95525,12.304423 -1.044658,1.545308 -1.395168,3.562189 -1.278331,5.542794 0.08247,1.349424 0.08935,2.713358 -0.50171,3.910427 -1.127131,2.27806 -0.652911,4.490824 0.233673,6.594765 0.529201,1.262364 0.790366,2.488453 0.859093,3.823367 0.192437,3.620228 1.477641,6.631039 4.013684,9.206552 2.034333,2.067665 3.986193,4.345725 5.463834,6.870453 2.549788,4.35298 4.804049,8.756744 10.563411,8.785764 0.749129,0.0073 1.539495,0.943146 2.22677,1.552563 3.649428,3.221205 7.285111,6.130448 12.590871,4.403765 2.254261,-0.732752 4.522267,0.181374 6.508491,1.581582 2.10306,0.08706 4.192375,-0.0073 6.240454,-0.602162 1.32644,-0.696477 2.72848,-1.262364 3.965574,-2.111195 2.15117,-1.487268 5.264524,-1.791977 6.247327,-4.701218 0.962184,-2.851202 2.824699,-4.635924 5.120196,-6.028877 3.133972,-1.900801 4.742195,-4.860828 6.419145,-8.147327 2.22677,-4.36749 3.807502,-8.916354 4.838414,-13.632082 0.989675,-4.621414 3.477606,-9.591066 -1.065276,-13.842476 z m -20.652603,5.898288 c -0.06185,1.00844 -0.481092,1.966096 -0.989676,2.916496 -0.08247,0.290199 -0.2268,0.493338 -0.405492,0.529613 l -0.948439,3.910427 c 2.130552,3.264734 2.027461,8.901843 -1.642586,10.918724 -2.934663,1.610602 -5.944926,0.841576 -8.93457,0.812556 -0.02062,0.02177 -0.04124,0.04353 -0.05498,0.04353 -0.144328,0.05079 -0.295528,0.08706 -0.439856,0.130589 -0.04124,0.123335 -0.08935,0.203139 -0.137455,0.203139 -3.649428,1.18256 -7.511912,1.820997 -11.133849,0.892361 -4.233612,-1.0955 -7.752458,-7.835363 -7.408821,-12.79776 0.192437,-2.771397 0.137455,-5.637109 0.831602,-8.270662 1.134004,-4.331215 2.900299,-8.241642 6.714674,-10.309307 0.879711,-0.551377 1.869387,-1.001185 3.00339,-1.313149 3.030881,-0.848831 5.718125,-2.07492 9.223226,-1.661387 6.233581,0.718241 10.487811,7.936933 11.965451,10.614015 0.371128,0.326474 0.62542,1.08099 0.62542,1.951586 0.0069,0.551378 -0.103091,1.051971 -0.268037,1.429229 z"
+     id="path4"
+     style="display:inline;opacity:0.6;fill:#fe34cc;fill-opacity:1;stroke-width:0.706127" />
+  <text
+     xml:space="preserve"
+     id="text904"
+     style="font-size:64px;line-height:0.7;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect906);display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
+     x="69.734375"
+     y="0"
+     transform="rotate(-7.5137792,-69.737228,582.81109)"><tspan
+       x="106.17285"
+       y="75.819921"
+       id="tspan1760"><tspan
+         style="font-weight:600;font-stretch:condensed;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift Semi-Bold Condensed'"
+         id="tspan1758">Donut
+</tspan></tspan><tspan
+       x="94.954102"
+       y="121.04328"
+       id="tspan1764"><tspan
+         style="font-weight:600;font-stretch:condensed;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift Semi-Bold Condensed'"
+         id="tspan1762">Motors</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     id="text2848"
+     style="font-size:64px;line-height:0.7;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect2850);display:inline;fill:#fe34cc;fill-opacity:1;stroke:none"
+     x="69.734375"
+     y="0"
+     transform="rotate(-7.5137792,-70.737228,598.04008)"><tspan
+       x="106.17285"
+       y="75.819921"
+       id="tspan1768"><tspan
+         style="font-weight:600;font-stretch:condensed;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift Semi-Bold Condensed';fill:#000000"
+         id="tspan1766">Donut
+</tspan></tspan><tspan
+       x="94.954102"
+       y="121.04328"
+       id="tspan1772"><tspan
+         style="font-weight:600;font-stretch:condensed;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift Semi-Bold Condensed';fill:#000000"
+         id="tspan1770">Motors</tspan></tspan></text>
+</svg>

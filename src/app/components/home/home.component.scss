@@ -1,0 +1,24 @@
+.masthead {
+    position: relative;
+    background: url("/assets/img/home/bg-masthead.png") no-repeat center center;
+    background-size: cover;
+}
+
+.bn-img {
+    position: relative;
+    background: url("/assets/img/home/bn-img.png") no-repeat center center;
+    background-size: cover;
+}
+
+.title-shadow{
+    box-shadow: 10px 10px #FFC000;
+}
+
+.bn-shadow{
+    box-shadow: 0px 10px #FFC000;
+}
+
+.btn-font {
+    font-family: "Agency FB";
+    font-size: 1.5em;
+}
