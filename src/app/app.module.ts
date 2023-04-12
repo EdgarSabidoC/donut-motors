@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,8 +28,8 @@ import { CarCategoryComponent } from './components/car-category/car-category.com
 import { WordSuggesterComponent } from './components/word-suggester/word-suggester.component';
 
 import { CarsForSaleComponent } from './components/cars-for-sale/cars-for-sale.component';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { SellACarComponent } from './components/sell-a-car/sell-a-car.component';
+import { SortFilterComponent } from './components/sort-filter/sort-filter.component';
 
 @NgModule({
   declarations: [
@@ -57,14 +57,15 @@ import { SellACarComponent } from './components/sell-a-car/sell-a-car.component'
     CarsForSaleComponent,
     SellACarComponent,
     WordSuggesterComponent,
+    SortFilterComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
