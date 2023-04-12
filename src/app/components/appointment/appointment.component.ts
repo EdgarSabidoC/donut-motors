@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, AbstractControl, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SearchService } from '@app/services/search.service';
 
 @Component({
   selector: 'app-appointment',
@@ -13,7 +14,7 @@ export class AppointmentComponent implements OnInit {
 
   appointment_booking_form!: FormGroup;
   constructor(private fb: FormBuilder, private aRoute: ActivatedRoute,
-    private router: Router,) {}
+    private router: Router, private searchService: SearchService) {}
 
   title = this.aRoute.snapshot.data['title'];
 
@@ -64,27 +65,7 @@ export class AppointmentComponent implements OnInit {
     // Se obtiene la fecha y hora seleccionadas:
     const selectedDate = this.appointment_booking_form.get('date')?.value;
     const selectedTime = this.appointment_booking_form.get('time')?.value;
-    const timeOptions = [
-      { value: '8:00', label: '8:00' },
-      { value: '8:30', label: '8:30' },
-      { value: '9:00', label: '9:00' },
-      { value: '9:30', label: '9:30' },
-      { value: '10:00', label: '10:00' },
-      { value: '10:30', label: '10:30' },
-      { value: '11:00', label: '11:00' },
-      { value: '11:30', label: '11:30' },
-      { value: '12:00', label: '12:00' },
-      { value: '12:30', label: '12:30' },
-      { value: '13:00', label: '13:00' },
-      { value: '13:30', label: '13:30' },
-      { value: '14:00', label: '14:00' },
-      { value: '14:30', label: '14:30' },
-      { value: '15:00', label: '15:00' },
-      { value: '15:30', label: '15:30' },
-      { value: '16:00', label: '16:00' },
-      { value: '16:30', label: '16:30' },
-      { value: '17:00', label: '17:00' },
-    ];
+    const timeOptions = this.searchService.timeOptions;
     const time = timeOptions.find(option => option.value === selectedTime);
 
     // Se valida que el formato de hora sea válido:

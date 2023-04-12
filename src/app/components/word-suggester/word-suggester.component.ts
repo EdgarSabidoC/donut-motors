@@ -12,28 +12,12 @@ import { SearchService } from '@app/services/search.service';
 })
 export class WordSuggesterComponent {
 
-  makers = [
-    'Chevrolet',
-    'Ford',
-    'Mazda',
-    'Nissan',
-    'Peugeot',
-  ];
-
-  models = [
-    'Corvette',
-    'Fiesta',
-    'GT-R',
-    'MX-30',
-    'Rifter'
-  ];
-
-  options = [...this.models, ...this.makers].sort();
-
   suggester_form !: FormGroup;
   model!: any;
 
-  constructor(private SearchService: SearchService) {}
+  constructor(private searchService: SearchService) {}
+
+  options = [...this.searchService.models, ...this.searchService.makers].sort();
 
 	@ViewChild('instance', { static: true })
   instance!: NgbTypeahead;
@@ -55,6 +39,6 @@ export class WordSuggesterComponent {
 
   onSuggestionSelected(suggestion: string): void {
     // Llamar al servicio para almacenar la cadena obtenida
-    this.SearchService.setSelectedString(suggestion);
+    this.searchService.setqueryString(suggestion);
   }
 }

@@ -457,7 +457,7 @@
 
     <div class="col-md-4">
       <div class="position-sticky nav-filter">
-        <div class="p-4 pt-1 mb-0 pb-0" [formGroup]="sort_form">
+        <div class="p-4 pt-1 mb-0 pb-0">
           <div
             class="align-items-center p-2 my-4 text-white bg-black title-shadow"
           >
@@ -486,7 +486,7 @@
                   aria-expanded="true"
                   aria-controls="collapseOne"
                 >
-                  Make and Model
+                  Maker and Model
                 </button>
               </h2>
               <div
@@ -496,20 +496,22 @@
               >
                 <div class="accordion-body">
                   <div class="align-items-center p-2">
-                    <h6 class="mb-0">Make</h6>
+                    <h6 class="mb-0">Maker</h6>
                   </div>
                   <div class="d-flex justify-content-center">
                     <app-car-maker
                       class="col-12"
+                      formControlName="maker"
+                      ngDefaultControl
                       (change)="onFilterChange($event, { maker: true })"
                     ></app-car-maker>
                   </div>
-                  <div class="align-items-center p-2">
-                    <h6 class="mb-0">Models</h6>
-                  </div>
+                  <div class="align-items-center p-2"></div>
                   <div class="d-flex justify-content-center">
                     <app-car-model
                       class="col-12"
+                      formControlName="model"
+                      ngDefaultControl
                       (change)="onFilterChange($event, { model: true })"
                     ></app-car-model>
                   </div>
@@ -543,7 +545,8 @@
                         class="form-control"
                         id="minYears"
                         placeholder="19xx"
-                        [value]="filter_form.get('minYear')"
+                        formControlName="minYear"
+                        ngDefaultControl
                         (input)="onFilterChange($event, { minYear: true })"
                       />
                     </div>
@@ -554,7 +557,8 @@
                         class="form-control"
                         id="maxYears"
                         placeholder="20xx"
-                        [value]="filter_form.get('maxYear')"
+                        formControlName="maxYear"
+                        ngDefaultControl
                         (input)="onFilterChange($event, { maxYear: true })"
                       />
                     </div>
@@ -585,75 +589,98 @@
                   <div>
                     <input
                       id="rangeOne"
-                      value="rangeOne"
+                      value="<5"
                       type="radio"
-                      name="price"
-                    />
-                    <label for="rangeOne">Less than $5k</label>
-                  </div>
-                  <div>
-                    <input
-                      id="rangeOne"
-                      value="rangeOne"
-                      type="radio"
-                      name="price"
+                      formControlName="priceRange"
+                      ngDefaultControl
+                      (dblclick)="uncheckRadio({ priceRange: true })"
+                      (change)="onFilterChange($event, { priceRange: true })"
                     />
                     <label for="rangeOne">Less than $5k</label>
                   </div>
                   <div>
                     <input
                       id="rangeTwo"
-                      value="rangeTwo"
+                      value=">=5 && <=10"
                       type="radio"
-                      name="price"
+                      formControlName="priceRange"
+                      ngDefaultControl
+                      (dblclick)="uncheckRadio({ priceRange: true })"
+                      (change)="onFilterChange($event, { priceRange: true })"
                     />
                     <label for="rangeTwo">$5k to $10k</label>
                   </div>
                   <div>
                     <input
                       id="rangeThree"
-                      value="rangeThree"
+                      value=">=10 && <=20"
                       type="radio"
-                      name="price"
+                      formControlName="priceRange"
+                      ngDefaultControl
+                      (dblclick)="uncheckRadio({ priceRange: true })"
+                      (change)="onFilterChange($event, { priceRange: true })"
                     />
                     <label for="rangeThree">$10k to $20k</label>
                   </div>
                   <div>
                     <input
                       id="rangeFour"
-                      value="rangeFour"
+                      value=">=20 && <=50"
                       type="radio"
-                      name="price"
+                      formControlName="priceRange"
+                      ngDefaultControl
+                      (dblclick)="uncheckRadio({ priceRange: true })"
+                      (change)="onFilterChange($event, { priceRange: true })"
                     />
                     <label for="rangeFour">$20k to $50k</label>
                   </div>
                   <div>
                     <input
                       id="rangeFive"
-                      value="rangeFive"
+                      value=">= 50k"
                       type="radio"
-                      name="price"
+                      formControlName="priceRange"
+                      ngDefaultControl
+                      (dblclick)="uncheckRadio({ priceRange: true })"
+                      (change)="onFilterChange($event, { priceRange: true })"
                     />
                     <label for="rangeFive">$50k or Greater</label>
                   </div>
-                  <h6>Custom price range:</h6>
+                  <div>
+                    <input
+                      id="customRange"
+                      value="customRange"
+                      type="radio"
+                      formControlName="priceRange"
+                      ngDefaultControl
+                      (dblclick)="uncheckRadio({ priceRange: true })"
+                      (change)="onFilterChange($event, { priceRange: true })"
+                    />
+                    <label for="customRange">Custom price range:</label>
+                  </div>
                   <div class="row g-3">
                     <div class="col-sm-6">
                       <label for="minPrice" class="form-label">Min Price</label>
                       <input
-                        type="text"
+                        type="number"
                         class="form-control"
                         id="minPrice"
                         placeholder="$"
+                        formControlName="minPrice"
+                        ngDefaultControl
+                        (change)="onFilterChange($event, { minPrice: true })"
                       />
                     </div>
                     <div class="col-sm-6">
                       <label for="maxPrice" class="form-label">Max Price</label>
                       <input
-                        type="text"
+                        type="number"
                         class="form-control"
                         id="maxPrice"
                         placeholder="$"
+                        formControlName="maxPrice"
+                        ngDefaultControl
+                        (change)="onFilterChange($event, { maxPrice: true })"
                       />
                     </div>
                   </div>
@@ -683,45 +710,60 @@
                   <div>
                     <input
                       id="mint_condition"
-                      value="mint"
+                      value="Mint"
                       type="radio"
-                      name="condition"
+                      formControlName="condition"
+                      ngDefaultControl
+                      (dblclick)="uncheckRadio({ condition: true })"
+                      (change)="onFilterChange($event, { condition: true })"
                     />
                     <label for="mint_condition">Mint</label>
                   </div>
                   <div>
                     <input
                       id="excellent_condition"
-                      value="excellent"
+                      value="Excellent"
                       type="radio"
-                      name="condition"
+                      formControlName="condition"
+                      ngDefaultControl
+                      (dblclick)="uncheckRadio({ condition: true })"
+                      (change)="onFilterChange($event, { condition: true })"
                     />
                     <label for="excellent_condition">Excellent</label>
                   </div>
                   <div>
                     <input
                       id="good_condition"
-                      value="good"
+                      value="Good"
                       type="radio"
-                      name="condition"
+                      formControlName="condition"
+                      ngDefaultControl
+                      (dblclick)="uncheckRadio({ condition: true })"
+                      (change)="onFilterChange($event, { condition: true })"
                     />
                     <label for="good_condition">Good</label>
                   </div>
                   <div>
                     <input
                       id="fair_condition"
-                      value="fair"
+                      value="Fair"
                       type="radio"
-                      name="condition"
+                      formControlName="condition"
+                      ngDefaultControl
+                      (dblclick)="uncheckRadio({ condition: true })"
+                      (change)="onFilterChange($event, { condition: true })"
                     />
                     <label for="fair_condition">Fair</label>
                   </div>
                   <div>
                     <input
                       id="maintenance_condition"
-                      value="maintenance"
+                      value="Maintenance"
                       type="radio"
-                      name="condition"
+                      formControlName="condition"
+                      ngDefaultControl
+                      (dblclick)="uncheckRadio({ condition: true })"
+                      (change)="onFilterChange($event, { condition: true })"
                     />
                     <label for="maintenance_condition"
                       >Needs repair or maintenance</label
@@ -749,22 +791,28 @@
                 data-bs-parent="#accordionExample"
               >
                 <div class="accordion-body">
-                  <h6>Select transmision type:</h6>
+                  <h6>Select transmission type:</h6>
                   <div>
                     <input
-                      id="automatic_transmision"
-                      value="automatic"
+                      id="automatic_transmission"
+                      value="Automatic"
                       type="radio"
-                      name="transmision"
+                      formControlName="transmission"
+                      ngDefaultControl
+                      (dblclick)="uncheckRadio({ transmission: true })"
+                      (change)="onFilterChange($event, { transmission: true })"
                     />
                     <label for="automatic_transmision">Automatic</label>
                   </div>
                   <div>
                     <input
-                      id="manual_transmision"
-                      value="manual"
+                      id="manual_transmission"
+                      value="Manual"
                       type="radio"
-                      name="transmision"
+                      formControlName="transmission"
+                      ngDefaultControl
+                      (dblclick)="uncheckRadio({ transmission: true })"
+                      (change)="onFilterChange($event, { transmission: true })"
                     />
                     <label for="manual_transmision">Manual</label>
                   </div>
@@ -790,9 +838,13 @@
                 data-bs-parent="#accordionExample"
               >
                 <div class="accordion-body">
-                  <h6>Choose dealership:</h6>
                   <div class="d-flex justify-content-center">
-                    <app-car-dealership class="col-12"></app-car-dealership>
+                    <app-car-dealership
+                      class="col-12"
+                      formControlName="dealership"
+                      ngDefaultControl
+                      (change)="onFilterChange($event, { dealership: true })"
+                    ></app-car-dealership>
                   </div>
                 </div>
               </div>
@@ -816,9 +868,13 @@
                 data-bs-parent="#accordionExample"
               >
                 <div class="accordion-body">
-                  <h6>Select a category:</h6>
                   <div class="d-flex justify-content-center">
-                    <app-car-category class="col-12"></app-car-category>
+                    <app-car-category
+                      class="col-12"
+                      formControlName="category"
+                      ngDefaultControl
+                      (change)="onFilterChange($event, { category: true })"
+                    ></app-car-category>
                   </div>
                 </div>
               </div>
