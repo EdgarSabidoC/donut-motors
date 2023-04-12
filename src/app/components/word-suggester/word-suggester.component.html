@@ -6,6 +6,7 @@
   id="typeahead-focus"
   [(ngModel)]="model"
   [ngbTypeahead]="search"
+  [placement]="'bottom-left'"
   (focus)="focus$.next($any($event).target.value)"
   (click)="click$.next($any($event).target.value)"
   (selectItem)="onSuggestionSelected($event.item)"
