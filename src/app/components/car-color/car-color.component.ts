@@ -7,15 +7,15 @@ import { Component } from '@angular/core';
 })
 export class CarColorComponent {
   colorOptions = [
-    { value: 'carColor1', label: 'Blanco' },
-    { value: 'carColor2', label: 'Azul' },
-    { value: 'carColor3', label: 'Negro' },
-    { value: 'carColor4', label: 'Plateado' },
-    { value: 'carColor5', label: 'Rojo' },
-    { value: 'carColor6', label: 'Dorado' },
-    { value: 'carColor7', label: 'Verde' },
-    { value: 'carColor8', label: 'Amarillo' },
-    { value: 'carColor9', label: 'Naranja' },
-    { value: 'carColor10', label: 'Gris' },
+    { value: 'Blanco', label: 'Blanco' },
+    { value: 'Azul', label: 'Azul' },
+    { value: 'Negro', label: 'Negro' },
+    { value: 'Plateado', label: 'Plateado' },
+    { value: 'Rojo', label: 'Rojo' },
+    { value: 'Dorado', label: 'Dorado' },
+    { value: 'Verde', label: 'Verde' },
+    { value: 'Amarillo', label: 'Amarillo' },
+    { value: 'Naranja', label: 'Naranja' },
+    { value: 'Gris', label: 'Gris' },
   ];
 }

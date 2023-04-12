@@ -10,6 +10,39 @@ import { CarModels } from '@app/interfaces/car-models';
 export class SearchService {
   selectedString: string = '';
 
+  cars = [
+    {
+      id: 1,
+      maker: 'Ford',
+      model: 'Fiesta',
+      year: 2007,
+      color: "Black",
+      mileage: 12000,
+      description: "",
+      transmission: "Automatic",
+      category: "Sedan",
+      price: 120000,
+      dealership: "Donut-Motors Vintage Auto Gallery",
+      photo_image: "car-images/1",
+      serial_number: 12043932041,
+    },
+    {
+      id: 2,
+      maker: 'Chevrolet',
+      model: 'Corvette',
+      year: 1995,
+      color: "Red",
+      mileage: 100000,
+      description: "",
+      transmission: "Automatic",
+      category: "Convertible",
+      price: 135000,
+      dealership: "Donut-Motors Vintage Auto Gallery",
+      photo_image: "car-images/2",
+      serial_number: 120439120121,
+    },
+  ];
+
   // Constructor de la clase:
   constructor(private http: HttpClient) {
     this.http = http;

@@ -7,14 +7,14 @@ import { Component } from '@angular/core';
 })
 export class CarCategoryComponent {
   categorypOptions = [
-    { value: 'category0', label: 'SUV' },
-    { value: 'category1', label: 'Sedan' },
-    { value: 'category2', label: 'Hatchback' },
-    { value: 'category3', label: 'Pickup' },
-    { value: 'category4', label: 'Coupe' },
-    { value: 'category5', label: 'Minivan' },
-    { value: 'category6', label: 'Convertible' },
-    { value: 'category7', label: 'Wagon' },
-    { value: 'category8', label: 'Van' },
+    { value: 'SUV', label: 'SUV' },
+    { value: 'Sedan', label: 'Sedan' },
+    { value: 'Hatchback', label: 'Hatchback' },
+    { value: 'Pickup', label: 'Pickup' },
+    { value: 'Coupe', label: 'Coupe' },
+    { value: 'Minivan', label: 'Minivan' },
+    { value: 'Convertible', label: 'Convertible' },
+    { value: 'Wagon', label: 'Wagon' },
+    { value: 'Van', label: 'Van' },
   ];
 }
