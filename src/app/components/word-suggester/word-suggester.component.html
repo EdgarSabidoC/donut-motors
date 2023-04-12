@@ -1,8 +1,8 @@
 <input
-  type="search"
+  type="text"
   class="form-control bg-white search-bar"
   placeholder="Search..."
-  aria-label="Search"
+  aria-label="Search bar"
   id="typeahead-focus"
   [(ngModel)]="model"
   [ngbTypeahead]="search"
@@ -10,5 +10,6 @@
   (focus)="focus$.next($any($event).target.value)"
   (click)="click$.next($any($event).target.value)"
   (selectItem)="onSuggestionSelected($event.item)"
+  (change)="searchQueryInput()"
   #instance="ngbTypeahead"
 />

@@ -13,7 +13,7 @@ import { SearchService } from '@app/services/search.service';
 export class WordSuggesterComponent {
 
   suggester_form !: FormGroup;
-  model!: any;
+  model!: string;
 
   constructor(private searchService: SearchService) {}
 
@@ -38,7 +38,12 @@ export class WordSuggesterComponent {
 	};
 
   onSuggestionSelected(suggestion: string): void {
-    // Llamar al servicio para almacenar la cadena obtenida
-    this.searchService.setqueryString(suggestion);
+    this.model = suggestion;
+    this.searchQueryInput();
   }
+
+  searchQueryInput(){
+    this.searchService.setQueryString(this.model);
+  }
+
 }
