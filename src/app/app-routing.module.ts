@@ -4,15 +4,15 @@ import { SignUpComponent } from '@app/components/sign-up/sign-up.component';
 import { HomeComponent } from '@app/components/home/home.component';
 import { PageNotFoundComponent } from "@app/components/page-not-found/page-not-found.component"
 import { LoginComponent } from '@app/components/login/login.component';
-import { AppointmentComponent } from './components/appointment/appointment.component';
-import { QuoteACarComponent } from './components/quote-a-car/quote-a-car.component';
-import { RegisterACarComponent } from './components/register-a-car/register-a-car.component';
-import { RegisterAColorComponent } from './components/register-a-color/register-a-color.component';
-import { RegisterADealershipComponent } from './components/register-a-dealership/register-a-dealership.component';
-import { RegisterAMakerComponent } from './components/register-a-maker/register-a-maker.component';
-import { RegisterAModelComponent } from './components/register-a-model/register-a-model.component';
-import { CarsForSaleComponent } from './components/cars-for-sale/cars-for-sale.component';
-import { SellACarComponent } from './components/sell-a-car/sell-a-car.component';
+import { AppointmentComponent } from '@app/components/appointment/appointment.component';
+import { QuoteACarComponent } from '@app/components/quote-a-car/quote-a-car.component';
+import { RegisterACarComponent } from '@app/components/register-a-car/register-a-car.component';
+import { RegisterAColorComponent } from '@app/components/register-a-color/register-a-color.component';
+import { RegisterADealershipComponent } from '@app/components/register-a-dealership/register-a-dealership.component';
+import { RegisterAMakerComponent } from '@app/components/register-a-maker/register-a-maker.component';
+import { RegisterAModelComponent } from '@app/components/register-a-model/register-a-model.component';
+import { CarsForSaleComponent } from '@app/components/cars-for-sale/cars-for-sale.component';
+import { SellACarComponent } from '@app/components/sell-a-car/sell-a-car.component';
 
 const routes: Routes = [
   { path: '', redirectTo: "home", pathMatch: "full" },
