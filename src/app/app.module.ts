@@ -26,7 +26,6 @@ import { RegisterADealershipComponent } from './components/register-a-dealership
 import { TimeComponent } from './components/time/time.component';
 import { CarCategoryComponent } from './components/car-category/car-category.component';
 import { WordSuggesterComponent } from './components/word-suggester/word-suggester.component';
-
 import { CarsForSaleComponent } from './components/cars-for-sale/cars-for-sale.component';
 import { SellACarComponent } from './components/sell-a-car/sell-a-car.component';
 import { ContactComponent } from './components/contact/contact.component';

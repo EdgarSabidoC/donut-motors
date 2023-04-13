@@ -14,5 +14,5 @@ import "@lottiefiles/lottie-player";
 })
 export class PageNotFoundComponent {
   // No contiene ninguna lógica o funcionalidad específica en su código.
-  // Se utiliza para mostrar lla página de error 404.
+  // Se utiliza para mostrar la página de error 404.
 }
