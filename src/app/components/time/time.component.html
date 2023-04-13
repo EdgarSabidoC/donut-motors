@@ -1,11 +1,10 @@
-<select name="time" id="time" class="time" class="btn btn-warning">
+<select name="time" id="time" class="time" class="form-select">
   <option class="select_option_title" [ngValue]="null" disabled selected>
     Select Time:
   </option>
   <option
     *ngFor="let time of timeOptions"
     [value]="time?.value"
-    class="btn btn-light"
   >
     {{ time?.label }}
   </option>

@@ -1,6 +1,6 @@
 /* Para cambiar el color de fondo del recuadro de sugerencias cuando se muestra */
 ::ng-deep .dropdown-menu.show {
-  background: #fff;
+  width: 100%;
 }
 
 /* Para cambiar el color de cada item */
@@ -12,7 +12,3 @@
   color: black;
 }
 
-.search-bar {
-  height: 3.1em;
-  width: 45em;
-}

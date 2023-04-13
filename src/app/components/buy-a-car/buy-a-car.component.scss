@@ -1,0 +1,38 @@
+.bg-featured-blog {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 15rem;
+}
+
+.title-shadow{
+    box-shadow: 10px 10px #FFC000;
+}
+
+
+.btn-font {
+    font-family: "Agency FB";
+    font-size: 1.5em;
+}
+
+.nav-filter {
+    top: 0rem;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+  
+/* Oculta la barra de desplazamiento */
+.nav-filter::-webkit-scrollbar {
+width: 0.5em;
+}
+
+.nav-filter::-webkit-scrollbar-track {
+background-color: transparent;
+}
+
+.nav-filter::-webkit-scrollbar-thumb {
+background-color: transparent;
+}
