@@ -1,3 +1,9 @@
+/**
+ * Componente Angular para la cotización de venta de auto.
+ *
+ * Este componente representa la página de cotización de venta de auto de la aplicación.
+ * Contiene la estructura HTML, los estilos CSS y la lógica de negocio asociada a la cotización de venta de auto.
+ */
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
@@ -7,10 +13,17 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
   styleUrls: ['./quote-a-car.component.scss']
 })
 export class QuoteACarComponent implements OnInit {
-  quote_a_car_form!: FormGroup;
+
+  quote_a_car_form!: FormGroup; // Formulario de cotización de venta de auto
+
   constructor(private fb: FormBuilder) {}
 
-  // Formulario de cotización de venta de auto:
+  /**
+   * Método del ciclo de vida de Angular que se ejecuta al inicializar el componente.
+   *
+   * En este método se define la lógica de inicialización del componente, incluyendo la creación
+   * del formulario de cotización de venta de auto con sus respectivas validaciones.
+   */
   ngOnInit(): void {
     this.quote_a_car_form = this.fb.group({
       maker: this.fb.control(null, [Validators.required]),
@@ -25,9 +38,15 @@ export class QuoteACarComponent implements OnInit {
     });
   }
 
-  // Guarda el formulario.
+  /**
+   * Método para guardar el formulario de cotización de venta de auto.
+   *
+   * Este método se ejecuta al hacer clic en el botón de guardar formulario. Verifica si el formulario
+   * es válido antes de realizar cualquier acción adicional.
+   */
   onSaveForm() {
     if (this.quote_a_car_form.valid)
       console.log("Saved!");
   }
 }
+

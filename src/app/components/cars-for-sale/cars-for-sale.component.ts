@@ -1,3 +1,7 @@
+/**
+ * Componente que representa la funcionalidad de búsqueda, filtrado y
+ * ordenamiento de autos a comprar.
+ */
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SearchService } from '@app/services/search.service';
@@ -8,9 +12,6 @@ import { SearchService } from '@app/services/search.service';
   styleUrls: ['./cars-for-sale.component.scss']
 })
 
-/**
- * Componente que representa la funcionalidad de filtrado y ordenamiento de autos.
- */
 export class CarsForSaleComponent implements OnInit {
   // Atributos
   filter_form!: FormGroup; // Formulario de filtro

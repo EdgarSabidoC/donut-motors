@@ -1,3 +1,6 @@
+/**
+ * Clase que representa el componente de compra de automóviles.
+ */
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./buy-a-car.component.scss']
 })
 export class BuyACarComponent {
-
+  // No contiene ninguna lógica o funcionalidad específica en su código.
 }
+
