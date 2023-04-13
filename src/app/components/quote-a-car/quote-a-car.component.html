@@ -1,70 +1,64 @@
-<form
-  [formGroup]="quote_a_car_form"
-  class="form-container"
-  (ngSubmit)="onSaveForm()"
->
-  <app-car-maker formControlName="maker" ngDefaultControl></app-car-maker>
-  <br />
+<section class="py-5">
+  <div class="container px-5">
+    <!-- Contact form-->
+    <div class="bg-body rounded-3 py-5 px-4 px-md-5 mb-5">
+      <div class="text-center d-flex justify-content-center mb-5">
+        <div class="align-items-center p-4 my-4 col-4 text-white bg-black title-shadow">
+          <h1 class="fw-bolder mb-0 text-center">Quote your car</h1>
+        </div>
+      </div>
+        <div class="row gx-5 justify-content-center">
+          <div class="col-10 mb-5">
+            
+            <form [formGroup]="quote_a_car_form" class="form-container" (ngSubmit)="onSaveForm()">
+              <div class="row justify-content-between">
+                <div class="align-items-center p-2">
+                  <h6 class="mb-0">Your car information</h6>
+                </div>
+                <div class="col-lg-8 col-xl-6 py-lg-5 mb-3">
+                  <app-car-maker formControlName="maker" ngDefaultControl></app-car-maker>
+                  <br />
+                  <app-car-model formControlName="model" ngDefaultControl></app-car-model>
+                  <br />
+                  <app-car-color formControlName="color" ngDefaultControl></app-car-color>
+                </div>
+                <div class="col-lg-8 col-xl-6 py-lg-5 d-flex flex-column align-items-end">
+                  <input id="year" class="form-control" placeholder="year" type="number" formControlName="year" ngDefaultControl />
+                  <br />
 
-  <app-car-model formControlName="model" ngDefaultControl></app-car-model>
-  <br />
+                  <input id="mileage" class="form-control" placeholder="mileage" type="number" formControlName="mileage" />
+                  <br />
+                  
+                  <input id="serial_number" class="form-control" placeholder="serial number" type="number" formControlName="serial_number" />
+                  <br />
 
-  <input
-    id="year"
-    placeholder="year"
-    type="number"
-    formControlName="year"
-    ngDefaultControl
-  />
-  <br />
+                  <input id="email" class="form-control" type="email" placeholder="email@example.com" formControlName="email" />
+                  <div class="alert alert-danger" *ngIf="quote_a_car_form.get('email')?.hasError('email')">
+                    Invalid email!
+                  </div>
+                  <br />
 
-  <app-car-color formControlName="color" ngDefaultControl></app-car-color>
-  <br />
+                  <input id="phone" class="form-control" type="tel" placeholder="phone" formControlName="phone_number" />
+                </div>
+              </div>
 
-  <input
-    id="mileage"
-    placeholder="mileage"
-    type="number"
-    formControlName="mileage"
-  />
-  <br />
-
-  <input
-    id="serial_number"
-    placeholder="serial number"
-    type="number"
-    formControlName="serial_number"
-  />
-  <br />
-
-  <input
-    id="email"
-    type="email"
-    placeholder="email@example.com"
-    formControlName="email"
-  />
-  <div
-    class="alert alert-danger"
-    *ngIf="quote_a_car_form.get('email')?.hasError('email')"
-  >
-    Invalid email!
+              <div class="align-items-center p-2">
+                <h6 class="mb-0">In which dealership would you like to carry out the inspection?</h6>
+              </div>
+              <div class="p-2 mb-5">
+                <app-car-dealership formControlName="dealership" ngDefaultControl></app-car-dealership>
+              </div>
+              <div class="d-flex align-items-end justify-content-center">
+                <div class="d-flex align-items-center">
+                    <div class="d-grid gap-2 d-md-flex mb-4 mb-lg-3">
+                      <button type="submit" class="btn btn-send btn-warning btn-font btn-lg" name="send">Send</button>
+                      <button type="reset" class="btn btn-send btn-warning btn-font btn-lg" name="reset">Reset</button>
+                    </div>
+                </div>
+              </div>
+            </form>                
+          </div>
+        </div>
+    </div>
   </div>
-  <br />
-
-  <input
-    id="phone"
-    type="tel"
-    placeholder="phone"
-    formControlName="phone_number"
-  />
-  <br />
-
-  <app-car-dealership
-    formControlName="dealership"
-    ngDefaultControl
-  ></app-car-dealership>
-  <br />
-
-  <button type="submit" class="btn-send" name="send">Send</button>
-  <button type="reset" class="btn-send" name="reset">Reset</button>
-</form>
+</section>

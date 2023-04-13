@@ -1,68 +1,90 @@
-<h1>{{ title }}</h1>
+<section class="py-5">
+  <div class="container px-5">
+    <!-- Contact form-->
+    <div class="bg-body rounded-3 py-5 px-4 px-md-5 mb-5">
+      <div class="text-center d-flex justify-content-center mb-5">
+        <div class="align-items-center p-4 my-4 col-4 text-white bg-black title-shadow">
+          <h1 class="fw-bolder mb-0 text-center">Book an appointment</h1>
+        </div>
+      </div>
+        <div class="row gx-5 justify-content-center">
+          <div class="col-10 mb-5">
+            <form [formGroup]="appointment_booking_form" class="form-container" (ngSubmit)="onSaveForm()">
+              <div class="row justify-content-between">
+                <div class="col-lg-8 col-xl-6 py-lg-5 mb-3">
+                  <app-time formControlName="time" ngDefaultControl></app-time>
+                  <br />
+                  <ngb-datepicker
+                    name="calendar"
+                    class="calendar mb-3"
+                    formControlName="date"
+                  ></ngb-datepicker>
+                </div>
+                <div class="col-lg-8 col-xl-6 py-lg-5 d-flex flex-column align-items-end">
+                  <input
+                    id="first_name"
+                    placeholder="first name"
+                    type="text"
+                    formControlName="first_name"
+                    class="form-control"
+                    ngDefaultControl
+                  />
+                  <br />
 
-<form
-  [formGroup]="appointment_booking_form"
-  class="form-container"
-  (ngSubmit)="onSaveForm()"
->
-  <input
-    id="first_name"
-    placeholder="first name"
-    type="text"
-    formControlName="first_name"
-    ngDefaultControl
-  />
-  <br />
+                  <input
+                    id="last_name"
+                    type="text"
+                    placeholder="last name"
+                    formControlName="last_name"
+                    class="form-control"
+                    ngDefaultControl
+                  />
+                  <br />
 
-  <input
-    id="last_name"
-    type="text"
-    placeholder="last name"
-    formControlName="last_name"
-    ngDefaultControl
-  />
-  <br />
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="email@example.com"
+                    formControlName="email"
+                    class="form-control"
+                    ngDefaultControl
+                  />
+                  <div
+                    class="alert alert-danger w-100"
+                    *ngIf="appointment_booking_form.get('email')?.hasError('email')"
+                  >
+                    Invalid email!
+                  </div>
+                  <br />
 
-  <input
-    id="email"
-    type="email"
-    placeholder="email@example.com"
-    formControlName="email"
-    ngDefaultControl
-  />
-  <div
-    class="alert alert-danger"
-    *ngIf="appointment_booking_form.get('email')?.hasError('email')"
-  >
-    Invalid email!
+                  <input
+                    id="phone"
+                    type="tel"
+                    placeholder="phone"
+                    formControlName="phone_number"
+                    class="form-control"
+                    ngDefaultControl
+                  />
+                </div>
+              </div>
+
+              <div class="align-items-center p-2">
+                <h6 class="mb-0">In which dealership would you like to carry out the inspection?</h6>
+              </div>
+              <div class="p-2 mb-5">
+                <app-car-dealership formControlName="dealership" ngDefaultControl></app-car-dealership>
+              </div>
+              <div class="d-flex align-items-end justify-content-center">
+                <div class="d-flex align-items-center">
+                    <div class="d-grid gap-2 d-md-flex mb-4 mb-lg-3">
+                      <button class="btn btn-warning btn-font btn-lg" type="submit" name="send">Send</button>
+                      <button class="btn btn-warning btn-font btn-lg" type="reset" name="reset">Reset</button>
+                    </div>
+                </div>
+              </div>
+            </form>                
+          </div>
+        </div>
+    </div>
   </div>
-  <br />
-
-  <input
-    id="phone"
-    type="tel"
-    placeholder="phone"
-    formControlName="phone_number"
-    ngDefaultControl
-  />
-  <br />
-
-  <app-car-dealership
-    formControlName="dealership"
-    ngDefaultControl
-  ></app-car-dealership>
-  <br />
-
-  <ngb-datepicker
-    name="calendar"
-    class="calendar"
-    formControlName="date"
-  ></ngb-datepicker>
-  <br />
-
-  <app-time formControlName="time" ngDefaultControl></app-time>
-  <br />
-
-  <button class="btn btn-warning" type="submit" name="send">Send</button>
-  <button class="btn btn-warning" type="reset" name="reset">Reset</button>
-</form>
+</section>
