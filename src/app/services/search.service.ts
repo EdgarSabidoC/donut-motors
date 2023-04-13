@@ -1,3 +1,8 @@
+/**
+ * Componente que representa un servicio de búsqueda de autos.
+ * Este componente utiliza Observables para realizar la búsqueda y devuelve un objeto CarsApi.
+ * Aún no está completo.
+ */
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders  } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -7,8 +12,9 @@ import { CarsApi } from '@app/interfaces/cars-api';
   providedIn: 'root'
 })
 export class SearchService {
-  queryString: string = '';
+  queryString: string = ''; // Consulta de búsqueda
 
+  // Lista de autos disponibles
   cars = [
     {
       id: 1,
@@ -76,6 +82,7 @@ export class SearchService {
     },
   ];
 
+  // Opciones de categoría de auto
   categorypOptions = [
     { value: 'SUV', label: 'SUV' },
     { value: 'Sedan', label: 'Sedan' },
@@ -88,6 +95,7 @@ export class SearchService {
     { value: 'Van', label: 'Van' },
   ];
 
+  // Opciones de color de auto
   colorOptions = [
     { value: 'White', label: 'White' },
     { value: 'Blue', label: 'Blue' },
@@ -101,6 +109,7 @@ export class SearchService {
     { value: 'Grey', label: 'Grey' },
   ];
 
+  // Opciones de fabricantes de autos
   makerOptions = [
     { value: 'Chevrolet', label: 'Chevrolet' },
     { value: 'Ford', label: 'Ford' },
@@ -109,6 +118,7 @@ export class SearchService {
     { value: 'Peugeot', label: 'Peugeot' },
   ];
 
+  // Opciones de sedes de Donut-Motors:
   dealershipOptions = [
     { value: 'Donut-Motors Cars Emporium', label: 'Donut-Motors Cars Emporium' },
     { value: 'Donut-Motors Vintage Auto Gallery', label: 'Donut-Motors Vintage Auto Gallery' },
@@ -117,6 +127,7 @@ export class SearchService {
     { value: 'Donut-Motors Timeless Car Boutique', label: 'Donut-Motors Timeless Car Boutique' },
   ];
 
+  // Opciones de modelos de auto:
   modelOptions = [
     { value: 'Corvette', label: 'Corvette' },
     { value: 'Fiesta', label: 'Fiesta' },
@@ -125,6 +136,7 @@ export class SearchService {
     { value: 'Rifter', label: 'Rifter' },
   ];
 
+  // Fabricantes de auto (para sugerencia):
   makers = [
     'Chevrolet',
     'Ford',
@@ -133,6 +145,7 @@ export class SearchService {
     'Peugeot',
   ];
 
+  // Modelos de auto (para sugerencia):
   models = [
     'Corvette',
     'Fiesta',
@@ -141,6 +154,7 @@ export class SearchService {
     'Rifter'
   ];
 
+  // Opciones de horario de las sedes de Donut-Motors:
   timeOptions = [
       { value: '8:00', label: '8:00' },
       { value: '8:30', label: '8:30' },
@@ -168,15 +182,32 @@ export class SearchService {
     this.http = http;
   }
 
-  setQueryString(value: string): void {
-    this.queryString = value;
-  }
+  /**
+ * Método que establece el valor de la cadena de consulta.
+ * @param {string} value - Valor de la cadena de consulta a establecer.
+ * @returns {void}
+ */
+setQueryString(value: string): void {
+  this.queryString = value;
+}
 
-  getQueryString(): string {
-    return this.queryString;
-  }
+/**
+ * Método que obtiene el valor de la cadena de consulta.
+ * @returns {string} - Valor actual de la cadena de consulta.
+ */
+getQueryString(): string {
+  return this.queryString;
+}
 
-  // Método de búsqueda para consumir el servicio utilizando Observables:
+/**
+ * Método de búsqueda para consumir el servicio utilizando Observables.
+ * @param {Object} options - Opciones de búsqueda que incluyen limit, maker, model, y year.
+ * @param {string} options.limit - Cantidad de objetos devueltos.
+ * @param {string} options.maker - Fabricante para realizar la búsqueda.
+ * @param {string} options.model - Modelo para realizar la búsqueda.
+ * @param {string} options.year - Año para realizar la búsqueda.
+ * @returns {Observable<CarsApi>} - Observable que devuelve un objeto CarsApi.
+ */
   searchCarsApi = (options: { limit?: string, maker?: string, model?: string, year?: string }): Observable<CarsApi> => {
     const headerOptions = new HttpHeaders({
       'X-Api-Key': 'nK7yBNLBYaa4Pdxn+SBxyw==o0jbL22gh3mNk5z6',
@@ -185,7 +216,7 @@ export class SearchService {
     let params = new HttpParams();
 
     if (options.limit) {
-      params = params.set('limit', options.limit) // Parámetro que inidica la cantidad de objetos devueltos.
+      params = params.set('limit', options.limit) // Parámetro que indica la cantidad de objetos devueltos.
     }
     if (options.maker) {
       params = params.set('make', options.maker); // Parámetro que realiza la búsqueda por fabricante.
@@ -203,5 +234,4 @@ export class SearchService {
     console.log(apiUrl, { headers: headerOptions, params });
     return this.http.get<CarsApi>(apiUrl, { headers: headerOptions, params });
   }
-
 }

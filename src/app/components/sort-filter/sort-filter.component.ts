@@ -1,3 +1,7 @@
+/**
+ * Clase del componente SortFilterComponent.
+ * Este componente representa una lista de opciones de clasificación y filtrado.
+ */
 import { Component } from '@angular/core';
 
 @Component({

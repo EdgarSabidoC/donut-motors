@@ -20,7 +20,7 @@ import { BuyACarComponent } from './components/buy-a-car/buy-a-car.component';
 
 const routes: Routes = [
   { path: '', redirectTo: "home", pathMatch: "full" },
-  { path: "home", component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'sign-up', component: SignUpComponent, data: { title: 'Sign-Up' } },
   { path: 'login', component: LoginComponent, data: { title: 'Login' } },
   { path: 'appointment', component: AppointmentComponent, data: { title: 'Book an appointment' } },

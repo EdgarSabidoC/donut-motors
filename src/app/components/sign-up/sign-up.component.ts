@@ -1,3 +1,7 @@
+/**
+ * Componente para el registro de usuario.
+ * Permite a los usuarios registrarse mediante un formulario de registro.
+ */
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, ValidatorFn, AbstractControl, ValidationErrors, FormBuilder } from '@angular/forms';
 
@@ -7,10 +11,15 @@ import { FormGroup, Validators, ValidatorFn, AbstractControl, ValidationErrors, 
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
+
   sign_up_form!: FormGroup;
+
   constructor(private fb: FormBuilder) {}
 
-  // Formulario de registro de usuario:
+  /**
+   * Inicializa el formulario de registro de usuario.
+   * Define las validaciones y los controles del formulario.
+   */
   ngOnInit(): void {
     this.sign_up_form = this.fb.group({
       first_name:  this.fb.control(null, [
@@ -33,7 +42,10 @@ export class SignUpComponent implements OnInit {
     }, { validators: this.passwordMatchingValidator  });
   }
 
-  // Valida que las cadenas de los campos de password y confirm_password sean iguales.
+  /**
+   * Validador personalizado para verificar que las contraseñas coincidan.
+   * Comprueba si las contraseñas son iguales y devuelve un error si no lo son.
+   */
   private passwordMatchingValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
     const password = control.get('password');
     const confirmPassword = control.get('confirm_password');
@@ -45,7 +57,10 @@ export class SignUpComponent implements OnInit {
       null;
   }
 
-  // Valida que la contraseña tenga cuando menos una letra mayúscula, un número, un símbolo y tiene 8 caracteres:
+  /**
+   * Validador personalizado para verificar la fortaleza de la contraseña.
+   * Comprueba si la contraseña cumple con los requisitos de seguridad y devuelve errores correspondientes si no los cumple.
+   */
   private passwordValidator(control: AbstractControl): { [key: string]: boolean } | null {
     const password = control.value;
     if (password && password.length >= 8) {
@@ -62,7 +77,10 @@ export class SignUpComponent implements OnInit {
     return null;
   }
 
-  // Guarda el formulario.
+  /**
+   * Guarda el formulario de registro de usuario.
+   * Verifica si el formulario es válido antes de guardar los datos.
+   */
   onSaveForm() {
     if (this.sign_up_form.valid)
       console.log("Saved!");

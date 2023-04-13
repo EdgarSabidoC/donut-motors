@@ -9,6 +9,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./buy-a-car.component.scss']
 })
 export class BuyACarComponent {
-  // No contiene ninguna lógica o funcionalidad específica en su código.
+  // No contiene ninguna lógica o funcionalidad específica en su código por el momento.
 }
 

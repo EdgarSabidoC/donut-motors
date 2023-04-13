@@ -1,3 +1,7 @@
+/**
+ * Clase que representa el componente principal de la aplicación Donut Motors.
+ * Este componente define la estructura y comportamiento de la página principal de la aplicación.
+ */
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,12 +10,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  /**
+   * Título de la aplicación.
+   * @type {string}
+   */
   title = 'donut-motors';
-
-  	// constructor(private SearchService: SearchService,
-    // private aRoute: ActivatedRoute,
-    // private router: Router
-    // ) { }
-
-
 }
