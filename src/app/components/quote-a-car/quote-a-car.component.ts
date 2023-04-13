@@ -16,7 +16,6 @@ export class QuoteACarComponent implements OnInit {
       maker: this.fb.control(null, [Validators.required]),
       model: this.fb.control(null, [Validators.required]),
       year: this.fb.control(null, [Validators.required, Validators.pattern(/^\d{4}$/), Validators.minLength(1900), Validators.maxLength(2099)]),
-      version: this.fb.control(null, [Validators.required]),
       color: this.fb.control(null, [Validators.required]),
       mileage: this.fb.control(null, [Validators.required, Validators.pattern(/^\d+$/)]),
       email: this.fb.control(null, [Validators.required, Validators.email]),

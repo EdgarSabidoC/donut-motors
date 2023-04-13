@@ -1,108 +1,52 @@
 <header class="masthead bg-dark py-5">
-  <div class="container px-5 py-4">
-    <div class="col-md-6 my-5 justify-content-md-start">
-      <h1 class="display-4 fw-bold lh-1 text-white">Cars for sale</h1>
-      <p class="lead text-white">
-        If you're thinking of buying the car of your dreams, Donut Motors has
-        thousands of cars for sale in our inventory...
-      </p>
+    <div class="container px-5 py-4">
+        <div class="col-md-6 my-5 justify-content-md-start">
+            <h1 class="display-4 fw-bold lh-1 text-white">Cars for sale</h1>
+            <p class="lead text-white">If you're thinking of buying the car of your dreams, Donut Motors has thousands of cars for sale in our inventory...</p>
+        </div>
     </div>
-  </div>
 </header>
 
 <section class="container py-5">
-  <div
-    class="align-items-center p-4 my-3 col-4 text-white bg-black title-shadow"
-  >
+  <div class="align-items-center p-4 my-3 col-4 text-white bg-black title-shadow">
     <h5 class="mb-0 text-center">Find your ideal vehicle</h5>
   </div>
-  <div
-    class="p-5 align-items-center justify-content-center bg-warning rounded-3"
-  >
+  <div class="p-5 align-items-center justify-content-center bg-warning rounded-3">
     <app-search-bar></app-search-bar>
   </div>
 </section>
 <section class="container py-5">
   <div class="row g-3">
     <div class="col-md-8">
-      <h3 class="pb-1 mb-2 fst-italic border-bottom"># results</h3>
+      <h3 class="pb-1 mb-2 fst-italic border-bottom">
+        # results
+      </h3>
 
       <div class="row">
         <div class="col-lg-4 mb-3">
           <div class="card h-100 bg-warning shadow border-0">
-            <a routerLink="/" class="stretched-link text-decoration-none"
-              ><svg
-                class="bd-placeholder-img card-img-top"
-                width="100"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="Placeholder: Thumbnail"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" />
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-              </svg></a
-            >
+            <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
             <div class="card-body">
               <h5 class="card-title mb-0 text-black">Car name</h5>
-              <p class="card-text mb-0 text-black">
-                Relevant information of the car (Year, Mileage, Dealership,
-                Price)
-              </p>
+              <p class="card-text mb-0 text-black">Relevant information of the car (Year, Mileage, Dealership, Price)</p>
             </div>
           </div>
         </div>
         <div class="col-lg-4 mb-3">
           <div class="card h-100 bg-warning shadow border-0">
-            <a routerLink="/" class="stretched-link text-decoration-none"
-              ><svg
-                class="bd-placeholder-img card-img-top"
-                width="100"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="Placeholder: Thumbnail"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" />
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-              </svg></a
-            >
+            <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
             <div class="card-body">
               <h5 class="card-title mb-0 text-black">Car name</h5>
-              <p class="card-text mb-0 text-black">
-                Relevant information of the car (Year, Mileage, Dealership,
-                Price)
-              </p>
+              <p class="card-text mb-0 text-black">Relevant information of the car (Year, Mileage, Dealership, Price)</p>
             </div>
           </div>
         </div>
         <div class="col-lg-4 mb-3">
           <div class="card h-100 bg-warning shadow border-0">
-            <a routerLink="/" class="stretched-link text-decoration-none"
-              ><svg
-                class="bd-placeholder-img card-img-top"
-                width="100"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="Placeholder: Thumbnail"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" />
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-              </svg></a
-            >
+            <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
             <div class="card-body">
               <h5 class="card-title mb-0 text-black">Car name</h5>
-              <p class="card-text mb-0 text-black">
-                Relevant information of the car (Year, Mileage, Dealership,
-                Price)
-              </p>
+              <p class="card-text mb-0 text-black">Relevant information of the car (Year, Mileage, Dealership, Price)</p>
             </div>
           </div>
         </div>
@@ -111,79 +55,28 @@
       <div class="row">
         <div class="col-lg-4 mb-3">
           <div class="card h-100 bg-warning shadow border-0">
-            <a routerLink="/" class="stretched-link text-decoration-none"
-              ><svg
-                class="bd-placeholder-img card-img-top"
-                width="100"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="Placeholder: Thumbnail"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" />
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-              </svg></a
-            >
+            <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
             <div class="card-body">
               <h5 class="card-title mb-0 text-black">Car name</h5>
-              <p class="card-text mb-0 text-black">
-                Relevant information of the car (Year, Mileage, Dealership,
-                Price)
-              </p>
+              <p class="card-text mb-0 text-black">Relevant information of the car (Year, Mileage, Dealership, Price)</p>
             </div>
           </div>
         </div>
         <div class="col-lg-4 mb-3">
           <div class="card h-100 bg-warning shadow border-0">
-            <a routerLink="/" class="stretched-link text-decoration-none"
-              ><svg
-                class="bd-placeholder-img card-img-top"
-                width="100"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="Placeholder: Thumbnail"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" />
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-              </svg></a
-            >
+            <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
             <div class="card-body">
               <h5 class="card-title mb-0 text-black">Car name</h5>
-              <p class="card-text mb-0 text-black">
-                Relevant information of the car (Year, Mileage, Dealership,
-                Price)
-              </p>
+              <p class="card-text mb-0 text-black">Relevant information of the car (Year, Mileage, Dealership, Price)</p>
             </div>
           </div>
         </div>
         <div class="col-lg-4 mb-3">
           <div class="card h-100 bg-warning shadow border-0">
-            <a routerLink="/" class="stretched-link text-decoration-none"
-              ><svg
-                class="bd-placeholder-img card-img-top"
-                width="100"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="Placeholder: Thumbnail"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" />
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-              </svg></a
-            >
+            <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
             <div class="card-body">
               <h5 class="card-title mb-0 text-black">Car name</h5>
-              <p class="card-text mb-0 text-black">
-                Relevant information of the car (Year, Mileage, Dealership,
-                Price)
-              </p>
+              <p class="card-text mb-0 text-black">Relevant information of the car (Year, Mileage, Dealership, Price)</p>
             </div>
           </div>
         </div>
@@ -192,79 +85,28 @@
       <div class="row">
         <div class="col-lg-4 mb-3">
           <div class="card h-100 bg-warning shadow border-0">
-            <a routerLink="/" class="stretched-link text-decoration-none"
-              ><svg
-                class="bd-placeholder-img card-img-top"
-                width="100"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="Placeholder: Thumbnail"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" />
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-              </svg></a
-            >
+            <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
             <div class="card-body">
               <h5 class="card-title mb-0 text-black">Car name</h5>
-              <p class="card-text mb-0 text-black">
-                Relevant information of the car (Year, Mileage, Dealership,
-                Price)
-              </p>
+              <p class="card-text mb-0 text-black">Relevant information of the car (Year, Mileage, Dealership, Price)</p>
             </div>
           </div>
         </div>
         <div class="col-lg-4 mb-3">
           <div class="card h-100 bg-warning shadow border-0">
-            <a routerLink="/" class="stretched-link text-decoration-none"
-              ><svg
-                class="bd-placeholder-img card-img-top"
-                width="100"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="Placeholder: Thumbnail"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" />
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-              </svg></a
-            >
+            <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
             <div class="card-body">
               <h5 class="card-title mb-0 text-black">Car name</h5>
-              <p class="card-text mb-0 text-black">
-                Relevant information of the car (Year, Mileage, Dealership,
-                Price)
-              </p>
+              <p class="card-text mb-0 text-black">Relevant information of the car (Year, Mileage, Dealership, Price)</p>
             </div>
           </div>
         </div>
         <div class="col-lg-4 mb-3">
           <div class="card h-100 bg-warning shadow border-0">
-            <a routerLink="/" class="stretched-link text-decoration-none"
-              ><svg
-                class="bd-placeholder-img card-img-top"
-                width="100"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="Placeholder: Thumbnail"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" />
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-              </svg></a
-            >
+            <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
             <div class="card-body">
               <h5 class="card-title mb-0 text-black">Car name</h5>
-              <p class="card-text mb-0 text-black">
-                Relevant information of the car (Year, Mileage, Dealership,
-                Price)
-              </p>
+              <p class="card-text mb-0 text-black">Relevant information of the car (Year, Mileage, Dealership, Price)</p>
             </div>
           </div>
         </div>
@@ -273,79 +115,28 @@
       <div class="row">
         <div class="col-lg-4 mb-3">
           <div class="card h-100 bg-warning shadow border-0">
-            <a routerLink="/" class="stretched-link text-decoration-none"
-              ><svg
-                class="bd-placeholder-img card-img-top"
-                width="100"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="Placeholder: Thumbnail"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" />
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-              </svg></a
-            >
+            <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
             <div class="card-body">
               <h5 class="card-title mb-0 text-black">Car name</h5>
-              <p class="card-text mb-0 text-black">
-                Relevant information of the car (Year, Mileage, Dealership,
-                Price)
-              </p>
+              <p class="card-text mb-0 text-black">Relevant information of the car (Year, Mileage, Dealership, Price)</p>
             </div>
           </div>
         </div>
         <div class="col-lg-4 mb-3">
           <div class="card h-100 bg-warning shadow border-0">
-            <a routerLink="/" class="stretched-link text-decoration-none"
-              ><svg
-                class="bd-placeholder-img card-img-top"
-                width="100"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="Placeholder: Thumbnail"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" />
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-              </svg></a
-            >
+            <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
             <div class="card-body">
               <h5 class="card-title mb-0 text-black">Car name</h5>
-              <p class="card-text mb-0 text-black">
-                Relevant information of the car (Year, Mileage, Dealership,
-                Price)
-              </p>
+              <p class="card-text mb-0 text-black">Relevant information of the car (Year, Mileage, Dealership, Price)</p>
             </div>
           </div>
         </div>
         <div class="col-lg-4 mb-3">
           <div class="card h-100 bg-warning shadow border-0">
-            <a routerLink="/" class="stretched-link text-decoration-none"
-              ><svg
-                class="bd-placeholder-img card-img-top"
-                width="100"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="Placeholder: Thumbnail"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" />
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-              </svg></a
-            >
+            <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
             <div class="card-body">
               <h5 class="card-title mb-0 text-black">Car name</h5>
-              <p class="card-text mb-0 text-black">
-                Relevant information of the car (Year, Mileage, Dealership,
-                Price)
-              </p>
+              <p class="card-text mb-0 text-black">Relevant information of the car (Year, Mileage, Dealership, Price)</p>
             </div>
           </div>
         </div>
@@ -354,113 +145,56 @@
       <div class="row">
         <div class="col-lg-4 mb-3">
           <div class="card h-100 bg-warning shadow border-0">
-            <a routerLink="/" class="stretched-link text-decoration-none"
-              ><svg
-                class="bd-placeholder-img card-img-top"
-                width="100"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="Placeholder: Thumbnail"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" />
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-              </svg></a
-            >
+            <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
             <div class="card-body">
               <h5 class="card-title mb-0 text-black">Car name</h5>
-              <p class="card-text mb-0 text-black">
-                Relevant information of the car (Year, Mileage, Dealership,
-                Price)
-              </p>
+              <p class="card-text mb-0 text-black">Relevant information of the car (Year, Mileage, Dealership, Price)</p>
             </div>
           </div>
         </div>
         <div class="col-lg-4 mb-3">
           <div class="card h-100 bg-warning shadow border-0">
-            <a routerLink="/" class="stretched-link text-decoration-none"
-              ><svg
-                class="bd-placeholder-img card-img-top"
-                width="100"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="Placeholder: Thumbnail"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" />
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-              </svg></a
-            >
+            <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
             <div class="card-body">
               <h5 class="card-title mb-0 text-black">Car name</h5>
-              <p class="card-text mb-0 text-black">
-                Relevant information of the car (Year, Mileage, Dealership,
-                Price)
-              </p>
+              <p class="card-text mb-0 text-black">Relevant information of the car (Year, Mileage, Dealership, Price)</p>
             </div>
           </div>
         </div>
         <div class="col-lg-4 mb-3">
           <div class="card h-100 bg-warning shadow border-0">
-            <a routerLink="/" class="stretched-link text-decoration-none"
-              ><svg
-                class="bd-placeholder-img card-img-top"
-                width="100"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="Placeholder: Thumbnail"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" />
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-              </svg></a
-            >
+            <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
             <div class="card-body">
               <h5 class="card-title mb-0 text-black">Car name</h5>
-              <p class="card-text mb-0 text-black">
-                Relevant information of the car (Year, Mileage, Dealership,
-                Price)
-              </p>
+              <p class="card-text mb-0 text-black">Relevant information of the car (Year, Mileage, Dealership, Price)</p>
             </div>
           </div>
         </div>
       </div>
 
-      <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-          <li class="page-item">
-            <a
-              class="page-link bg-warning"
-              routerLink="/"
-              aria-label="Previous"
-            >
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" routerLink="/">1</a></li>
-          <li class="page-item"><a class="page-link" routerLink="/">2</a></li>
-          <li class="page-item"><a class="page-link" routerLink="/">3</a></li>
-          <li class="page-item">
-            <a class="page-link bg-warning" routerLink="/" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+<nav aria-label="Page navigation">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="page-link bg-warning" routerLink="/cars-for-sale" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" routerLink="/cars-for-sale">1</a></li>
+    <li class="page-item"><a class="page-link" routerLink="/cars-for-sale">2</a></li>
+    <li class="page-item"><a class="page-link" routerLink="/cars-for-sale">3</a></li>
+    <li class="page-item">
+      <a class="page-link bg-warning" routerLink="/cars-for-sale" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
     </div>
 
     <div class="col-md-4">
       <div class="position-sticky nav-filter">
         <div class="p-4 pt-1 mb-0 pb-0">
-          <div
-            class="align-items-center p-2 my-4 text-white bg-black title-shadow"
-          >
+          <div class="align-items-center p-2 my-4 text-white bg-black title-shadow">
             <h5 class="mb-0 text-center">Sort</h5>
           </div>
           <div class="mb-0">
@@ -470,33 +204,20 @@
         </div>
 
         <div class="pt-0 p-4" [formGroup]="filter_form">
-          <div
-            class="align-items-center p-2 my-4 text-white bg-black title-shadow"
-          >
+          <div class="align-items-center p-2 my-4 text-white bg-black title-shadow">
             <h5 class="mb-0 text-center">Filter</h5>
           </div>
           <div class="accordion" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
-                  Maker and Model
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Make and Model
                 </button>
               </h2>
-              <div
-                id="collapseOne"
-                class="accordion-collapse collapse show"
-                data-bs-parent="#accordionExample"
-              >
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <div class="align-items-center p-2">
-                    <h6 class="mb-0">Maker</h6>
+                    <h6 class="mb-0">Make</h6>
                   </div>
                   <div class="d-flex justify-content-center">
                     <app-car-maker
@@ -506,7 +227,10 @@
                       (change)="onFilterChange($event, { maker: true })"
                     ></app-car-maker>
                   </div>
-                  <div class="align-items-center p-2"></div>
+                  <div class="align-items-center p-2">
+                    <h6 class="mb-0">Models</h6>
+                    <small class="mb-0">Please select vehicle make above to enable model options.</small>
+                  </div>
                   <div class="d-flex justify-content-center">
                     <app-car-model
                       class="col-12"
@@ -520,22 +244,11 @@
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   Year
                 </button>
               </h2>
-              <div
-                id="collapseTwo"
-                class="accordion-collapse collapse"
-                data-bs-parent="#accordionExample"
-              >
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <div class="row g-3">
                     <div class="col-sm-6">
@@ -568,22 +281,11 @@
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                   Price
                 </button>
               </h2>
-              <div
-                id="collapseThree"
-                class="accordion-collapse collapse"
-                data-bs-parent="#accordionExample"
-              >
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <h6>Price Range:</h6>
                   <div>
@@ -656,7 +358,7 @@
                       (dblclick)="uncheckRadio({ priceRange: true })"
                       (change)="onFilterChange($event, { priceRange: true })"
                     />
-                    <label for="customRange">Custom price range:</label>
+                    <label class="h6" for="customRange">Custom price range:</label>
                   </div>
                   <div class="row g-3">
                     <div class="col-sm-6">
@@ -689,22 +391,11 @@
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseFour"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
                   Vehicle Condition
                 </button>
               </h2>
-              <div
-                id="collapseFour"
-                class="accordion-collapse collapse"
-                data-bs-parent="#accordionExample"
-              >
+              <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <h6>Select vehicle condition:</h6>
                   <div>
@@ -881,6 +572,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>

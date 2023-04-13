@@ -1,9 +1,8 @@
-<select name="car_color" id="car_color" class="btn btn-warning">
+<select name="car_color" id="car_color" class="form-select">
   <option class="select_option_title" [ngValue]="null" disabled selected>
     Select Color:
   </option>
   <option
-    class="btn btn-light"
     *ngFor="let color of colorOptions"
     [value]="color?.value"
   >

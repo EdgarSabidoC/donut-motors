@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, Subject, merge, OperatorFunction } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
@@ -9,6 +9,7 @@ import { SearchService } from '@app/services/search.service';
   selector: 'app-word-suggester',
   templateUrl: './word-suggester.component.html',
   styleUrls: ['./word-suggester.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class WordSuggesterComponent {
 
