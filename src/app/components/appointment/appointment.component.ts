@@ -1,3 +1,6 @@
+/**
+ * Clase que representa el componente de citas para comprar un automóvil.
+ */
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, AbstractControl, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
