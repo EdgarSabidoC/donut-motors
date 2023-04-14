@@ -1,127 +1,164 @@
-<form
-  [formGroup]="sign_up_form"
-  class="form-container"
-  (ngSubmit)="onSaveForm()"
->
-  <label for="first_name">First Name: </label>
-  <input
-    id="first_name"
-    type="text"
-    formControlName="first_name"
-    ngDefaultControl
-  />
-  <br />
-  <label for="last_name">Last Name: </label>
-  <input
-    id="last_name"
-    type="text"
-    formControlName="last_name"
-    ngDefaultControl
-  />
-  <br />
-  <label for="email">Email: </label>
-  <input id="email" type="email" formControlName="email" ngDefaultControl />
-  <div
-    class="alert alert-danger"
-    *ngIf="sign_up_form.get('email')?.hasError('email')"
-  >
-    Invalid email!
-  </div>
-  <br />
-  <label for="phone">Phone: </label>
-  <input
-    id="phone"
-    type="tel"
-    formControlName="phone_number"
-    ngDefaultControl
-  />
-  <br />
-  <label for="postal_code">Postal Code: </label>
-  <input
-    id="postal_code"
-    type="text"
-    formControlName="postal_code"
-    ngDefaultControl
-  />
-  <br />
-  <label for="password">Password: </label>
-  <input
-    id="password"
-    type="password"
-    formControlName="password"
-    ngDefaultControl
-  />
-  <div
-    class="alert alert-danger"
-    *ngIf="sign_up_form.get('password')?.hasError('symbolRequired')"
-  >
-    The password must contain at least one symbol
-  </div>
-  <div
-    class="alert alert-danger"
-    *ngIf="sign_up_form.get('password')?.hasError('numberRequired')"
-  >
-    The password must contain at least one number
-  </div>
-  <div
-    class="alert alert-danger"
-    *ngIf="sign_up_form.get('password')?.hasError('uppercaseRequired')"
-  >
-    The password must contain at least one uppercase letter
-  </div>
-  <div
-    class="alert alert-danger"
-    *ngIf="
-      sign_up_form.get('password')?.value !== null &&
-      sign_up_form.get('password')?.value !== undefined &&
-      sign_up_form.get('password')?.value !== '' &&
-      sign_up_form.get('password')?.hasError('minLength')
-    "
-  >
-    The password must be at least 8 characters long
-  </div>
-  <br />
-  <label for="confirm_password">Confirm password: </label>
-  <input
-    id="confirm_password"
-    type="password"
-    formControlName="confirm_password"
-    ngDefaultControl
-  />
-  <div
-    class="alert alert-danger"
-    *ngIf="sign_up_form.get('confirm_password')?.hasError('symbolRequired')"
-  >
-    The password must contain at least one symbol
-  </div>
-  <div
-    class="alert alert-danger"
-    *ngIf="sign_up_form.get('confirm_password')?.hasError('numberRequired')"
-  >
-    The password must contain at least one number
-  </div>
-  <div
-    class="alert alert-danger"
-    *ngIf="sign_up_form.get('confirm_password')?.hasError('uppercaseRequired')"
-  >
-    The password must contain at least one uppercase letter
-  </div>
-  <div
-    class="alert alert-danger"
-    *ngIf="
-      sign_up_form.get('confirm_password')?.value !== null &&
-      sign_up_form.get('confirm_password')?.value !== undefined &&
-      sign_up_form.get('confirm_password')?.value !== '' &&
-      sign_up_form.get('confirm_password')?.hasError('minLength')
-    "
-  >
-    The password must be at least 8 characters long
-  </div>
-  <div class="alert alert-danger" *ngIf="sign_up_form.errors?.['notMatched']">
-    Passwords don't match!
-  </div>
-  <br />
+<div class="h-100 d-flex align-items-center">
+  <div class="container col-xl-10 col-xxl-8 px-4 py-4">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Sign up</h1>
+        <p class="col-lg-10 fs-4">Register a new employee in the system and create an account.</p>
+      </div>
+      <div class="col-md-10 mx-auto col-lg-5">
+        <div class="card form-signin w-100 m-auto shadow">
+          <form
+            [formGroup]="sign_up_form"
+            class="form-container p-md-5"
+            (ngSubmit)="onSaveForm()"
+          >
+            <div class="form-floating">
+              <input
+                id="first_name"
+                placeholder="First Name"
+                class="form-control"
+                type="text"
+                formControlName="first_name"
+                ngDefaultControl
+              />
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="form-floating">
+              <input
+                id="last_name"
+                placeholder="Last Name"
+                class="form-control"
+                type="text"
+                formControlName="last_name"
+                ngDefaultControl
+              />
+              <label for="last_name">Last Name</label>
+            </div>
+            
+            <div class="form-floating">
+              <input id="email" placeholder="Email" class="form-control" type="email" formControlName="email" ngDefaultControl />
+              <label for="email">Email</label>
+            </div>
+            <div
+              class="alert alert-danger"
+              *ngIf="sign_up_form.get('email')?.hasError('email')"
+            >
+              Invalid email!
+            </div>
+            
+            <div class="form-floating">
+              <input
+                id="phone"
+                placeholder="Phone"
+                class="form-control"
+                type="tel"
+                formControlName="phone_number"
+                ngDefaultControl
+              />
+              <label for="phone">Phone</label>
+            </div>
+            <div class="form-floating">
+              <input
+                id="postal_code"
+                placeholder="Postal Code"
+                class="form-control"
+                type="text"
+                formControlName="postal_code"
+                ngDefaultControl
+              />
+              <label for="postal_code">Postal Code</label>
+            </div>
+            
+            <div class="form-floating">
+              <input
+                id="password"
+                placeholder="Password"
+                class="form-control"
+                type="password"
+                formControlName="password"
+                ngDefaultControl
+              />
+              <label for="password">Password</label>
+            </div>
 
-  <button type="submit" class="btn-send">Send</button>
-</form>
-<a routerLink="/home" routerLinkActive="active"> Go to home </a>
+            <div
+              class="alert alert-danger"
+              *ngIf="sign_up_form.get('password')?.hasError('symbolRequired')"
+            >
+              The password must contain at least one symbol
+            </div>
+            <div
+              class="alert alert-danger"
+              *ngIf="sign_up_form.get('password')?.hasError('numberRequired')"
+            >
+              The password must contain at least one number
+            </div>
+            <div
+              class="alert alert-danger"
+              *ngIf="sign_up_form.get('password')?.hasError('uppercaseRequired')"
+            >
+              The password must contain at least one uppercase letter
+            </div>
+            <div
+              class="alert alert-danger"
+              *ngIf="
+                sign_up_form.get('password')?.value !== null &&
+                sign_up_form.get('password')?.value !== undefined &&
+                sign_up_form.get('password')?.value !== '' &&
+                sign_up_form.get('password')?.hasError('minLength')
+              "
+            >
+              The password must be at least 8 characters long
+            </div>
+            
+            <div class="form-floating">
+              <input
+                id="confirm_password"
+                placeholder="Confirm password"
+                type="password"
+                class="form-control"
+                formControlName="confirm_password"
+                ngDefaultControl
+              />
+              <label for="confirm_password">Confirm password</label>
+            </div>
+            <div
+              class="alert alert-danger"
+              *ngIf="sign_up_form.get('confirm_password')?.hasError('symbolRequired')"
+            >
+              The password must contain at least one symbol
+            </div>
+            <div
+              class="alert alert-danger"
+              *ngIf="sign_up_form.get('confirm_password')?.hasError('numberRequired')"
+            >
+              The password must contain at least one number
+            </div>
+            <div
+              class="alert alert-danger"
+              *ngIf="sign_up_form.get('confirm_password')?.hasError('uppercaseRequired')"
+            >
+              The password must contain at least one uppercase letter
+            </div>
+            <div
+              class="alert alert-danger"
+              *ngIf="
+                sign_up_form.get('confirm_password')?.value !== null &&
+                sign_up_form.get('confirm_password')?.value !== undefined &&
+                sign_up_form.get('confirm_password')?.value !== '' &&
+                sign_up_form.get('confirm_password')?.hasError('minLength')
+              "
+            >
+              The password must be at least 8 characters long
+            </div>
+            <div class="alert alert-danger" *ngIf="sign_up_form.errors?.['notMatched']">
+              Passwords don't match!
+            </div>
+
+            <button type="submit" class="w-100 btn btn-warning btn-send btn-font">Send</button>
+          </form>          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
