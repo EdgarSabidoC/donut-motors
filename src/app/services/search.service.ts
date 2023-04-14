@@ -208,7 +208,7 @@ getQueryString(): string {
  * @param {string} options.year - Año para realizar la búsqueda.
  * @returns {Observable<CarsApi>} - Observable que devuelve un objeto CarsApi.
  */
-  searchCarsApi = (options: { limit?: string, maker?: string, model?: string, year?: string }): Observable<CarsApi> => {
+  searchCarsApi = (options: { limit?: number, maker?: string, model?: string, year?: number }): Observable<CarsApi> => {
     const headerOptions = new HttpHeaders({
       'X-Api-Key': 'nK7yBNLBYaa4Pdxn+SBxyw==o0jbL22gh3mNk5z6',
     });
@@ -219,11 +219,11 @@ getQueryString(): string {
       params = params.set('limit', options.limit) // Parámetro que indica la cantidad de objetos devueltos.
     }
     if (options.maker) {
-      params = params.set('make', options.maker); // Parámetro que realiza la búsqueda por fabricante.
+      params = params.set('make', options.maker.toLowerCase()); // Parámetro que realiza la búsqueda por fabricante.
     }
 
     if (options.model) {
-      params = params.set('model', options.model); // Parámetro que realiza la búsqueda por modelo.
+      params = params.set('model', options.model.toLowerCase()); // Parámetro que realiza la búsqueda por modelo.
     }
 
     if (options.year) {
@@ -231,7 +231,6 @@ getQueryString(): string {
     }
 
     const apiUrl: string = 'https://api.api-ninjas.com/v1/cars';
-    console.log(apiUrl, { headers: headerOptions, params });
     return this.http.get<CarsApi>(apiUrl, { headers: headerOptions, params });
   }
 }
