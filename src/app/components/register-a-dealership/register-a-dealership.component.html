@@ -1,63 +1,100 @@
-<form
-  [formGroup]="register_a_dealership_form"
-  class="form-container"
-  (ngSubmit)="onSaveForm()"
->
-  <input
-    id="dealership_name"
-    placeholder="dealership name"
-    type="string"
-    formControlName="name"
-    ngDefaultControl
-  />
-  <br />
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header border-bottom-0">
+        <h1 class="modal-title fs-5">Add data: Dealership</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+              <form
+              [formGroup]="register_a_dealership_form"
+              class="form-container"
+              (ngSubmit)="onSaveForm()"
+            >
+              <div class="form-floating mb-3">
+                <input
+                  id="dealership_name"
+                  placeholder="dealership name"
+                  type="string"
+                  formControlName="name"
+                  class="form-control"
+                  ngDefaultControl
+                />
+                <label for="dealership_name">Dealership name</label>
+              </div>
 
-  <input
-    id="street"
-    placeholder="street"
-    type="string"
-    formControlName="street"
-    ngDefaultControl
-  />
-  <input
-    id="house_number"
-    placeholder="house number"
-    type="string"
-    formControlName="house_number"
-    ngDefaultControl
-  />
-  <input
-    id="intersections"
-    placeholder="intersections"
-    type="string"
-    formControlName="intersections"
-    ngDefaultControl
-  />
-  <input
-    id="neighborhood"
-    placeholder="neighborhood"
-    type="string"
-    formControlName="neighborhood"
-    ngDefaultControl
-  />
-  <input
-    id="postal_code"
-    placeholder="postal code"
-    type="number"
-    formControlName="postal_code"
-    ngDefaultControl
-  />
-  <br />
-
-  <input
-    id="phone"
-    type="tel"
-    placeholder="phone"
-    formControlName="phone_number"
-    ngDefaultControl
-  />
-  <br />
-
-  <button class="btn btn-warning" type="submit" name="Save">Save</button>
-  <button class="btn btn-warning" type="reset" name="reset">Reset</button>
-</form>
+              <div class="form-floating mb-3">
+                <input
+                  id="street"
+                  placeholder="street"
+                  type="string"
+                  formControlName="street"
+                  class="form-control"
+                  ngDefaultControl
+                />
+                <label for="street">Street</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  id="house_number"
+                  placeholder="house number"
+                  type="string"
+                  formControlName="house_number"
+                  class="form-control"
+                  ngDefaultControl
+                />
+                <label for="house_number">House number</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  id="intersections"
+                  placeholder="intersections"
+                  type="string"
+                  formControlName="intersections"
+                  class="form-control"
+                  ngDefaultControl
+                />
+                <label for="intersections">Intersections</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  id="neighborhood"
+                  placeholder="neighborhood"
+                  type="string"
+                  formControlName="neighborhood"
+                  class="form-control"
+                  ngDefaultControl
+                />
+                <label for="neighborhood">Neighborhood</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  id="postal_code"
+                  placeholder="postal code"
+                  type="number"
+                  formControlName="postal_code"
+                  class="form-control"
+                  ngDefaultControl
+                />
+                <label for="postal_code">Postal code</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  id="phone"
+                  type="tel"
+                  placeholder="phone"
+                  formControlName="phone_number"
+                  class="form-control"
+                  ngDefaultControl
+                />
+                <label for="phone">Phone</label>
+              </div>              
+              <div class="flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
+                <button class="w-100 btn btn-lg btn-warning btn-send btn-font mb-2" type="submit" name="Save">Save</button>
+                <button class="w-100 btn btn-lg btn-secondary btn-font mb-2" type="reset" name="reset">Reset</button>
+              </div>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
