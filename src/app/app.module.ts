@@ -33,6 +33,28 @@ import { AboutComponent } from './components/about/about.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { BuyACarComponent } from './components/buy-a-car/buy-a-car.component';
 import { SortFilterComponent } from '@app/components/sort-filter/sort-filter.component';
+import { ControlPanelComponent } from './components/control-panel/control-panel.component';
+import { TransmissionComponent } from './components/transmission/transmission.component';
+import { StateComponent } from './components/state/state.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
+import { PriceComponent } from './components/price/price.component';
+import { PostalCodeComponent } from './components/postal-code/postal-code.component';
+import { MaintenanceTypeComponent } from './components/maintenance-type/maintenance-type.component';
+import { MaintenanceComponent } from './components/maintenance/maintenance.component';
+import { DealershipComponent } from './components/dealership/dealership.component';
+import { ColorComponent } from './components/color/color.component';
+import { CarModelDbComponent } from './components/car-model-db/car-model-db.component';
+import { CarMakerDbComponent } from './components/car-maker-db/car-maker-db.component';
+import { CarConditionDbComponent } from './components/car-condition-db/car-condition-db.component';
+import { CarCategoryDbComponent } from './components/car-category-db/car-category-db.component';
+import { CarDbComponent } from './components/car-db/car-db.component';
+import { AppointmentDbComponent } from './components/appointment-db/appointment-db.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { ReportsComponent } from './components/reports/reports.component';
+import { RegisterATransmissionComponent } from './components/register-a-transmission/register-a-transmission.component';
+import { RegisterAPostalCodeComponent } from './components/register-a-postal-code/register-a-postal-code.component';
+import { RegisterAStateComponent } from './components/register-a-state/register-a-state.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +87,28 @@ import { SortFilterComponent } from '@app/components/sort-filter/sort-filter.com
     FaqComponent,
     BuyACarComponent,
     SortFilterComponent,
+    ControlPanelComponent,
+    TransmissionComponent,
+    StateComponent,
+    ScheduleComponent,
+    PriceComponent,
+    PostalCodeComponent,
+    MaintenanceTypeComponent,
+    MaintenanceComponent,
+    DealershipComponent,
+    ColorComponent,
+    CarModelDbComponent,
+    CarMakerDbComponent,
+    CarConditionDbComponent,
+    CarCategoryDbComponent,
+    CarDbComponent,
+    AppointmentDbComponent,
+    ProfileComponent,
+    SettingsComponent,
+    ReportsComponent,
+    RegisterATransmissionComponent,
+    RegisterAPostalCodeComponent,
+    RegisterAStateComponent,
   ],
   imports: [
     BrowserModule,

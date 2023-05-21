@@ -20,6 +20,17 @@ export class CarModelComponent {
   /**
    * Opciones de modelo obtenidas del servicio de búsqueda.
    */
-  modelOptions = this.searchService.modelOptions;
+  modelOptions: { value: string, label: string }[] = [];
+
+  ngOnInit(): void {
+    this.searchService.getDataOptionList("http://localhost:3001/api/car_model").subscribe(
+      modelOptions => {
+        this.modelOptions = modelOptions;
+      },
+      error => {
+        console.error('Error:', error);
+      }
+    );
+  }
 }
 

@@ -20,6 +20,18 @@ export class CarColorComponent {
   /**
    * Opciones de color obtenidas del servicio de búsqueda.
    */
-  colorOptions = this.searchService.colorOptions;
+
+  colorOptions: { value: string, label: string }[] = [];
+
+  ngOnInit(): void {
+    this.searchService.getDataOptionList("http://localhost:3001/api/color").subscribe(
+      colorOptions => {
+        this.colorOptions = colorOptions;
+      },
+      error => {
+        console.error('Error:', error);
+      }
+    );
+  }
 }
 
