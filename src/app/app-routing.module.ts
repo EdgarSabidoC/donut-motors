@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 //import { SignUpComponent } from '@app/components/sign-up/sign-up.component';
 import { HomeComponent } from '@app/components/home/home.component';
 import { PageNotFoundComponent } from "@app/components/page-not-found/page-not-found.component"
-//import { LoginComponent } from '@app/components/login/login.component';
+import { LoginComponent } from '@app/components/login/login.component';
 import { AppointmentComponent } from './components/appointment/appointment.component';
 import { QuoteACarComponent } from './components/quote-a-car/quote-a-car.component';
 import { RegisterACarComponent } from './components/register-a-car/register-a-car.component';
