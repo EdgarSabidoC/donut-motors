@@ -20,6 +20,18 @@ export class CarMakerComponent {
   /**
    * Opciones de fabricante obtenidas del servicio de búsqueda.
    */
-  makerOptions = this.searchService.makerOptions;
+
+  makerOptions: { value: string, label: string }[] = [];
+
+  ngOnInit(): void {
+    this.searchService.getDataOptionList("http://localhost:3001/api/car_maker").subscribe(
+      makerOptions => {
+        this.makerOptions = makerOptions;
+      },
+      error => {
+        console.error('Error:', error);
+      }
+    );
+  }
 }
 

@@ -6,6 +6,8 @@
  */
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 export class LoginComponent implements OnInit {
   login_form!: FormGroup; // Formulario de inicio de sesión de usuario
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private http: HttpClient, private fb: FormBuilder, private router: Router) { }
 
   /**
    * Método del ciclo de vida OnInit.
@@ -25,9 +27,32 @@ export class LoginComponent implements OnInit {
    */
   ngOnInit(): void {
     this.login_form = this.fb.group({
-      email: this.fb.control(null, [Validators.required, Validators.email]), // Campo de correo electrónico con validación requerida y de formato de correo electrónico
-      password: this.fb.control(null, [Validators.required, Validators.minLength(8)]), // Campo de contraseña con validación requerida y longitud mínima de 8 caracteres
+      email: this.fb.control(null, ), // Campo de correo electrónico con validación requerida y de formato de correo electrónico
+      password: this.fb.control(null, ), // Campo de contraseña con validación requerida y longitud mínima de 8 caracteres
     });
+  }
+  apiUrl: string = 'http://localhost:3001/api/auth/google';
+
+  apiLogOut = 'http://localhost:3001/api/auth/logout'
+  httpOptions = {
+  	headers: new HttpHeaders({
+    	'Content-Type': 'application/json',
+  	}), withCredentials: true,
+	};
+  logOut = () => {
+    this.http.get(this.apiLogOut, this.httpOptions).subscribe(response => {
+      console.log("RESPUESTA:", response);
+    }, error => {
+      console.error(error);
+    });
+  }
+
+  login = () => {
+    window.location.href = this.apiUrl;
+  }
+
+  logout = () => {
+    this.logOut();
   }
 
   /**
@@ -42,4 +67,3 @@ export class LoginComponent implements OnInit {
     }
   }
 }
-

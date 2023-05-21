@@ -1,0 +1,44 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "code": "10001",
+      "deleted": "No",
+      "deletedAt": "",
+      "createdAt": "2023/05/11",
+      "updatedAt": "2023/05/11"
+    },
+    {
+      "id": "2",
+      "code": "20002",
+      "deleted": "No",
+      "deletedAt": "",
+      "createdAt": "2023/05/11",
+      "updatedAt": "2023/05/11"
+    },
+    {
+      "id": "3",
+      "code": "30003",
+      "deleted": "No",
+      "deletedAt": "",
+      "createdAt": "2023/05/11",
+      "updatedAt": "2023/05/11"
+    },
+    {
+      "id": "4",
+      "code": "40004",
+      "deleted": "yes",
+      "deletedAt": "2023/05/11",
+      "createdAt": "2023/05/11",
+      "updatedAt": "2023/05/11"
+    },
+    {
+      "id": "5",
+      "code": "50005",
+      "deleted": "yes",
+      "deletedAt": "2023/05/11",
+      "createdAt": "2023/05/11",
+      "updatedAt": "2023/05/11"
+    }
+  ]
+}

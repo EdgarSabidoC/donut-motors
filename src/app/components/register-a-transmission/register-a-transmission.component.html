@@ -1,0 +1,31 @@
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header border-bottom-0">
+        <h1 class="modal-title fs-5">Add data: Transmission</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <form class="form-container p-md-5">
+            <div class="align-items-center p-2">
+                <h6 class="mb-0">New transmission type</h6>
+            </div>
+            <div class="form-floating mb-5">
+                <input
+                    id="transmission"
+                    placeholder="transmission"
+                    class="form-control"
+                    type="text"
+                />
+                <label for="transmission">Transmission</label>
+            </div>
+
+            <div class="flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
+                <button type="submit" class="w-100 btn btn-lg btn-warning btn-send btn-font mb-2">Save changes</button>
+                <button type="button" class="w-100 btn btn-lg btn-secondary btn-font mb-2" data-bs-dismiss="modal">Close</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

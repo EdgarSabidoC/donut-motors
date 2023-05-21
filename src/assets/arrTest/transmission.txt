@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "Automatic",
+      "deleted": "Yes",
+      "deletedAt": "2011/04/25",
+      "createdAt": "2011/04/25",
+      "updatedAt": "2011/04/25"
+    },
+    {
+      "id": "2",
+      "type": "Manual",
+      "deleted": "Yes",
+      "deletedAt": "2011/04/25",
+      "createdAt": "2011/04/25",
+      "updatedAt": "2011/04/25"
+    }
+  ]
+}

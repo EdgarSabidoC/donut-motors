@@ -36,16 +36,10 @@ export class SearchBarComponent {
   searchQuery(){
     const service = this.searchService;
     let query: string = this.searchService.getQueryString();
-    type Filters = { limit?: number; maker?: string; model?: string; };
-    const options: Filters = {limit: 10 };
+    
     if(query && query !== '') {
-      if(service.models.includes(query)) {
-        options.model = query;
-      } else if(service.makers.includes(query)) {
-        options.maker = query;
-      }
       // Muestra el resultado de la búsqueda en la consola:
-      this.searchService.searchCarsApi(options).subscribe({
+      this.searchService.searchCarsApi(query).subscribe({
         next: value => console.log("The results are: ",value),
         error: error => console.error("Error: " + error.statusText)
       });

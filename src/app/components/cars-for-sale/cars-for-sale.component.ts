@@ -2,9 +2,11 @@
  * Componente que representa la funcionalidad de búsqueda, filtrado y
  * ordenamiento de autos a comprar.
  */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SearchService } from '@app/services/search.service';
+
+declare var $: any;
 
 @Component({
   selector: 'app-cars-for-sale',
@@ -25,7 +27,8 @@ export class CarsForSaleComponent implements OnInit {
    * @param fb                  Instancia del FormBuilder para la creación de formularios reactivos.
    * @param searchService       Servicio de búsqueda de autos.
    */
-  constructor(private fb: FormBuilder, private searchService: SearchService) {}
+  constructor(private fb: FormBuilder, private searchService: SearchService) {
+  }
 
   /**
    * Método que se ejecuta al inicializar el componente.
@@ -44,7 +47,25 @@ export class CarsForSaleComponent implements OnInit {
       transmission: this.fb.control(null), // Control de transmisión del auto
       dealership: this.fb.control(null), // Control de concesionaria
       category: this.fb.control(null), // Control de categoría del auto
-    });
+    }); 
+  }
+
+  ngAfterViewInit(): void {
+    this.searchService.getDataList().subscribe(
+      cars => {
+        // Aquí puedes procesar los datos de los carros
+        console.log(cars);
+        // Llamar a funciones o realizar cualquier otra lógica
+      },
+      error => {
+        // Aquí manejas el error en caso de que ocurra
+        console.error('Error:', error);
+      },
+      () => {
+        // Aquí manejas la lógica cuando la suscripción se completa
+        console.log('Suscripción completada');
+      }
+    );
   }
 
   /**
@@ -132,7 +153,24 @@ export class CarsForSaleComponent implements OnInit {
 
         // Establece el valor del filtro correspondiente:
         this.filter_form.get(controlName)?.setValue(eventValue);
-        console.log(this.filter_form.get(controlName)?.value); // Se imprime el valor del filtro en la consola.
+        console.log(this.filter_form.value); // Se imprime el valor del filtro en la consola.
+        
+
+        this.searchService.searchFilter(this.filter_form.value).subscribe(
+          cars => {
+            // Aquí puedes procesar los datos de los carros
+            console.log(cars);
+            // Llamar a funciones o realizar cualquier otra lógica
+          },
+          error => {
+            // Aquí manejas el error en caso de que ocurra
+            console.error('Error:', error);
+          },
+          () => {
+            // Aquí manejas la lógica cuando la suscripción se completa
+            console.log('Suscripción completada');
+          }
+        );
       }
     }
   }
@@ -147,6 +185,7 @@ export class CarsForSaleComponent implements OnInit {
     this.sort = event.target.value;
     // Aplica el nuevo tipo de ordenamiento a la lista de autos utilizando el método 'sortCars':
     this.cars = this.sortCars(this.sort);
+    this.searchService.setCarListSort(this.cars);
     console.log(this.cars);
   }
 
@@ -165,8 +204,14 @@ export class CarsForSaleComponent implements OnInit {
  * @returns {Array} - La lista de autos ordenada de acuerdo al criterio especificado.
  */
   sortCars(sort: string) {
-     // Obtener la lista de autos del servicio de búsqueda:
-    const cars = this.searchService.cars;
+    // Obtener la lista de autos del servicio de búsqueda:
+    let cars;
+    if(this.searchService.tmpCars.tmpCars.length>0){
+      cars = this.searchService.tmpCars.tmpCars;
+    }
+    else{
+      cars = this.searchService.cars;
+    }
 
      // Definir los criterios de ordenamiento como funciones de comparación:
     const sortCriteria: Record<string, (a: any, b: any) => number> = {
