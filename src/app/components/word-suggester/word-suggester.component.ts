@@ -19,6 +19,8 @@ export class WordSuggesterComponent {
 
   suggester_form !: FormGroup; // Formulario del componente
   model!: string; // Modelo de datos
+  makerSuggestions: string[] = [];
+  modelSuggestions: string[] = [];
 
   constructor(private searchService: SearchService) {}
 
@@ -29,6 +31,29 @@ export class WordSuggesterComponent {
 
   focus$ = new Subject<string>(); // Subject para eventos de enfoque en el input
   click$ = new Subject<string>(); // Subject para eventos de clic en el input
+
+  ngOnInit(): void {
+    this.searchService.getDataSuggestion("http://localhost:3001/api/car_maker").subscribe(
+      makers => {
+        this.makerSuggestions = makers;
+        this.options = [...this.modelSuggestions, ...this.makerSuggestions].sort();
+        console.log(this.options);
+      },
+      error => {
+        console.error('Error:', error);
+      }
+    );
+    this.searchService.getDataSuggestion("http://localhost:3001/api/car_model").subscribe(
+      models => {
+        this.modelSuggestions = models;
+        this.options = [...this.modelSuggestions, ...this.makerSuggestions].sort();
+        console.log(this.options);
+      },
+      error => {
+        console.error('Error:', error);
+      }
+    );
+  }
 
   /**
    * Función de búsqueda de sugerencias.

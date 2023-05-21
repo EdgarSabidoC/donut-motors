@@ -22,12 +22,11 @@ export class RegisterADealershipComponent {
     // Se crea el formulario utilizando FormBuilder y se asigna a la propiedad register_a_dealership_form.
     this.register_a_dealership_form = this.fb.group({
       name: this.fb.control(null, [Validators.required]),
-      address: this.fb.control(null, [Validators.required]),
       phone_number: this.fb.control(null, [Validators.required, Validators.pattern(/^\d{10}$/)]),
       house_number: this.fb.control(null, [Validators.required]),
       street: this.fb.control(null, [Validators.required]),
       intersections: this.fb.control(null, [Validators.required]),
-      neighbordhood: this.fb.control(null, [Validators.required]),
+      neighborhood: this.fb.control(null, [Validators.required]),
       postal_code: this.fb.control(null, [Validators.required, Validators.pattern(/^\d{5}$/)]),
     });
   }

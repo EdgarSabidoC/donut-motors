@@ -1,0 +1,68 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "name": "California",
+      "deleted": "No",
+      "deletedAt": "",
+      "createdAt": "2023/05/11",
+      "updatedAt": "2023/05/11"
+    },
+    {
+      "id": "2",
+      "name": "New York",
+      "deleted": "No",
+      "deletedAt": "",
+      "createdAt": "2023/05/11",
+      "updatedAt": "2023/05/11"
+    },
+    {
+      "id": "3",
+      "name": "Texas",
+      "deleted": "No",
+      "deletedAt": "",
+      "createdAt": "2023/05/11",
+      "updatedAt": "2023/05/11"
+    },
+    {
+      "id": "4",
+      "name": "Florida",
+      "deleted": "yes",
+      "deletedAt": "2023/05/11",
+      "createdAt": "2023/05/11",
+      "updatedAt": "2023/05/11"
+    },
+    {
+      "id": "5",
+      "name": "Illinois",
+      "deleted": "yes",
+      "deletedAt": "2023/05/11",
+      "createdAt": "2023/05/11",
+      "updatedAt": "2023/05/11"
+    },
+    {
+      "id": "6",
+      "name": "Ohio",
+      "deleted": "No",
+      "deletedAt": "",
+      "createdAt": "2023/05/11",
+      "updatedAt": "2023/05/11"
+    },
+    {
+      "id": "7",
+      "name": "Pennsylvania",
+      "deleted": "No",
+      "deletedAt": "",
+      "createdAt": "2023/05/11",
+      "updatedAt": "2023/05/11"
+    },
+    {
+      "id": "8",
+      "name": "Michigan",
+      "deleted": "No",
+      "deletedAt": "",
+      "createdAt": "2023/05/11",
+      "updatedAt": "2023/05/11"
+    }
+  ]
+}

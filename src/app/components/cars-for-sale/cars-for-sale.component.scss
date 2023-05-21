@@ -1,6 +1,6 @@
 .masthead {
     position: relative;
-    background: url("/assets/img/cars-for-sale/bg-masthead.png") no-repeat center center;
+    background: url("/assets/img/cars-for-sale/bg-masthead.webp") no-repeat center center;
     background-size: cover;
 }
 
@@ -32,4 +32,11 @@ background-color: transparent;
 
 .nav-filter::-webkit-scrollbar-thumb {
 background-color: transparent;
+}
+.clickable-text {
+    cursor: pointer;
+}
+.clickable-text:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }

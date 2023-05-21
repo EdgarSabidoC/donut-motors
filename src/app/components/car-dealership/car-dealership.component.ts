@@ -20,5 +20,16 @@ export class CarDealershipComponent {
   /**
    * Opciones de concesionario obtenidas del servicio de búsqueda.
    */
-  dealershipOptions = this.searchService.dealershipOptions;
+  dealershipOptions: { value: string, label: string }[] = [];
+
+  ngOnInit(): void {
+    this.searchService.getDataOptionList("http://localhost:3001/api/dealership").subscribe(
+      dealershipOptions => {
+        this.dealershipOptions = dealershipOptions;
+      },
+      error => {
+        console.error('Error:', error);
+      }
+    );
+  }
 }

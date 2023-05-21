@@ -3,7 +3,8 @@
  * Define la estructura de los datos de un coche obtenidos de la API.
  */
 export interface CarsApi {
-  city_mpg: number; // Consumo de combustible en ciudad (millas por galón)
+  
+  /*city_mpg: number; // Consumo de combustible en ciudad (millas por galón)
   class: string; // Clase del coche
   combination_mpg: number; // Consumo de combustible combinado (millas por galón)
   cylinders: number; // Número de cilindros del coche
@@ -14,6 +15,20 @@ export interface CarsApi {
   make: string; // Marca del coche
   model: string; // Modelo del coche
   transmission: string; // Tipo de transmisión del coche
-  year: number; // Año del coche
+  year: number; // Año del coche*/
+  vin: string;
+  mileage: number;
+  description: string;
+  price: number;
+  model: string;
+  year: number;
+  transmission: string;
+  maker: string;
+  category: string;
+  condition: string;
+  interior_color: string;
+  exterior_color: string;
+  dealership: string;
+  photo_url: string;
 }
 

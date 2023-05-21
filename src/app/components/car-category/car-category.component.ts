@@ -20,5 +20,17 @@ export class CarCategoryComponent {
   /**
    * Opciones de categoría obtenidas del servicio de búsqueda.
    */
-  categorypOptions = this.searchService.categorypOptions;
+  
+  categorypOptions: { value: string, label: string }[] = [];
+
+  ngOnInit(): void {
+    this.searchService.getDataOptionList("http://localhost:3001/api/car_category").subscribe(
+      categorypOptions => {
+        this.categorypOptions = categorypOptions;
+      },
+      error => {
+        console.error('Error:', error);
+      }
+    );
+  }
 }
