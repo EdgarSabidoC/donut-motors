@@ -7,28 +7,23 @@
       </div>
       <div class="col-md-10 mx-auto col-lg-7">
         <div class="card form-signin w-100 m-auto shadow">
-          <form [formGroup]="login_form" class="form-container p-md-5" (ngSubmit)="onSaveForm()">        
-            <div class="form-floating">
-              <input type="email" class="form-control" id="email" placeholder="name@example.com" formControlName="email" ngDefaultControl />
-              <label for="email">Email address</label>
-            </div>
-            <div
-              class="alert alert-danger"
-              *ngIf="login_form.get('email')?.hasError('email')"
+          <form
+            [formGroup]="login_form"
+            class="form-container p-md-5"
+            (ngSubmit)="onSaveForm()"
+          >
+            <button
+              class="w-100 btn btn-lg btn-warning btn-font mb-3"
+              (click)="login()"
             >
-              Invalid email!
-            </div>
-            <div class="form-floating">
-              <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password" ngDefaultControl />
-              <label for="password">Password</label>
-            </div>
-            <div
-              class="alert alert-danger"
-              *ngIf="login_form.get('password')?.hasError('minlength')"
+              Login
+            </button>
+            <button
+              class="w-100 btn btn-lg btn-warning btn-font mb-3"
+              (click)="logout()"
             >
-              The password must be at least 8 characters long
-            </div>
-            <button class="w-100 btn btn-lg btn-warning btn-font" type="submit">Login</button>
+              Logout
+            </button>
           </form>
         </div>
       </div>

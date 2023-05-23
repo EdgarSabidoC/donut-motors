@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 //import { SignUpComponent } from '@app/components/sign-up/sign-up.component';
 import { HomeComponent } from '@app/components/home/home.component';
 import { PageNotFoundComponent } from "@app/components/page-not-found/page-not-found.component"
-//import { LoginComponent } from '@app/components/login/login.component';
+import { LoginComponent } from '@app/components/login/login.component';
 import { AppointmentComponent } from './components/appointment/appointment.component';
 import { QuoteACarComponent } from './components/quote-a-car/quote-a-car.component';
 import { RegisterACarComponent } from './components/register-a-car/register-a-car.component';
@@ -33,14 +33,13 @@ import { CarConditionDbComponent } from './components/car-condition-db/car-condi
 import { CarCategoryDbComponent } from './components/car-category-db/car-category-db.component';
 import { CarDbComponent } from './components/car-db/car-db.component';
 import { AppointmentDbComponent } from './components/appointment-db/appointment-db.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { SettingsComponent } from './components/settings/settings.component';
-import { ReportsComponent } from './components/reports/reports.component';
+import { AuthGuard } from '@app/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: "home", pathMatch: "full" },
   { path: 'home', component: HomeComponent },
   //{ path: 'sign-up', component: SignUpComponent, data: { title: 'Sign-Up' } },
+  { path: 'login', component: LoginComponent, data: { title: 'Login' } },
   //{ path: 'login', component: LoginComponent, data: { title: 'Login' } },
   { path: 'appointment', component: AppointmentComponent, data: { title: 'Book an appointment' } },
   { path: 'quote-a-car', component: QuoteACarComponent, data: { title: 'Quote a car' } },
@@ -55,7 +54,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent, data: { title: 'About' } },
   { path: 'faq', component: FaqComponent, data: { title: 'Faq' } },
   { path: 'buy-a-car', component: BuyACarComponent, data: { title: 'Buy a car' } },
-  { path: 'control-panel', component: ControlPanelComponent, data: { title: 'Buy a car' }, children:
+  { path: 'control-panel', component: ControlPanelComponent, data: { title: 'Buy a car' }, canActivate: [AuthGuard], children:
   [
     { path: 'transmission', component: TransmissionComponent, outlet:'dataBaseViews', data: { title: 'Transmission' }},
     { path: 'state', component: StateComponent, outlet:'dataBaseViews', data: { title: 'State' }},
@@ -72,11 +71,8 @@ const routes: Routes = [
     { path: 'car-condition-db', component: CarConditionDbComponent, outlet:'dataBaseViews', data: { title: 'Car condition DB' }},
     { path: 'car-category-db', component: CarCategoryDbComponent, outlet:'dataBaseViews', data: { title: 'Car category DB' }},
     { path: 'appointment-db', component: AppointmentDbComponent, outlet:'dataBaseViews', data: { title: 'Appointment' } },
-    { path: 'profile', component: ProfileComponent, outlet:'dataBaseViews', data: { title: 'Profile' }},
-    { path: 'settings', component: SettingsComponent, outlet:'dataBaseViews', data: { title: 'Settings' } },
-    { path: 'reports', component: ReportsComponent, outlet:'dataBaseViews', data: { title: 'Reports' } },
     {
-      path: '',        
+      path: '',
       redirectTo: 'actual', pathMatch: 'full',
     },
   ]

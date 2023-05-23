@@ -124,3 +124,8 @@ input[type="number"] {
   text-decoration-color: #ffc107 !important; /* Cambia el color del subrayado de los enlaces del nav */
   text-decoration-thickness: 3px !important;
 }
+.card-img-top {
+  width: 100%;
+  height: 200px; /* Ajusta la altura deseada para las imágenes */
+  object-fit: cover;
+}

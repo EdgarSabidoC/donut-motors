@@ -1,138 +1,83 @@
 <section class="container pt-3 px-5">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb p-3 bg-body rounded-3">
-        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-        <li class="breadcrumb-item"><a routerLink="/cars-for-sale">Cars for sale</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Data</li>
-        </ol>
-    </nav>
-    <div class="card border-0 shadow rounded-3 overflow-hidden">
-        <div class="card-body p-0">
-            <div class="row gx-0">
-                <div class="col-lg-6 col-xl-5 py-lg-5">
-                    <div class="p-4 p-md-5">
-                        <div class="h1 fw-bolder">Car Name</div>
-                        <p>Relevant information of the car (Year, Mileage, transmision)</p>
-                        <div class="d-flex align-items-end justify-content-center">
-                            <div class="d-flex align-items-center">
-                                <div class="d-grid gap-2 d-md-flex mb-4 mb-lg-3">
-                                    <button type="button" class="btn btn-warning btn-lg btn-font px-5 me-md-2" routerLink="/appointment" [queryParams]="{query: '1'}">Schedule an appointment to purchase</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <nav aria-label="breadcrumb">
+      <ol class="breadcrumb p-3 bg-body rounded-3">
+      <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+      <li class="breadcrumb-item"><a routerLink="/cars-for-sale">Cars for sale</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Buy a car</li>
+      </ol>
+  </nav>
+  <!-- Tarjeta de información del carro -->
+  <div class="card border-0 shadow rounded-3 overflow-hidden">
+    <div class="card-body p-0">
+      <div class="row gx-0" *ngIf="car">
+        <div class="col-lg-6 col-xl-5 py-lg-5">
+          <div class="p-4 p-md-5">
+            <div class="h1 fw-bolder">{{ car.model }}</div>
+              <p>Year: {{ car.year | number}}</p>
+              <p>Maker: {{ car.maker }}</p>
+              <p>Price: {{ car.price | number }}</p>
+            <div class="d-flex align-items-end justify-content-center">
+              <div class="d-flex align-items-center">
+                <div class="d-grid gap-2 d-md-flex mb-4 mb-lg-3">
+                  <button type="button" class="btn btn-warning btn-lg btn-font px-5 me-md-2" routerLink="/appointment" [queryParams]="{ query: car.vin }">Schedule an appointment to purchase</button>
                 </div>
-                <div class="col-lg-6 col-xl-7"><div class="bg-featured-blog" style="background-image: url('https://dummyimage.com/700x350/343a40/6c757d')"></div></div>
+              </div>
             </div>
+          </div>
         </div>
+        <div class="col-lg-6 col-xl-7">
+          <div class="bg-featured-blog" [style.background-image]="'url(http://localhost:3001/car_photos/' + car.car_image + ')'"></div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
-<section class="container px-5 py-5">
-    <div class="d-flex align-items-center p-3 my-3 bg-warning rounded shadow-sm">
-        <div class="lh-1">
-          <h5 class="mb-0 lh-1 text-black">Technical Information</h5>
+<section class="container px-5 py-5" *ngIf="car">
+  <div class="d-flex align-items-center p-3 my-3 bg-warning rounded shadow-sm">
+    <div class="lh-1">
+      <h5 class="mb-0 lh-1 text-black">Technical Information</h5>
+    </div>
+  </div>
+
+  <div class="my-3 p-3 bg-body rounded shadow-sm d-flex align-items-center justify-content-center">
+    <div class="col-10">
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="col mb-5 h-100">
+          <h2 class="h5">VIN</h2>
+          <p class="mb-0">{{ car.vin }}</p>
+        </div>
+        <div class="col mb-5 h-100">
+          <h2 class="h5">CONDITION</h2>
+          <p class="mb-0">{{ car.condition }}</p>
+        </div>
+        <div class="col mb-5 mb-md-0 h-100">
+          <h2 class="h5">EXTERIOR COLOR</h2>
+          <p class="mb-0">{{ car.exterior_color }}</p>
+        </div>
+        <div class="col mb-5 h-100">
+          <h2 class="h5">ODOMETER</h2>
+          <p class="mb-0">{{ car.mileage | number }}</p>
+        </div>
+        <div class="col mb-5 mb-md-0 h-100">
+          <h2 class="h5">TRANSMISSION</h2>
+          <p class="mb-0">{{ car.transmission }}</p>
+        </div>
+        <div class="col mb-5 h-100">
+          <h2 class="h5">INTERIOR COLOR</h2>
+          <p class="mb-0">{{ car.interior_color }}</p>
         </div>
       </div>
-    
-      <div class="my-3 p-3 bg-body rounded shadow-sm d-flex align-items-center justify-content-center">
-        <div class="col-10">
-            <div class="row row-cols-1 row-cols-md-3">
-                <div class="col mb-5 h-100">
-                    <h2 class="h5">VIN</h2>
-                    <p class="mb-0">Information</p>
-                </div>
-                <div class="col mb-5 h-100">
-                    <h2 class="h5">ENGINE</h2>
-                    <p class="mb-0">Information</p>
-                </div>
-                <div class="col mb-5 mb-md-0 h-100">
-                    <h2 class="h5">EXTERIOR COLOR</h2>
-                    <p class="mb-0">Information</p>
-                </div>
-                <div class="col mb-5 h-100">
-                    <h2 class="h5">ODOMETER</h2>
-                    <p class="mb-0">Information</p>
-                </div>
-                <div class="col mb-5 mb-md-0 h-100">
-                    <h2 class="h5">TRANSMISSION</h2>
-                    <p class="mb-0">Information</p>
-                </div>
-                <div class="col mb-5 h-100">
-                    <h2 class="h5">INTERIOR</h2>
-                    <p class="mb-0">Information</p>
-                </div>
-            </div>
-        </div>
-      </div>
+    </div>
+  </div>
 </section>
-<section class="container py-5">
+<section class="container py-5"  *ngIf="car">
     <div class="row g-3">
       <div class="col-md-8">
         <div class="align-items-center p-2 my-4 text-white bg-black title-shadow">
             <h5 class="mb-0">Overview</h5>
         </div>
         <div class="p-4 p-md-5">
-            <p>A general description of the vehicle and other information that may be considered relevant, including documentation and maintenance records...</p>
-        </div>
-        <div class="align-items-center p-2 my-4 text-white bg-black title-shadow">
-            <h5 class="mb-0">Exterior photos</h5>
-        </div>
-        <div class="photo-gallery">
-            <div class="container">
-                <div class="row photos">
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                </div>
-            </div>
-        </div>
-        <div class="align-items-center p-2 my-4 text-white bg-black title-shadow">
-            <h5 class="mb-0">Interior photos</h5>
-        </div>
-        <div class="photo-gallery">
-            <div class="container">
-                <div class="row photos">
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                </div>
-            </div>
-        </div>
-        <div class="align-items-center p-2 my-4 text-white bg-black title-shadow">
-            <h5 class="mb-0">Engine photos</h5>
-        </div>
-        <div class="photo-gallery">
-            <div class="container">
-                <div class="row photos">
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                </div>
-            </div>
-        </div>
-        <div class="align-items-center p-2 my-4 text-white bg-black title-shadow">
-            <h5 class="mb-0">Extra photos</h5>
-        </div>
-        <div class="photo-gallery">
-            <div class="container">
-                <div class="row photos">
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item mb-3"><a href="https://dummyimage.com/700x350/343a40/6c757d" data-lightbox="photos"><img class="img-fluid" src="https://dummyimage.com/700x350/343a40/6c757d"></a></div>
-                </div>
-            </div>
+            <p>{{ car.description }}</p>
         </div>
       </div>
   
@@ -143,101 +88,22 @@
               <h5 class="mb-0 text-center">You might be interested</h5>
             </div>
             <div class="row">
-              <div class="col-lg-6 mb-3">
-                <div class="card h-100 bg-warning shadow border-0">
-                  <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
-                  <div class="card-body">
-                    <h5 class="card-title mb-0 text-black">Car name</h5>
+              <ng-container *ngFor="let carItem of cars | slice:0:8; let i = index">
+                <div class="col-lg-6 mb-3">
+                  <div class="card h-100 bg-warning shadow border-0">
+                    <a routerLink="/buy-a-car" [queryParams]="{query: carItem.vin}" class="stretched-link text-decoration-none">
+                      <img class="bd-placeholder-img card-img-top" [src]="'http://localhost:3001/car_photos/' + carItem.car_image" width="100" height="auto" alt="Car Image">
+                    </a>
+                    <div class="card-body">
+                      <h5 class="card-title mb-0 text-black">{{ carItem.model }}</h5>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-6 mb-3">
-                <div class="card h-100 bg-warning shadow border-0">
-                  <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
-                  <div class="card-body">
-                    <h5 class="card-title mb-0 text-black">Car name</h5>
-                  </div>
-                </div>
-              </div>
+                <!-- Add a new row after every 2 cards -->
+                <div class="clearfix" *ngIf="(i + 1) % 2 === 0"></div>
+              </ng-container>
             </div>
-        
-            <div class="row">
-                <div class="col-lg-6 mb-3">
-                  <div class="card h-100 bg-warning shadow border-0">
-                    <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
-                    <div class="card-body">
-                      <h5 class="card-title mb-0 text-black">Car name</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-3">
-                  <div class="card h-100 bg-warning shadow border-0">
-                    <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
-                    <div class="card-body">
-                      <h5 class="card-title mb-0 text-black">Car name</h5>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        
-            <div class="row">
-                <div class="col-lg-6 mb-3">
-                  <div class="card h-100 bg-warning shadow border-0">
-                    <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
-                    <div class="card-body">
-                      <h5 class="card-title mb-0 text-black">Car name</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-3">
-                  <div class="card h-100 bg-warning shadow border-0">
-                    <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
-                    <div class="card-body">
-                      <h5 class="card-title mb-0 text-black">Car name</h5>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        
-            <div class="row">
-                <div class="col-lg-6 mb-3">
-                  <div class="card h-100 bg-warning shadow border-0">
-                    <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
-                    <div class="card-body">
-                      <h5 class="card-title mb-0 text-black">Car name</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-3">
-                  <div class="card h-100 bg-warning shadow border-0">
-                    <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
-                    <div class="card-body">
-                      <h5 class="card-title mb-0 text-black">Car name</h5>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        
-            <div class="row">
-                <div class="col-lg-6 mb-3">
-                  <div class="card h-100 bg-warning shadow border-0">
-                    <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
-                    <div class="card-body">
-                      <h5 class="card-title mb-0 text-black">Car name</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-3">
-                  <div class="card h-100 bg-warning shadow border-0">
-                    <a routerLink="/buy-a-car" [queryParams]="{query: '1'}" class="stretched-link text-decoration-none"><svg class="bd-placeholder-img card-img-top" width="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg></a>
-                    <div class="card-body">
-                      <h5 class="card-title mb-0 text-black">Car name</h5>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </div>
-
+          </div>
         </div>
       </div>
     </div>

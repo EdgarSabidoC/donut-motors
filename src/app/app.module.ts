@@ -49,12 +49,11 @@ import { CarConditionDbComponent } from './components/car-condition-db/car-condi
 import { CarCategoryDbComponent } from './components/car-category-db/car-category-db.component';
 import { CarDbComponent } from './components/car-db/car-db.component';
 import { AppointmentDbComponent } from './components/appointment-db/appointment-db.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { SettingsComponent } from './components/settings/settings.component';
-import { ReportsComponent } from './components/reports/reports.component';
 import { RegisterATransmissionComponent } from './components/register-a-transmission/register-a-transmission.component';
 import { RegisterAPostalCodeComponent } from './components/register-a-postal-code/register-a-postal-code.component';
 import { RegisterAStateComponent } from './components/register-a-state/register-a-state.component';
+import { AuthGuard } from '@app/guards/auth.guard';
+import { AuthService } from '@app/services/auth.service';
 
 @NgModule({
   declarations: [
@@ -103,9 +102,6 @@ import { RegisterAStateComponent } from './components/register-a-state/register-
     CarCategoryDbComponent,
     CarDbComponent,
     AppointmentDbComponent,
-    ProfileComponent,
-    SettingsComponent,
-    ReportsComponent,
     RegisterATransmissionComponent,
     RegisterAPostalCodeComponent,
     RegisterAStateComponent,
@@ -119,7 +115,7 @@ import { RegisterAStateComponent } from './components/register-a-state/register-
     FormsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

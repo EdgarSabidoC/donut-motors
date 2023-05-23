@@ -16,74 +16,20 @@
     </div>
 </section>
 <!-- About section one-->
-<section class="py-5 bg-warning">
-    <div class="container px-5 my-5">
+<ng-container *ngIf="dealershipData && dealershipData.length > 0">
+    <section *ngFor="let dealership of dealershipData; let i = index" class="py-5" [ngClass]="{'bg-warning': i % 2 === 0}">
+      <div class="container px-5 my-5">
         <div class="row gx-5 align-items-center">
-            <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
-            <div class="col-lg-6 text-black">
-                <h2 class="fw-bolder">Dealership name</h2>
-                <p class="lead fw-normal mb-0">Description of the dealership along with its address.</p>
-            </div>
+          <div class="col-lg-6" [ngClass]="{'order-first order-lg-last': i % 2 !== 0}">
+            <img class="img-fluid rounded mb-5 mb-lg-0" [src]="randomImages[i]" alt="Concesionario" />
+          </div>              
+          <div class="col-lg-6">
+            <h2 class="fw-bolder">{{ dealership.name }}</h2>
+            <p class="lead fw-normal" [ngClass]="{'text-muted': i % 2 !== 0}">{{ dealership.description }}</p>
+            <p class="lead fw-normal">{{ dealership.street }}, {{ dealership.exterior_number }}, {{ dealership.neighborhood }}</p>
+          </div>
         </div>
-    </div>
-</section>
-<!-- About section two-->
-<section class="py-5">
-    <div class="container px-5 my-5">
-        <div class="row gx-5 align-items-center">
-            <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
-            <div class="col-lg-6">
-                <h2 class="fw-bolder">Dealership name</h2>
-                <p class="lead fw-normal text-muted mb-0">Description of the dealership along with its address.</p>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- About section one-->
-<section class="py-5 bg-warning">
-    <div class="container px-5 my-5">
-        <div class="row gx-5 align-items-center">
-            <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
-            <div class="col-lg-6 text-black">
-                <h2 class="fw-bolder">Dealership name</h2>
-                <p class="lead fw-normal mb-0">Description of the dealership along with its address.</p>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- About section two-->
-<section class="py-5">
-    <div class="container px-5 my-5">
-        <div class="row gx-5 align-items-center">
-            <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
-            <div class="col-lg-6">
-                <h2 class="fw-bolder">Dealership name</h2>
-                <p class="lead fw-normal text-muted mb-0">Description of the dealership along with its address.</p>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- About section one-->
-<section class="py-5 bg-warning">
-    <div class="container px-5 my-5">
-        <div class="row gx-5 align-items-center">
-            <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
-            <div class="col-lg-6 text-black">
-                <h2 class="fw-bolder">Dealership name</h2>
-                <p class="lead fw-normal mb-0">Description of the dealership along with its address.</p>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- About section two-->
-<section class="py-5">
-    <div class="container px-5 my-5">
-        <div class="row gx-5 align-items-center">
-            <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
-            <div class="col-lg-6">
-                <h2 class="fw-bolder">Dealership name</h2>
-                <p class="lead fw-normal text-muted mb-0">Description of the dealership along with its address.</p>
-            </div>
-        </div>
-    </div>
-</section>
+      </div>
+    </section>
+  </ng-container>
+  

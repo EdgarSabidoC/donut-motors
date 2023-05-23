@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,20 +8,33 @@ import { Observable } from 'rxjs';
 export class HTTPMethodsService {
 
   constructor(private http: HttpClient) { }
+  httpOptions = {
+  	headers: new HttpHeaders({
+    	'Content-Type': 'application/json',
+  	}), withCredentials: true,
+	};
   
   getRequest(url: string): Observable<any> {
     return this.http.get(url);
   }
 
   deleteRequest(url: string): Observable<any> {
-    return this.http.delete(url);
+    return this.http.delete(url, this.httpOptions);
   }
 
   putRequest(url: string, body: { name: string }): Observable<any> {
-    return this.http.put(url, body);
+    return this.http.put(url, body, this.httpOptions);
   }
 
   postRequest(url: string, body: { name: string }): Observable<any> {
-    return this.http.post(url, body);
+    return this.http.post(url, body, this.httpOptions);
+  }
+
+  getRequestPDF(url: string, body: any): Observable<any> {
+    const options = {
+      ...this.httpOptions,
+      body: JSON.stringify(body)
+    };
+    return this.http.get(url, options);
   }
 }

@@ -36,3 +36,9 @@ background-color: transparent;
 .nav-filter::-webkit-scrollbar-thumb {
 background-color: transparent;
 }
+
+.card-img-top {
+    width: 100% !important;
+    height: 100px !important; /* Ajusta la altura deseada para las imágenes */
+    object-fit: cover !important;
+  }
