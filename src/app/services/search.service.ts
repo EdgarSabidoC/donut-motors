@@ -174,6 +174,22 @@ export class SearchService {
     );
   }
 
+  
+            
+  getDealershipList(): Observable<{ name: string, description: string, street: string, exterior_number: string, neighborhood: string }[]> {
+    return this.HTTPMethodsService.getRequest("http://localhost:3001/api/dealership").pipe(
+      map((response: any) => {
+        return response.data.map((item: any) => {
+          return { name: item.name, description: item.description, street: item.street, exterior_number: item.exterior_number, neighborhood: item.neighborhood };
+        });
+      }),
+      catchError((error: any) => {
+        console.error('Error:', error);
+        return of([]); // Devuelve un array vacío en caso de error
+      })
+    );
+  }
+
   /**
   * Método que recupera la información de la base de datos para las listas de opciones de los autos del servicio de busqueda.
   * @returns {Observable<{ vin: string, mileage: number, description: string, price: number, model: string, year: number, transmission: string, condition: string, interior_color: string, exterior_color: string, dealership: string, car_image: string }[]>} - Observable que devuelve una lista de valores.
@@ -195,6 +211,64 @@ export class SearchService {
       })
     );
   }
+  getCarItem(id: string): Observable<{
+    vin: string,
+    mileage: number,
+    description: string,
+    price: number,
+    model: string,
+    year: number,
+    transmission: string,
+    maker: string,
+    category: string,
+    condition: string,
+    interior_color: string,
+    exterior_color: string,
+    dealership: string,
+    car_image: string
+  }> {
+    return this.HTTPMethodsService.getRequest("http://localhost:3001/api/car/" + id).pipe(
+      map((response: any) => {
+        const item = response.data;
+        return {
+          vin: item.vin,
+          mileage: item.mileage,
+          description: item.description,
+          price: item.sale_price,
+          model: item.car_model.name,
+          year: item.car_model.year,
+          transmission: item.car_model.model_transmission.type,
+          maker: item.car_model.model_maker.name,
+          category: item.car_model.model_category.name,
+          condition: item.car_condition.type,
+          interior_color: item.car_interior_color.name,
+          exterior_color: item.car_exterior_color.name,
+          dealership: item.car_dealership.name,
+          car_image: item.car_image
+        };
+      }),
+      catchError((error: any) => {
+        console.error('Error:', error);
+        return of({
+          vin: '',
+          mileage: 0,
+          description: '',
+          price: 0,
+          model: '',
+          year: 0,
+          transmission: '',
+          maker: '',
+          category: '',
+          condition: '',
+          interior_color: '',
+          exterior_color: '',
+          dealership: '',
+          car_image: ''
+        });
+      })
+    );
+  }
+  
   
   setCarListSort(carSort: { vin: string, mileage: number, description: string, price: number, model: string, year: number, transmission: string, maker: string,
     category: string, condition: string, interior_color: string, exterior_color: string, dealership: string, car_image: string }[]){
@@ -224,76 +298,6 @@ export class SearchService {
     return this.queryString;
   }
 
-  /**
-  * Método de búsqueda para consumir el servicio utilizando Observables.
-  * @param {Object} options - Opciones de búsqueda que incluyen limit, maker, model, y year.
-  * @param {string} options.limit - Cantidad de objetos devueltos.
-  * @param {string} options.maker - Fabricante para realizar la búsqueda.
-  * @param {string} options.model - Modelo para realizar la búsqueda.
-  * @param {string} options.year - Año para realizar la búsqueda.
-  * @returns {Observable<CarsApi>} - Observable que devuelve un objeto CarsApi.
-  */
-  /*searchCarsApi = (query: string): Observable<CarsApi> => {
-    /*const headerOptions = new HttpHeaders({
-      'X-Api-Key': 'nK7yBNLBYaa4Pdxn+SBxyw==o0jbL22gh3mNk5z6',
-    });
-
-    let params = new HttpParams();
-
-    if (options.limit) {
-      params = params.set('limit', options.limit) // Parámetro que indica la cantidad de objetos devueltos.
-    }
-    if (options.maker) {
-      params = params.set('make', options.maker.toLowerCase()); // Parámetro que realiza la búsqueda por fabricante.
-    }
-
-    if (options.model) {
-      params = params.set('model', options.model.toLowerCase()); // Parámetro que realiza la búsqueda por modelo.
-    }
-
-    if (options.year) {
-      params = params.set('year', options.year); // Parámetro que realiza la búsqueda por año.
-    }
-
-    const apiUrl: string = 'https://api.api-ninjas.com/v1/cars';
-    return this.http.get<CarsApi>(apiUrl, { headers: headerOptions, params });
-    try {
-      this.queryString = this.getQueryString();
-      //category = "";
-      //tmpRssList.category = category;
-      
-      let tmp: { vin: string; mileage: number; description: string; price: number; model: string; year: number; transmission: string; maker: string; category: string; condition: string; interior_color: string; exterior_color: string; dealership: string; car_image: string; }[] = [];
-      this.tmpCars.queryString = this.queryString;
-  
-      const queryWords = this.queryString.split(" "); // separar la cadena de consulta en palabras
-  
-      // Se busca dentro de la lista de rss en caché:
-      this.cars.forEach((item) => {
-        //let categories = rss.categories.toLowerCase();
-        let description = item.description.toLowerCase();
-        let model = item.model.toLowerCase();
-  
-        // comprobar si alguna de las palabras de la consulta aparece en el título 0 descripción
-        const matchesQuery = queryWords.some((word) => {
-          return (
-            //categories.includes(word) ||
-            description.includes(word) ||
-            model.includes(word)
-          );
-        });
-  
-        if (matchesQuery) {
-          tmp.push(item);
-        }
-      });
-  
-      if (tmp.length > 0) {
-        this.tmpCars.tmpCars = tmp;
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }*/
   resetTmpCarList = () => {
     this.tmpCars.tmpCars = [];
     this.tmpCars.queryString = "";
@@ -340,10 +344,11 @@ export class SearchService {
         this.cars.forEach((item) => {
           let description = item.description.toLowerCase();
           let model = item.model.toLowerCase();
+          let maker = item.maker.toLowerCase();
   
           // comprobar si alguna de las palabras de la consulta aparece en el título o descripción
           const matchesQuery = queryWords.some((word) => {
-            return description.includes(word) || model.includes(word);
+            return description.includes(word) || model.includes(word) || maker.includes(word);
           });
   
           if (matchesQuery) {
@@ -481,9 +486,9 @@ export class SearchService {
                   <div class="card-body">
                     <div class="small text-muted">${item.year}</div>
                     <h5 class="card-title mb-0 text-black">${item.model}</h5>
-                    <p class="card-text mb-0 text-black">Dealership: ${item.dealership}</p>
-                    <p class="card-text mb-0 text-black">Mileage: ${item.mileage}</p>
-                    <p class="card-text mb-0 text-black">Price: ${item.price}</p>
+                    <p class="card-text mb-0 text-black"><strong>Dealership:</strong> ${item.dealership}</p>
+                    <p class="card-text mb-0 text-black"><strong>Mileage</strong>: ${item.mileage}</p>
+                    <p class="card-text mb-0 text-black"><strong>Price</strong>: ${item.price}</p>
                   </div>
                 </div>
               </div>`;

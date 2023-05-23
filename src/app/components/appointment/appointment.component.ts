@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, AbstractControl, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SearchService } from '@app/services/search.service';
+import { Observable } from 'rxjs';
+import { HTTPMethodsService } from '@app/services/httpmethods.service';
 
 @Component({
   selector: 'app-appointment',
@@ -16,8 +18,13 @@ export class AppointmentComponent implements OnInit {
   date!: Date;
 
   appointment_booking_form!: FormGroup;
-  constructor(private fb: FormBuilder, private aRoute: ActivatedRoute,
-    private router: Router, private searchService: SearchService) {}
+  constructor(
+    private fb: FormBuilder,
+    private aRoute: ActivatedRoute,
+    private router: Router,
+    private searchService: SearchService,
+    private http: HTTPMethodsService // Agrega el servicio HttpClient en el constructor
+  ) {}
 
   title = this.aRoute.snapshot.data['title'];
 
@@ -82,6 +89,38 @@ export class AppointmentComponent implements OnInit {
       console.log("Saved!");
       console.log("Fecha seleccionada en formato Date:", this.date);
       console.log("El query es: ",this.query);
+
+      // URL de la API
+      const url = 'http://localhost:3001/api/appointment/pdf';
+
+      // Construir el cuerpo de la solicitud
+      const requestBody = {
+        customer_firstname: this.appointment_booking_form.get('first_name')?.value,
+        customer_lastname_1: this.appointment_booking_form.get('last_name')?.value,
+        customer_lastname_2: null, // Si no se proporciona el valor en el formulario, puedes establecerlo como null o eliminar esta propiedad del objeto
+        email: this.appointment_booking_form.get('email')?.value,
+        telephone: this.appointment_booking_form.get('phone_number')?.value,
+        appointment_date: this.date.toISOString(), // Convierte la fecha a un formato ISO string
+        appointment_time: this.appointment_booking_form.get('time')?.value,
+        dealership: this.appointment_booking_form.get('dealership')?.value,
+        car: this.query
+      };
+
+      // Llamada a la API utilizando el método postRequest
+      this.postRequest(url, requestBody).subscribe(
+        (response) => {
+          console.log('API response:', response);
+          // Realiza las acciones necesarias con la respuesta de la API
+        },
+        (error) => {
+          console.log('API error:', error);
+          // Maneja el error de la llamada a la API
+        }
+      );
     }
+  }
+
+  postRequest(url: string, body: any): Observable<any> {
+    return this.http.getRequestPDF(url, body);
   }
 }

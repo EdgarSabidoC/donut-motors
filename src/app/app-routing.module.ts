@@ -33,9 +33,6 @@ import { CarConditionDbComponent } from './components/car-condition-db/car-condi
 import { CarCategoryDbComponent } from './components/car-category-db/car-category-db.component';
 import { CarDbComponent } from './components/car-db/car-db.component';
 import { AppointmentDbComponent } from './components/appointment-db/appointment-db.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { SettingsComponent } from './components/settings/settings.component';
-import { ReportsComponent } from './components/reports/reports.component';
 import { AuthGuard } from '@app/guards/auth.guard';
 
 const routes: Routes = [
@@ -74,9 +71,6 @@ const routes: Routes = [
     { path: 'car-condition-db', component: CarConditionDbComponent, outlet:'dataBaseViews', data: { title: 'Car condition DB' }},
     { path: 'car-category-db', component: CarCategoryDbComponent, outlet:'dataBaseViews', data: { title: 'Car category DB' }},
     { path: 'appointment-db', component: AppointmentDbComponent, outlet:'dataBaseViews', data: { title: 'Appointment' } },
-    { path: 'profile', component: ProfileComponent, outlet:'dataBaseViews', data: { title: 'Profile' }},
-    { path: 'settings', component: SettingsComponent, outlet:'dataBaseViews', data: { title: 'Settings' } },
-    { path: 'reports', component: ReportsComponent, outlet:'dataBaseViews', data: { title: 'Reports' } },
     {
       path: '',
       redirectTo: 'actual', pathMatch: 'full',
