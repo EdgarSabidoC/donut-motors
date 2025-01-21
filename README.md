@@ -10,7 +10,7 @@
 ![Picture4](https://github.com/user-attachments/assets/60a7afe6-42af-4020-8b94-798ba1ccee33)
 
 ## Sign Up
-![Picture4](https://github.com/user-attachments/assets/8f59f774-91fc-442c-b21d-0c67d19a3442)
+![Picture5](https://github.com/user-attachments/assets/3c81f8a4-ff15-4668-9944-e8ccce0434b6)
 
 ## Quote your car
 ![Picture3](https://github.com/user-attachments/assets/f97e2b50-8978-484a-9822-2b0c286920e3)
