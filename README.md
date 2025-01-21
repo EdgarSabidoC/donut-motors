@@ -1,32 +1,31 @@
-<<<<<<< HEAD
 # DonutMotors
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
+## Home
+![Picture1](https://github.com/user-attachments/assets/89acb37c-f022-4f9d-bee2-202701a83518)
 
-## Development server
+## Cars for sale
+![Picture2](https://github.com/user-attachments/assets/c18645fe-c994-4ce1-8629-d0584d6e137c)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Login
+![Picture4](https://github.com/user-attachments/assets/60a7afe6-42af-4020-8b94-798ba1ccee33)
 
-## Code scaffolding
+## Sign Up
+![Picture4](https://github.com/user-attachments/assets/8f59f774-91fc-442c-b21d-0c67d19a3442)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Quote your car
+![Picture3](https://github.com/user-attachments/assets/f97e2b50-8978-484a-9822-2b0c286920e3)
 
-## Build
+## Car data
+![Picture8](https://github.com/user-attachments/assets/93d83eac-9c79-4cf3-9c5f-1ff26b55ba64)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![Picture9](https://github.com/user-attachments/assets/a1713a81-1a23-45ca-a87b-5b21b1a6614e)
 
-## Running unit tests
+## Book an appointment
+![Picture10](https://github.com/user-attachments/assets/9baf791e-6728-45a8-a7b4-346fed0ae0f4)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## About
+![Picture7](https://github.com/user-attachments/assets/fa4d210b-e952-41bb-a1e4-74eec6630422)
 
-## Running end-to-end tests
+## FAQ
+![Picture6](https://github.com/user-attachments/assets/122146b3-3a24-4625-b20a-2267242fafc1)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
-# donut-motors
-Proyecto para la asignatura optativa "Desarrollo web ágil de APIs y SPAs".
->>>>>>> 69133a388fabfa65ea7e85de3bfa4c199047f632
