@@ -1,5 +1,8 @@
 # DonutMotors
 
+### Project Description
+Project developed for the course **Agile Web Development of APIs and SPAs**. A web platform was created for product cataloging and appointment management, aimed at enhancing user experience and improving workflow efficiency.
+
 ## Home
 ![Picture1](https://github.com/user-attachments/assets/89acb37c-f022-4f9d-bee2-202701a83518)
 
